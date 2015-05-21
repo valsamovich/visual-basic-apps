@@ -27,6 +27,7 @@ Partial Class Form1
         Me.btnCenter = New System.Windows.Forms.Button()
         Me.btnAlignment = New System.Windows.Forms.Button()
         Me.lblTranslator = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnLeft
@@ -70,16 +71,27 @@ Partial Class Form1
         Me.lblTranslator.AutoSize = True
         Me.lblTranslator.Location = New System.Drawing.Point(12, 48)
         Me.lblTranslator.Name = "lblTranslator"
-        Me.lblTranslator.Size = New System.Drawing.Size(41, 13)
+        Me.lblTranslator.Size = New System.Drawing.Size(33, 13)
         Me.lblTranslator.TabIndex = 4
-        Me.lblTranslator.Text = "English"
+        Me.lblTranslator.Text = "None"
+        Me.lblTranslator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblTranslator.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(135, 77)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Exit"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(344, 262)
+        Me.ClientSize = New System.Drawing.Size(344, 113)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.lblTranslator)
         Me.Controls.Add(Me.btnAlignment)
         Me.Controls.Add(Me.btnCenter)
@@ -96,5 +108,6 @@ Partial Class Form1
     Friend WithEvents btnCenter As System.Windows.Forms.Button
     Friend WithEvents btnAlignment As System.Windows.Forms.Button
     Friend WithEvents lblTranslator As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 
 End Class
