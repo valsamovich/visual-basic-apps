@@ -1,7 +1,7 @@
 ﻿Public Class Form1
 
     'Valery Samovich
-    '2015-05-20
+    '2015-05-22
 
     Private Sub btnLeft_Click(sender As Object, e As EventArgs) Handles btnLeft.Click
         ' Align the label text to the left.
