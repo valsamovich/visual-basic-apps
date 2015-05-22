@@ -25,9 +25,9 @@ Partial Class Form1
         Me.btnLeft = New System.Windows.Forms.Button()
         Me.btnRight = New System.Windows.Forms.Button()
         Me.btnCenter = New System.Windows.Forms.Button()
-        Me.btnAlignment = New System.Windows.Forms.Button()
+        Me.btnPosition = New System.Windows.Forms.Button()
         Me.lblTranslator = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnLeft
@@ -57,57 +57,55 @@ Partial Class Form1
         Me.btnCenter.Text = "medium"
         Me.btnCenter.UseVisualStyleBackColor = True
         '
-        'btnAlignment
+        'btnPosition
         '
-        Me.btnAlignment.Location = New System.Drawing.Point(255, 12)
-        Me.btnAlignment.Name = "btnAlignment"
-        Me.btnAlignment.Size = New System.Drawing.Size(75, 23)
-        Me.btnAlignment.TabIndex = 3
-        Me.btnAlignment.Text = "alineacion"
-        Me.btnAlignment.UseVisualStyleBackColor = True
+        Me.btnPosition.Location = New System.Drawing.Point(255, 12)
+        Me.btnPosition.Name = "btnPosition"
+        Me.btnPosition.Size = New System.Drawing.Size(75, 23)
+        Me.btnPosition.TabIndex = 3
+        Me.btnPosition.Text = "catastema"
+        Me.btnPosition.UseVisualStyleBackColor = True
         '
         'lblTranslator
         '
-        Me.lblTranslator.AutoSize = True
         Me.lblTranslator.Location = New System.Drawing.Point(12, 48)
         Me.lblTranslator.Name = "lblTranslator"
-        Me.lblTranslator.Size = New System.Drawing.Size(33, 13)
+        Me.lblTranslator.Size = New System.Drawing.Size(318, 26)
         Me.lblTranslator.TabIndex = 4
         Me.lblTranslator.Text = "None"
         Me.lblTranslator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblTranslator.Visible = False
         '
-        'Button2
+        'btnExit
         '
-        Me.Button2.Location = New System.Drawing.Point(135, 77)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Exit"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnExit.Location = New System.Drawing.Point(134, 85)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 23)
+        Me.btnExit.TabIndex = 5
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(344, 113)
-        Me.Controls.Add(Me.Button2)
+        Me.ClientSize = New System.Drawing.Size(344, 118)
+        Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.lblTranslator)
-        Me.Controls.Add(Me.btnAlignment)
+        Me.Controls.Add(Me.btnPosition)
         Me.Controls.Add(Me.btnCenter)
         Me.Controls.Add(Me.btnRight)
         Me.Controls.Add(Me.btnLeft)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Valery Samovich"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnLeft As System.Windows.Forms.Button
     Friend WithEvents btnRight As System.Windows.Forms.Button
     Friend WithEvents btnCenter As System.Windows.Forms.Button
-    Friend WithEvents btnAlignment As System.Windows.Forms.Button
+    Friend WithEvents btnPosition As System.Windows.Forms.Button
     Friend WithEvents lblTranslator As System.Windows.Forms.Label
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btnExit As System.Windows.Forms.Button
 
 End Class

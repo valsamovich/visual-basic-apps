@@ -30,8 +30,19 @@
         lblTranslator.Text = "center"
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnPosition_Click(sender As Object, e As EventArgs) Handles btnPosition.Click
+        ' Align the label text to the right.
+        lblTranslator.TextAlign = ContentAlignment.MiddleRight
+        ' Make the translation visible.
+        lblTranslator.Visible = True
+        ' Display center
+        lblTranslator.Text = "position"
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         ' Close the form.
         Me.Close()
     End Sub
+
+
 End Class
