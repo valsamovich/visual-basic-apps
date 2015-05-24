@@ -35,7 +35,7 @@
         lblTranslator.TextAlign = ContentAlignment.MiddleRight
         ' Make the translation visible.
         lblTranslator.Visible = True
-        ' Display center
+        ' Display position
         lblTranslator.Text = "position"
     End Sub
 
@@ -43,6 +43,5 @@
         ' Close the form.
         Me.Close()
     End Sub
-
 
 End Class
