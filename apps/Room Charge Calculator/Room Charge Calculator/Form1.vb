@@ -1,4 +1,9 @@
-﻿Public Class Form1
+﻿' Written by Valery Samovich 
+' June 1, 2015 
+Option Strict On
+Option Explicit On
+
+Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -36,7 +41,7 @@
             lblSubtotal.Text = decSubtotal.ToString("c")
 
             ' Calculate and display the tax.
-            decTax = decSubtotal + decTAX_RATE
+            decTax = decSubtotal * decTAX_RATE
             lblTax.Text = decTax.ToString("c")
 
             ' Calculate and display the total charges.
