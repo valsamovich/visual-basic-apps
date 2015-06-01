@@ -31,6 +31,18 @@
                 CDec(txtTelephone.Text) +
                 CDec(txtMisc.Text)
             lblAddCharges.Text = decAddCharges.ToString("c")
+
+            ' Calculate and display the subtotal.
+            decSubtotal = decRoomCharges + decAddCharges
+            lblSubtotal.Text = decSubtotal.ToString("c")
+
+            ' Calculate and display the tax.
+            decTax = decSubtotal + decTAX_RATE
+            lblTax.Text = decTax.ToString("c")
+
+            ' Calculate and display the total charges.
+            decTotal = decSubtotal + decTax
+            lblTotal.Text = decTotal.ToString("c")
         Catch
             ' Error message
             MessageBox.Show("All input must be valid numeric values.")
