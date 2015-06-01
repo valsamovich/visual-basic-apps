@@ -36,7 +36,14 @@ Partial Class Form1
         Me.txtNights = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtNightlyCharge = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtRoomService = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtTelephone = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtMisc = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -118,16 +125,22 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 111)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(168, 105)
+        Me.GroupBox1.Size = New System.Drawing.Size(168, 131)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Room Information"
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtMisc)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.txtTelephone)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.txtRoomService)
+        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Location = New System.Drawing.Point(186, 111)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(185, 105)
+        Me.GroupBox2.Size = New System.Drawing.Size(185, 131)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Additional Charges"
@@ -151,7 +164,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 66)
+        Me.Label5.Location = New System.Drawing.Point(13, 61)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(77, 13)
         Me.Label5.TabIndex = 9
@@ -159,10 +172,58 @@ Partial Class Form1
         '
         'txtNightlyCharge
         '
-        Me.txtNightlyCharge.Location = New System.Drawing.Point(93, 63)
+        Me.txtNightlyCharge.Location = New System.Drawing.Point(93, 58)
         Me.txtNightlyCharge.Name = "txtNightlyCharge"
         Me.txtNightlyCharge.Size = New System.Drawing.Size(69, 20)
         Me.txtNightlyCharge.TabIndex = 9
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(15, 30)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(77, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Room Service:"
+        '
+        'txtRoomService
+        '
+        Me.txtRoomService.Location = New System.Drawing.Point(98, 27)
+        Me.txtRoomService.Name = "txtRoomService"
+        Me.txtRoomService.Size = New System.Drawing.Size(81, 20)
+        Me.txtRoomService.TabIndex = 12
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(35, 61)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(61, 13)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Telephone:"
+        '
+        'txtTelephone
+        '
+        Me.txtTelephone.Location = New System.Drawing.Point(98, 58)
+        Me.txtTelephone.Name = "txtTelephone"
+        Me.txtTelephone.Size = New System.Drawing.Size(81, 20)
+        Me.txtTelephone.TabIndex = 13
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(64, 93)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(32, 13)
+        Me.Label8.TabIndex = 9
+        Me.Label8.Text = "Misc:"
+        '
+        'txtMisc
+        '
+        Me.txtMisc.Location = New System.Drawing.Point(98, 90)
+        Me.txtMisc.Name = "txtMisc"
+        Me.txtMisc.Size = New System.Drawing.Size(81, 20)
+        Me.txtMisc.TabIndex = 9
         '
         'Form1
         '
@@ -183,6 +244,8 @@ Partial Class Form1
         Me.Text = "Room Charge Calculator"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -201,5 +264,11 @@ Partial Class Form1
     Friend WithEvents txtNights As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtMisc As System.Windows.Forms.TextBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txtTelephone As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtRoomService As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 
 End Class
