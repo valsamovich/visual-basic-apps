@@ -9,4 +9,5 @@
         lblTimeToday.Text = Now.ToString("T")
 
     End Sub
+
 End Class
