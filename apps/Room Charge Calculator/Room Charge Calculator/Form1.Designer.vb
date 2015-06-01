@@ -32,27 +32,27 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtNights = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtNightlyCharge = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtRoomService = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtTelephone = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtMisc = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtNights = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtNightlyCharge = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtRoomService = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtTelephone = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtMisc = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblRoomCharges = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.lblAddCharges = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.lblSubtotal = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.lblTax = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -92,7 +92,7 @@ Partial Class Form1
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 3
-        Me.btnExit.Text = "btnExit"
+        Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
         'lblDateToday
@@ -132,9 +132,9 @@ Partial Class Form1
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.txtNightlyCharge)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtNights)
         Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.txtNights)
+        Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 111)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(168, 119)
@@ -145,11 +145,11 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.txtMisc)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.txtTelephone)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.txtRoomService)
+        Me.GroupBox2.Controls.Add(Me.txtTelephone)
         Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.txtRoomService)
+        Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Location = New System.Drawing.Point(186, 111)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(185, 119)
@@ -157,98 +157,18 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Additional Charges"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(50, 26)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Nights:"
-        '
-        'txtNights
-        '
-        Me.txtNights.Location = New System.Drawing.Point(93, 23)
-        Me.txtNights.Name = "txtNights"
-        Me.txtNights.Size = New System.Drawing.Size(69, 20)
-        Me.txtNights.TabIndex = 10
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 55)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Nighty Charge:"
-        '
-        'txtNightlyCharge
-        '
-        Me.txtNightlyCharge.Location = New System.Drawing.Point(93, 52)
-        Me.txtNightlyCharge.Name = "txtNightlyCharge"
-        Me.txtNightlyCharge.Size = New System.Drawing.Size(69, 20)
-        Me.txtNightlyCharge.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(15, 26)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(77, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Room Service:"
-        '
-        'txtRoomService
-        '
-        Me.txtRoomService.Location = New System.Drawing.Point(98, 23)
-        Me.txtRoomService.Name = "txtRoomService"
-        Me.txtRoomService.Size = New System.Drawing.Size(81, 20)
-        Me.txtRoomService.TabIndex = 12
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(35, 55)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(61, 13)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Telephone:"
-        '
-        'txtTelephone
-        '
-        Me.txtTelephone.Location = New System.Drawing.Point(98, 52)
-        Me.txtTelephone.Name = "txtTelephone"
-        Me.txtTelephone.Size = New System.Drawing.Size(81, 20)
-        Me.txtTelephone.TabIndex = 13
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(64, 85)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(32, 13)
-        Me.Label8.TabIndex = 9
-        Me.Label8.Text = "Misc:"
-        '
-        'txtMisc
-        '
-        Me.txtMisc.Location = New System.Drawing.Point(98, 82)
-        Me.txtMisc.Name = "txtMisc"
-        Me.txtMisc.Size = New System.Drawing.Size(81, 20)
-        Me.txtMisc.TabIndex = 9
-        '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.lblTotal)
-        Me.GroupBox3.Controls.Add(Me.Label13)
-        Me.GroupBox3.Controls.Add(Me.lblTax)
+        Me.GroupBox3.Controls.Add(Me.Label18)
         Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Controls.Add(Me.lblSubtotal)
+        Me.GroupBox3.Controls.Add(Me.Label17)
+        Me.GroupBox3.Controls.Add(Me.Label16)
+        Me.GroupBox3.Controls.Add(Me.Label15)
+        Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.Label11)
-        Me.GroupBox3.Controls.Add(Me.lblAddCharges)
         Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Controls.Add(Me.lblRoomCharges)
         Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Location = New System.Drawing.Point(33, 236)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(314, 182)
@@ -256,90 +176,170 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Total Charges"
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(45, 34)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(40, 13)
+        Me.Label14.TabIndex = 15
+        Me.Label14.Text = "Nights:"
+        '
+        'txtNights
+        '
+        Me.txtNights.Location = New System.Drawing.Point(91, 34)
+        Me.txtNights.Name = "txtNights"
+        Me.txtNights.Size = New System.Drawing.Size(66, 20)
+        Me.txtNights.TabIndex = 16
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 62)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(79, 13)
+        Me.Label4.TabIndex = 17
+        Me.Label4.Text = "Nightly Charge:"
+        '
+        'txtNightlyCharge
+        '
+        Me.txtNightlyCharge.Location = New System.Drawing.Point(91, 62)
+        Me.txtNightlyCharge.Name = "txtNightlyCharge"
+        Me.txtNightlyCharge.Size = New System.Drawing.Size(66, 20)
+        Me.txtNightlyCharge.TabIndex = 18
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(14, 25)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(77, 13)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "Room Service:"
+        '
+        'txtRoomService
+        '
+        Me.txtRoomService.Location = New System.Drawing.Point(97, 25)
+        Me.txtRoomService.Name = "txtRoomService"
+        Me.txtRoomService.Size = New System.Drawing.Size(76, 20)
+        Me.txtRoomService.TabIndex = 17
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(30, 53)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(61, 13)
+        Me.Label6.TabIndex = 18
+        Me.Label6.Text = "Telephone:"
+        '
+        'txtTelephone
+        '
+        Me.txtTelephone.Location = New System.Drawing.Point(97, 53)
+        Me.txtTelephone.Name = "txtTelephone"
+        Me.txtTelephone.Size = New System.Drawing.Size(76, 20)
+        Me.txtTelephone.TabIndex = 19
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(59, 81)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(32, 13)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "Misc:"
+        '
+        'txtMisc
+        '
+        Me.txtMisc.Location = New System.Drawing.Point(97, 81)
+        Me.txtMisc.Name = "txtMisc"
+        Me.txtMisc.Size = New System.Drawing.Size(76, 20)
+        Me.txtMisc.TabIndex = 21
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(67, 23)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(80, 13)
+        Me.Label8.TabIndex = 26
+        Me.Label8.Text = "Room Charges:"
+        '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(82, 22)
+        Me.Label9.Location = New System.Drawing.Point(49, 53)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(80, 13)
-        Me.Label9.TabIndex = 0
-        Me.Label9.Text = "Room Charges:"
-        '
-        'lblRoomCharges
-        '
-        Me.lblRoomCharges.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblRoomCharges.Location = New System.Drawing.Point(171, 22)
-        Me.lblRoomCharges.Name = "lblRoomCharges"
-        Me.lblRoomCharges.Size = New System.Drawing.Size(101, 23)
-        Me.lblRoomCharges.TabIndex = 1
+        Me.Label9.Size = New System.Drawing.Size(98, 13)
+        Me.Label9.TabIndex = 27
+        Me.Label9.Text = "Additional Charges:"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(64, 53)
+        Me.Label10.Location = New System.Drawing.Point(98, 83)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(98, 13)
-        Me.Label10.TabIndex = 2
-        Me.Label10.Text = "Additional Charges:"
-        '
-        'lblAddCharges
-        '
-        Me.lblAddCharges.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblAddCharges.Location = New System.Drawing.Point(171, 52)
-        Me.lblAddCharges.Name = "lblAddCharges"
-        Me.lblAddCharges.Size = New System.Drawing.Size(101, 23)
-        Me.lblAddCharges.TabIndex = 3
+        Me.Label10.Size = New System.Drawing.Size(49, 13)
+        Me.Label10.TabIndex = 28
+        Me.Label10.Text = "Subtotal:"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(113, 83)
+        Me.Label11.Location = New System.Drawing.Point(119, 114)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(49, 13)
-        Me.Label11.TabIndex = 10
-        Me.Label11.Text = "Subtotal:"
+        Me.Label11.Size = New System.Drawing.Size(28, 13)
+        Me.Label11.TabIndex = 29
+        Me.Label11.Text = "Tax:"
         '
-        'lblSubtotal
+        'Label13
         '
-        Me.lblSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblSubtotal.Location = New System.Drawing.Point(171, 82)
-        Me.lblSubtotal.Name = "lblSubtotal"
-        Me.lblSubtotal.Size = New System.Drawing.Size(101, 23)
-        Me.lblSubtotal.TabIndex = 11
+        Me.Label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label13.Location = New System.Drawing.Point(153, 23)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(100, 23)
+        Me.Label13.TabIndex = 31
+        '
+        'Label15
+        '
+        Me.Label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label15.Location = New System.Drawing.Point(153, 53)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(100, 23)
+        Me.Label15.TabIndex = 32
+        '
+        'Label16
+        '
+        Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label16.Location = New System.Drawing.Point(153, 83)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(100, 23)
+        Me.Label16.TabIndex = 33
+        '
+        'Label17
+        '
+        Me.Label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label17.Location = New System.Drawing.Point(153, 113)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(100, 23)
+        Me.Label17.TabIndex = 34
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(134, 113)
+        Me.Label12.Location = New System.Drawing.Point(71, 144)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(28, 13)
-        Me.Label12.TabIndex = 12
-        Me.Label12.Text = "Tax:"
+        Me.Label12.Size = New System.Drawing.Size(76, 13)
+        Me.Label12.TabIndex = 35
+        Me.Label12.Text = "Total Charges:"
         '
-        'lblTax
+        'Label18
         '
-        Me.lblTax.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTax.Location = New System.Drawing.Point(171, 112)
-        Me.lblTax.Name = "lblTax"
-        Me.lblTax.Size = New System.Drawing.Size(101, 23)
-        Me.lblTax.TabIndex = 13
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(86, 142)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(76, 13)
-        Me.Label13.TabIndex = 14
-        Me.Label13.Text = "Total Charges:"
-        '
-        'lblTotal
-        '
-        Me.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTotal.Location = New System.Drawing.Point(171, 142)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(101, 23)
-        Me.lblTotal.TabIndex = 15
+        Me.Label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label18.Location = New System.Drawing.Point(153, 144)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(100, 23)
+        Me.Label18.TabIndex = 36
         '
         'Form1
         '
@@ -378,27 +378,27 @@ Partial Class Form1
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtNightlyCharge As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents txtNights As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtMisc As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents txtTelephone As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents txtRoomService As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents lblAddCharges As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents lblRoomCharges As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents lblTax As System.Windows.Forms.Label
+    Friend WithEvents txtNightlyCharge As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtNights As System.Windows.Forms.TextBox
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents txtMisc As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtTelephone As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txtRoomService As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents lblSubtotal As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents lblTotal As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 
 End Class
