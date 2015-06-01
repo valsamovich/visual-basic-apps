@@ -30,6 +30,13 @@ Partial Class Form1
         Me.lblTimeToday = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtNights = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtNightlyCharge = New System.Windows.Forms.TextBox()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -72,7 +79,7 @@ Partial Class Form1
         'lblDateToday
         '
         Me.lblDateToday.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDateToday.Location = New System.Drawing.Point(154, 49)
+        Me.lblDateToday.Location = New System.Drawing.Point(154, 57)
         Me.lblDateToday.Name = "lblDateToday"
         Me.lblDateToday.Size = New System.Drawing.Size(217, 13)
         Me.lblDateToday.TabIndex = 4
@@ -80,7 +87,7 @@ Partial Class Form1
         'lblTimeToday
         '
         Me.lblTimeToday.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTimeToday.Location = New System.Drawing.Point(154, 71)
+        Me.lblTimeToday.Location = New System.Drawing.Point(154, 79)
         Me.lblTimeToday.Name = "lblTimeToday"
         Me.lblTimeToday.Size = New System.Drawing.Size(217, 13)
         Me.lblTimeToday.TabIndex = 5
@@ -88,7 +95,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(75, 49)
+        Me.Label2.Location = New System.Drawing.Point(75, 57)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(73, 13)
         Me.Label2.TabIndex = 6
@@ -97,17 +104,73 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(115, 71)
+        Me.Label3.Location = New System.Drawing.Point(115, 79)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(33, 13)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Time:"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtNightlyCharge)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.txtNights)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 111)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(168, 105)
+        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Room Information"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Location = New System.Drawing.Point(186, 111)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(185, 105)
+        Me.GroupBox2.TabIndex = 0
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Additional Charges"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(50, 30)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "Nights:"
+        '
+        'txtNights
+        '
+        Me.txtNights.Location = New System.Drawing.Point(93, 27)
+        Me.txtNights.Name = "txtNights"
+        Me.txtNights.Size = New System.Drawing.Size(69, 20)
+        Me.txtNights.TabIndex = 10
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(13, 66)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(77, 13)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Nighty Charge:"
+        '
+        'txtNightlyCharge
+        '
+        Me.txtNightlyCharge.Location = New System.Drawing.Point(93, 63)
+        Me.txtNightlyCharge.Name = "txtNightlyCharge"
+        Me.txtNightlyCharge.Size = New System.Drawing.Size(69, 20)
+        Me.txtNightlyCharge.TabIndex = 9
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(383, 500)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblTimeToday)
@@ -118,6 +181,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
         Me.Text = "Room Charge Calculator"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -130,5 +195,11 @@ Partial Class Form1
     Friend WithEvents lblTimeToday As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtNightlyCharge As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents txtNights As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 
 End Class
