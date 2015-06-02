@@ -6,13 +6,14 @@ Option Explicit On
 Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         ' Get today's date from the system and display it.
         lblDateToday.Text = Now.ToString("D")
 
         ' Get the current time from the system and display it.
         lblTimeToday.Text = Now.ToString("T")
 
+        ' Set the focus to the first field.
+        txtNights.Select()
     End Sub
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
@@ -76,7 +77,7 @@ Public Class Form1
         ' Get the current time from the system and display it.
         lblTimeToday.Text = Now.ToString("T")
 
-        ' Reset the focus to the first filed.
+        ' Reset the focus to the first field.
         txtNights.Focus()
     End Sub
 
