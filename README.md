@@ -7,6 +7,7 @@
 
 - Directions
 - Flags
-- FrenchNumbers
+- French Numbers
+- Latin Translator
 - Room Charge Calculator
 
