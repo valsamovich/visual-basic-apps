@@ -47,7 +47,7 @@ Partial Class Form1
         Me.lblChapter3Test = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.lblPercentageGrade = New System.Windows.Forms.Label()
-        Me.lblPointsEarned = New System.Windows.Forms.Label()
+        Me.lblTotalPointsEarned = New System.Windows.Forms.Label()
         Me.lblTotalPossiblePoints = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -274,7 +274,7 @@ Partial Class Form1
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.lblPercentageGrade)
-        Me.GroupBox5.Controls.Add(Me.lblPointsEarned)
+        Me.GroupBox5.Controls.Add(Me.lblTotalPointsEarned)
         Me.GroupBox5.Controls.Add(Me.lblTotalPossiblePoints)
         Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Controls.Add(Me.Label5)
@@ -284,7 +284,7 @@ Partial Class Form1
         Me.GroupBox5.Size = New System.Drawing.Size(279, 142)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Totals"
+        Me.GroupBox5.Text = "Totals && Grade"
         '
         'lblPercentageGrade
         '
@@ -294,13 +294,13 @@ Partial Class Form1
         Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
         Me.lblPercentageGrade.TabIndex = 1
         '
-        'lblPointsEarned
+        'lblTotalPointsEarned
         '
-        Me.lblPointsEarned.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblPointsEarned.Location = New System.Drawing.Point(133, 63)
-        Me.lblPointsEarned.Name = "lblPointsEarned"
-        Me.lblPointsEarned.Size = New System.Drawing.Size(100, 23)
-        Me.lblPointsEarned.TabIndex = 1
+        Me.lblTotalPointsEarned.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTotalPointsEarned.Location = New System.Drawing.Point(133, 63)
+        Me.lblTotalPointsEarned.Name = "lblTotalPointsEarned"
+        Me.lblTotalPointsEarned.Size = New System.Drawing.Size(100, 23)
+        Me.lblTotalPointsEarned.TabIndex = 1
         '
         'lblTotalPossiblePoints
         '
@@ -429,7 +429,7 @@ Partial Class Form1
     Friend WithEvents lblChapter3Test As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents lblTotalPossiblePoints As System.Windows.Forms.Label
-    Friend WithEvents lblPointsEarned As System.Windows.Forms.Label
+    Friend WithEvents lblTotalPointsEarned As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents lblPercentageGrade As System.Windows.Forms.Label
