@@ -12,20 +12,20 @@ Public Class Form1
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
         ' Declare variables for the calculation 
-        Dim intIntroPost As Integer = 0             ' To hold intro post points
+        Dim intIntroPost As Integer                 ' To hold intro post points
 
-        Dim intChapter1Test As Integer = 0          ' To hold chapter 1 test points
+        Dim intChapter1Test As Integer              ' To hold chapter 1 test points
 
-        Dim intChapter2Test As Integer = 0          ' To hold chapter 2 test points
-        Dim intChapter2Tutorial As Integer = 0      ' To hold chapter 2 tutorial points
-        Dim intChapter2Project As Integer = 0       ' To hold chapter 2 project points
+        Dim intChapter2Test As Integer              ' To hold chapter 2 test points
+        Dim intChapter2Tutorial As Integer          ' To hold chapter 2 tutorial points
+        Dim intChapter2Project As Integer           ' To hold chapter 2 project points
 
-        Dim intChapter3Test As Integer = 0          ' To hold chapter 3 test points
-        Dim intChapter3Tutorial As Integer = 0      ' To hold chapter 3 tutorial points
+        Dim intChapter3Test As Integer              ' To hold chapter 3 test points
+        Dim intChapter3Tutorial As Integer          ' To hold chapter 3 tutorial points
 
         Dim intTotalPossiblePoints As Integer = 250 ' To hold total possible points
-        Dim intTotalPointsEarned As Integer = 0     ' To hold total points earned
-        Dim intPrecentageGrade As Integer = 0       ' To hold PrecentageGrade
+        Dim intTotalPointsEarned As Integer         ' To hold total points earned
+        Dim intPrecentageGrade As Integer           ' To hold PrecentageGrade
 
         Try
             ' Read the values from the Introduction TextBox control. 
@@ -49,7 +49,7 @@ Public Class Form1
                 intChapter3Test + intChapter3Tutorial
 
             ' Calculate the precentage grade
-            intPrecentageGrade = CInt(intTotalPointsEarned / intTotalPossiblePoints)
+            intPrecentageGrade = CInt(intTotalPointsEarned * 100 / intTotalPossiblePoints)
 
             ' Display the total possible points
             lblTotalPossiblePoints.Text = CStr(intTotalPossiblePoints)
