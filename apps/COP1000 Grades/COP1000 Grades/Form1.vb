@@ -25,7 +25,7 @@ Public Class Form1
 
         Dim intTotalPossiblePoints As Integer = 250 ' To hold total possible points
         Dim intTotalPointsEarned As Integer         ' To hold total points earned
-        Dim intPercentageGrade As Integer           ' To hold PrecentageGrade
+        Dim dblPercentageGrade As Double            ' To hold PrecentageGrade
 
         Try
             ' Read the values from the Introduction TextBox control. 
@@ -49,7 +49,7 @@ Public Class Form1
                 intChapter3Test + intChapter3Tutorial
 
             ' Calculate the precentage grade
-            intPercentageGrade = CInt(intTotalPointsEarned * 100 / intTotalPossiblePoints)
+            dblPercentageGrade = intTotalPointsEarned / intTotalPossiblePoints
 
             ' Display the total possible points
             lblTotalPossiblePoints.Text = CStr(intTotalPossiblePoints)
@@ -58,7 +58,7 @@ Public Class Form1
             lblTotalPointsEarned.Text = CStr(intTotalPointsEarned)
 
             ' Display the total points earned
-            lblPercentageGrade.Text = intPercentageGrade.ToString("n")
+            lblPercentageGrade.Text = dblPercentageGrade.ToString("p")
         Catch
             ' Display an error mssage
             MessageBox.Show("Error: All imput must be valid numeric values.")
