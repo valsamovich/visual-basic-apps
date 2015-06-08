@@ -34,7 +34,7 @@ Partial Class Form1
         Me.txtChapter1Test = New System.Windows.Forms.TextBox()
         Me.lblChapter1Test = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtChapter2Project = New System.Windows.Forms.TextBox()
         Me.lblChapter2Project = New System.Windows.Forms.Label()
         Me.txtChapter2Tutorial = New System.Windows.Forms.TextBox()
         Me.lblChapter2Tutorial = New System.Windows.Forms.Label()
@@ -46,12 +46,12 @@ Partial Class Form1
         Me.txtChapter3Test = New System.Windows.Forms.TextBox()
         Me.lblChapter3Test = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.lblPercentageGrade = New System.Windows.Forms.Label()
+        Me.lblPointsEarned = New System.Windows.Forms.Label()
         Me.lblTotalPossiblePoints = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCalculate = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
@@ -165,7 +165,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.txtChapter2Project)
         Me.GroupBox3.Controls.Add(Me.lblChapter2Project)
         Me.GroupBox3.Controls.Add(Me.txtChapter2Tutorial)
         Me.GroupBox3.Controls.Add(Me.lblChapter2Tutorial)
@@ -178,12 +178,12 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Chapter 2"
         '
-        'TextBox1
+        'txtChapter2Project
         '
-        Me.TextBox1.Location = New System.Drawing.Point(54, 85)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.txtChapter2Project.Location = New System.Drawing.Point(54, 85)
+        Me.txtChapter2Project.Name = "txtChapter2Project"
+        Me.txtChapter2Project.Size = New System.Drawing.Size(70, 20)
+        Me.txtChapter2Project.TabIndex = 5
         '
         'lblChapter2Project
         '
@@ -273,8 +273,8 @@ Partial Class Form1
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.Label6)
-        Me.GroupBox5.Controls.Add(Me.Label4)
+        Me.GroupBox5.Controls.Add(Me.lblPercentageGrade)
+        Me.GroupBox5.Controls.Add(Me.lblPointsEarned)
         Me.GroupBox5.Controls.Add(Me.lblTotalPossiblePoints)
         Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Controls.Add(Me.Label5)
@@ -286,6 +286,22 @@ Partial Class Form1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Totals"
         '
+        'lblPercentageGrade
+        '
+        Me.lblPercentageGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPercentageGrade.Location = New System.Drawing.Point(133, 98)
+        Me.lblPercentageGrade.Name = "lblPercentageGrade"
+        Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
+        Me.lblPercentageGrade.TabIndex = 1
+        '
+        'lblPointsEarned
+        '
+        Me.lblPointsEarned.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPointsEarned.Location = New System.Drawing.Point(133, 63)
+        Me.lblPointsEarned.Name = "lblPointsEarned"
+        Me.lblPointsEarned.Size = New System.Drawing.Size(100, 23)
+        Me.lblPointsEarned.TabIndex = 1
+        '
         'lblTotalPossiblePoints
         '
         Me.lblTotalPossiblePoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -293,32 +309,6 @@ Partial Class Form1
         Me.lblTotalPossiblePoints.Name = "lblTotalPossiblePoints"
         Me.lblTotalPossiblePoints.Size = New System.Drawing.Size(100, 23)
         Me.lblTotalPossiblePoints.TabIndex = 1
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(55, 67)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(72, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Points earned"
-        '
-        'Label4
-        '
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label4.Location = New System.Drawing.Point(133, 63)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 23)
-        Me.Label4.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(50, 31)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(77, 13)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Possible points"
         '
         'Label2
         '
@@ -329,13 +319,23 @@ Partial Class Form1
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Percentage grade"
         '
-        'Label6
+        'Label5
         '
-        Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label6.Location = New System.Drawing.Point(133, 98)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(100, 23)
-        Me.Label6.TabIndex = 1
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(55, 67)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(72, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Points earned"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(50, 31)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(77, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Possible points"
         '
         'btnCalculate
         '
@@ -416,7 +416,7 @@ Partial Class Form1
     Friend WithEvents lblChapter1Project As System.Windows.Forms.Label
     Friend WithEvents txtChapter1Tutorial As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtChapter2Project As System.Windows.Forms.TextBox
     Friend WithEvents lblChapter2Project As System.Windows.Forms.Label
     Friend WithEvents txtChapter2Tutorial As System.Windows.Forms.TextBox
     Friend WithEvents lblChapter2Tutorial As System.Windows.Forms.Label
@@ -429,10 +429,10 @@ Partial Class Form1
     Friend WithEvents lblChapter3Test As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents lblTotalPossiblePoints As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblPointsEarned As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblPercentageGrade As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btnCalculate As System.Windows.Forms.Button
     Friend WithEvents btnClear As System.Windows.Forms.Button
