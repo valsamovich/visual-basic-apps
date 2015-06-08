@@ -27,10 +27,6 @@ Partial Class Form1
         Me.txtIntroPost = New System.Windows.Forms.TextBox()
         Me.lblIntroPost = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtChapter1Project = New System.Windows.Forms.TextBox()
-        Me.lblChapter1Project = New System.Windows.Forms.Label()
-        Me.txtChapter1Tutorial = New System.Windows.Forms.TextBox()
-        Me.lblChapter1Tutorial = New System.Windows.Forms.Label()
         Me.txtChapter1Test = New System.Windows.Forms.TextBox()
         Me.lblChapter1Test = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -55,7 +51,6 @@ Partial Class Form1
         Me.btnCalculate = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -102,10 +97,6 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.txtChapter1Project)
-        Me.GroupBox2.Controls.Add(Me.lblChapter1Project)
-        Me.GroupBox2.Controls.Add(Me.txtChapter1Tutorial)
-        Me.GroupBox2.Controls.Add(Me.lblChapter1Tutorial)
         Me.GroupBox2.Controls.Add(Me.txtChapter1Test)
         Me.GroupBox2.Controls.Add(Me.lblChapter1Test)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 132)
@@ -114,38 +105,6 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Chapter 1"
-        '
-        'txtChapter1Project
-        '
-        Me.txtChapter1Project.Location = New System.Drawing.Point(54, 85)
-        Me.txtChapter1Project.Name = "txtChapter1Project"
-        Me.txtChapter1Project.Size = New System.Drawing.Size(70, 20)
-        Me.txtChapter1Project.TabIndex = 5
-        '
-        'lblChapter1Project
-        '
-        Me.lblChapter1Project.AutoSize = True
-        Me.lblChapter1Project.Location = New System.Drawing.Point(9, 88)
-        Me.lblChapter1Project.Name = "lblChapter1Project"
-        Me.lblChapter1Project.Size = New System.Drawing.Size(40, 13)
-        Me.lblChapter1Project.TabIndex = 4
-        Me.lblChapter1Project.Text = "Project"
-        '
-        'txtChapter1Tutorial
-        '
-        Me.txtChapter1Tutorial.Location = New System.Drawing.Point(54, 54)
-        Me.txtChapter1Tutorial.Name = "txtChapter1Tutorial"
-        Me.txtChapter1Tutorial.Size = New System.Drawing.Size(70, 20)
-        Me.txtChapter1Tutorial.TabIndex = 3
-        '
-        'lblChapter1Tutorial
-        '
-        Me.lblChapter1Tutorial.AutoSize = True
-        Me.lblChapter1Tutorial.Location = New System.Drawing.Point(6, 57)
-        Me.lblChapter1Tutorial.Name = "lblChapter1Tutorial"
-        Me.lblChapter1Tutorial.Size = New System.Drawing.Size(42, 13)
-        Me.lblChapter1Tutorial.TabIndex = 2
-        Me.lblChapter1Tutorial.Text = "Tutorial"
         '
         'txtChapter1Test
         '
@@ -289,17 +248,17 @@ Partial Class Form1
         'lblPercentageGrade
         '
         Me.lblPercentageGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblPercentageGrade.Location = New System.Drawing.Point(133, 98)
+        Me.lblPercentageGrade.Location = New System.Drawing.Point(133, 97)
         Me.lblPercentageGrade.Name = "lblPercentageGrade"
-        Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
+        Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 20)
         Me.lblPercentageGrade.TabIndex = 1
         '
         'lblTotalPointsEarned
         '
         Me.lblTotalPointsEarned.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTotalPointsEarned.Location = New System.Drawing.Point(133, 63)
+        Me.lblTotalPointsEarned.Location = New System.Drawing.Point(133, 62)
         Me.lblTotalPointsEarned.Name = "lblTotalPointsEarned"
-        Me.lblTotalPointsEarned.Size = New System.Drawing.Size(100, 23)
+        Me.lblTotalPointsEarned.Size = New System.Drawing.Size(100, 20)
         Me.lblTotalPointsEarned.TabIndex = 1
         '
         'lblTotalPossiblePoints
@@ -307,13 +266,13 @@ Partial Class Form1
         Me.lblTotalPossiblePoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblTotalPossiblePoints.Location = New System.Drawing.Point(133, 27)
         Me.lblTotalPossiblePoints.Name = "lblTotalPossiblePoints"
-        Me.lblTotalPossiblePoints.Size = New System.Drawing.Size(100, 23)
+        Me.lblTotalPossiblePoints.Size = New System.Drawing.Size(100, 20)
         Me.lblTotalPossiblePoints.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(35, 102)
+        Me.Label2.Location = New System.Drawing.Point(35, 100)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(92, 13)
         Me.Label2.TabIndex = 0
@@ -322,7 +281,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(55, 67)
+        Me.Label5.Location = New System.Drawing.Point(55, 65)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(72, 13)
         Me.Label5.TabIndex = 0
@@ -331,7 +290,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(50, 31)
+        Me.Label3.Location = New System.Drawing.Point(50, 30)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 13)
         Me.Label3.TabIndex = 0
@@ -339,7 +298,7 @@ Partial Class Form1
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(61, 429)
+        Me.btnCalculate.Location = New System.Drawing.Point(107, 425)
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(75, 23)
         Me.btnCalculate.TabIndex = 4
@@ -348,7 +307,7 @@ Partial Class Form1
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(149, 429)
+        Me.btnClear.Location = New System.Drawing.Point(195, 425)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 23)
         Me.btnClear.TabIndex = 5
@@ -357,28 +316,18 @@ Partial Class Form1
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(236, 429)
+        Me.btnExit.Location = New System.Drawing.Point(282, 425)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 6
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'btnSave
-        '
-        Me.btnSave.Location = New System.Drawing.Point(325, 429)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 7
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(455, 476)
-        Me.Controls.Add(Me.btnSave)
+        Me.ClientSize = New System.Drawing.Size(455, 474)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnCalculate)
@@ -409,12 +358,8 @@ Partial Class Form1
     Friend WithEvents txtIntroPost As System.Windows.Forms.TextBox
     Friend WithEvents lblIntroPost As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents lblChapter1Tutorial As System.Windows.Forms.Label
     Friend WithEvents txtChapter1Test As System.Windows.Forms.TextBox
     Friend WithEvents lblChapter1Test As System.Windows.Forms.Label
-    Friend WithEvents txtChapter1Project As System.Windows.Forms.TextBox
-    Friend WithEvents lblChapter1Project As System.Windows.Forms.Label
-    Friend WithEvents txtChapter1Tutorial As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txtChapter2Project As System.Windows.Forms.TextBox
     Friend WithEvents lblChapter2Project As System.Windows.Forms.Label
@@ -437,6 +382,5 @@ Partial Class Form1
     Friend WithEvents btnCalculate As System.Windows.Forms.Button
     Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
-    Friend WithEvents btnSave As System.Windows.Forms.Button
 
 End Class

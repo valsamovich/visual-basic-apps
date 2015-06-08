@@ -164,6 +164,7 @@ Partial Class Form1
         Me.txtNights.Name = "txtNights"
         Me.txtNights.Size = New System.Drawing.Size(66, 20)
         Me.txtNights.TabIndex = 16
+        Me.txtNights.Text = "2"
         '
         'Label14
         '
