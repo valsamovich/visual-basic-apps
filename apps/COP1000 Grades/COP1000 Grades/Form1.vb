@@ -6,7 +6,40 @@ Option Explicit On
 Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Place the focus to the first field.
+        txtIntroPost.Focus()
+    End Sub
 
+    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
+        Dim intIntroPost As Integer = 0         ' To hold intro post points
+
+        Dim intChapter1Test As Integer = 0      ' To hold chapter 1 test points
+        Dim intChapter1Tutorial As Integer = 0  ' To hold chapter 1 tutorial points
+        Dim intChapter1Project As Integer = 0   ' To hold chapter 1 project points
+
+        Dim intChapter2Test As Integer = 0      ' To hold chapter 2 test points
+        Dim intChapter2Tutorial As Integer = 0  ' To hold chapter 2 tutorial points
+        Dim intChapter2Project As Integer = 0   ' To hold chapter 2 project points
+
+        Dim intChapter3Test As Integer = 0      ' To hold chapter 3 test points
+        Dim intChapter3Tutorial As Integer = 0  ' To hold chapter 3 tutorial points
+
+        ' Read the values from the Introduction TextBox control. 
+        intIntroPost = CInt(txtIntroPost.Text)
+
+        ' Read the values from the Chapter 1 TextBox controls. 
+        intChapter1Test = CInt(txtChapter1Test.Text)
+        intChapter1Tutorial = CInt(txtChapter1Tutorial.Text)
+        intChapter1Project = CInt(txtChapter1Project.Text)
+
+        ' Read the values from the Chapter 2 TextBox controls. 
+        intChapter2Test = CInt(txtChapter2Test.Text)
+        intChapter2Tutorial = CInt(txtChapter2Tutorial.Text)
+        intChapter2Project = CInt(txtChapter2Project.Text)
+
+        ' Read the values from the Chapter 3 TextBox controls. 
+        intChapter3Test = CInt(txtChapter3Test.Text)
+        intChapter3Tutorial = CInt(txtChapter3Tutorial.Text)
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -40,4 +73,5 @@ Public Class Form1
         ' Close the form.
         Me.Close()
     End Sub
+
 End Class
