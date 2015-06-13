@@ -26,20 +26,23 @@ Partial Class Form1
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.btnCalculate = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.radAdult = New System.Windows.Forms.RadioButton()
+        Me.radChild = New System.Windows.Forms.RadioButton()
+        Me.radStudent = New System.Windows.Forms.RadioButton()
+        Me.radSenior = New System.Windows.Forms.RadioButton()
+        Me.chkYoga = New System.Windows.Forms.CheckBox()
+        Me.chkKarate = New System.Windows.Forms.CheckBox()
+        Me.chkTrainer = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.txtMonths = New System.Windows.Forms.TextBox()
+        Me.lblMonthlyFee = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblTotalFee = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -48,10 +51,10 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.RadioButton4)
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.radSenior)
+        Me.GroupBox1.Controls.Add(Me.radStudent)
+        Me.GroupBox1.Controls.Add(Me.radChild)
+        Me.GroupBox1.Controls.Add(Me.radAdult)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(200, 116)
@@ -61,9 +64,9 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.CheckBox3)
-        Me.GroupBox2.Controls.Add(Me.CheckBox2)
-        Me.GroupBox2.Controls.Add(Me.CheckBox1)
+        Me.GroupBox2.Controls.Add(Me.chkTrainer)
+        Me.GroupBox2.Controls.Add(Me.chkKarate)
+        Me.GroupBox2.Controls.Add(Me.chkYoga)
         Me.GroupBox2.Location = New System.Drawing.Point(223, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(200, 116)
@@ -73,7 +76,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.txtMonths)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 146)
         Me.GroupBox3.Name = "GroupBox3"
@@ -84,6 +87,9 @@ Partial Class Form1
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.lblTotalFee)
+        Me.GroupBox4.Controls.Add(Me.Label2)
+        Me.GroupBox4.Controls.Add(Me.lblMonthlyFee)
         Me.GroupBox4.Controls.Add(Me.Label3)
         Me.GroupBox4.Location = New System.Drawing.Point(223, 146)
         Me.GroupBox4.Name = "GroupBox4"
@@ -92,133 +98,122 @@ Partial Class Form1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Membership Fees"
         '
-        'Button1
+        'btnCalculate
         '
-        Me.Button1.Location = New System.Drawing.Point(100, 262)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCalculate.Location = New System.Drawing.Point(100, 262)
+        Me.btnCalculate.Name = "btnCalculate"
+        Me.btnCalculate.Size = New System.Drawing.Size(75, 23)
+        Me.btnCalculate.TabIndex = 3
+        Me.btnCalculate.Text = "&Calculate"
+        Me.btnCalculate.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnClear
         '
-        Me.Button2.Location = New System.Drawing.Point(181, 262)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnClear.Location = New System.Drawing.Point(181, 262)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.TabIndex = 4
+        Me.btnClear.Text = "Clea&r"
+        Me.btnClear.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnExit
         '
-        Me.Button3.Location = New System.Drawing.Point(262, 262)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnExit.Location = New System.Drawing.Point(262, 262)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 23)
+        Me.btnExit.TabIndex = 5
+        Me.btnExit.Text = "E&xit"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'radAdult
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(13, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "RadioButton1"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.radAdult.AutoSize = True
+        Me.radAdult.Checked = True
+        Me.radAdult.Location = New System.Drawing.Point(13, 19)
+        Me.radAdult.Name = "radAdult"
+        Me.radAdult.Size = New System.Drawing.Size(98, 17)
+        Me.radAdult.TabIndex = 0
+        Me.radAdult.TabStop = True
+        Me.radAdult.Text = "Standard  &Adult"
+        Me.radAdult.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'radChild
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(13, 42)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "RadioButton2"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.radChild.AutoSize = True
+        Me.radChild.Location = New System.Drawing.Point(13, 42)
+        Me.radChild.Name = "radChild"
+        Me.radChild.Size = New System.Drawing.Size(108, 17)
+        Me.radChild.TabIndex = 1
+        Me.radChild.Text = "Chil&d (12 && under)"
+        Me.radChild.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'radStudent
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(13, 65)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton3.TabIndex = 2
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "RadioButton3"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.radStudent.AutoSize = True
+        Me.radStudent.Location = New System.Drawing.Point(13, 65)
+        Me.radStudent.Name = "radStudent"
+        Me.radStudent.Size = New System.Drawing.Size(62, 17)
+        Me.radStudent.TabIndex = 2
+        Me.radStudent.Text = "&Student"
+        Me.radStudent.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'radSenior
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(13, 88)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton4.TabIndex = 3
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "RadioButton4"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.radSenior.AutoSize = True
+        Me.radSenior.Location = New System.Drawing.Point(13, 88)
+        Me.radSenior.Name = "radSenior"
+        Me.radSenior.Size = New System.Drawing.Size(89, 17)
+        Me.radSenior.TabIndex = 3
+        Me.radSenior.Text = "S&enior Citizen"
+        Me.radSenior.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'chkYoga
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(10, 19)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkYoga.AutoSize = True
+        Me.chkYoga.Location = New System.Drawing.Point(10, 19)
+        Me.chkYoga.Name = "chkYoga"
+        Me.chkYoga.Size = New System.Drawing.Size(51, 17)
+        Me.chkYoga.TabIndex = 0
+        Me.chkYoga.Text = "&Yoga"
+        Me.chkYoga.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'chkKarate
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(10, 42)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox2.TabIndex = 1
-        Me.CheckBox2.Text = "CheckBox2"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.chkKarate.AutoSize = True
+        Me.chkKarate.Location = New System.Drawing.Point(10, 42)
+        Me.chkKarate.Name = "chkKarate"
+        Me.chkKarate.Size = New System.Drawing.Size(57, 17)
+        Me.chkKarate.TabIndex = 1
+        Me.chkKarate.Text = "&Karate"
+        Me.chkKarate.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'chkTrainer
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(10, 65)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox3.TabIndex = 2
-        Me.CheckBox3.Text = "CheckBox3"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.chkTrainer.AutoSize = True
+        Me.chkTrainer.Location = New System.Drawing.Point(10, 65)
+        Me.chkTrainer.Name = "chkTrainer"
+        Me.chkTrainer.Size = New System.Drawing.Size(103, 17)
+        Me.chkTrainer.TabIndex = 2
+        Me.chkTrainer.Text = "&Personal Trainer"
+        Me.chkTrainer.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 28)
+        Me.Label1.Location = New System.Drawing.Point(6, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(143, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Label1"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(10, 52)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Label2"
+        Me.Label1.Text = "Enter the Number of Months:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(7, 28)
+        Me.Label3.Location = New System.Drawing.Point(10, 29)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.Size = New System.Drawing.Size(68, 13)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Label3"
+        Me.Label3.Text = "Monthly Fee:"
         '
         'StatusStrip1
         '
@@ -228,15 +223,47 @@ Partial Class Form1
         Me.StatusStrip1.TabIndex = 6
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'txtMonths
+        '
+        Me.txtMonths.Location = New System.Drawing.Point(9, 51)
+        Me.txtMonths.Name = "txtMonths"
+        Me.txtMonths.Size = New System.Drawing.Size(100, 20)
+        Me.txtMonths.TabIndex = 1
+        '
+        'lblMonthlyFee
+        '
+        Me.lblMonthlyFee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblMonthlyFee.Location = New System.Drawing.Point(81, 24)
+        Me.lblMonthlyFee.Name = "lblMonthlyFee"
+        Me.lblMonthlyFee.Size = New System.Drawing.Size(100, 23)
+        Me.lblMonthlyFee.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(44, 63)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(34, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Total:"
+        '
+        'lblTotalFee
+        '
+        Me.lblTotalFee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTotalFee.Location = New System.Drawing.Point(81, 58)
+        Me.lblTotalFee.Name = "lblTotalFee"
+        Me.lblTotalFee.Size = New System.Drawing.Size(100, 23)
+        Me.lblTotalFee.TabIndex = 3
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(435, 323)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -259,19 +286,22 @@ Partial Class Form1
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents radSenior As System.Windows.Forms.RadioButton
+    Friend WithEvents radStudent As System.Windows.Forms.RadioButton
+    Friend WithEvents radChild As System.Windows.Forms.RadioButton
+    Friend WithEvents radAdult As System.Windows.Forms.RadioButton
+    Friend WithEvents chkTrainer As System.Windows.Forms.CheckBox
+    Friend WithEvents chkKarate As System.Windows.Forms.CheckBox
+    Friend WithEvents chkYoga As System.Windows.Forms.CheckBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btnCalculate As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
+    Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents txtMonths As System.Windows.Forms.TextBox
+    Friend WithEvents lblTotalFee As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblMonthlyFee As System.Windows.Forms.Label
 
 End Class
