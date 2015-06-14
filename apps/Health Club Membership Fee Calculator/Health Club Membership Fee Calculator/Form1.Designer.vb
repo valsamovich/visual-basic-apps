@@ -42,11 +42,13 @@ Partial Class Form1
         Me.btnCalculate = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.lblStatus = New System.Windows.Forms.StatusStrip()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -247,20 +249,26 @@ Partial Class Form1
         Me.btnExit.Text = "E&xit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatus})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 301)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(435, 22)
+        Me.StatusStrip1.TabIndex = 6
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'lblStatus
         '
-        Me.lblStatus.Location = New System.Drawing.Point(0, 301)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(435, 22)
-        Me.lblStatus.TabIndex = 6
-        Me.lblStatus.Text = "StatusStrip1"
+        Me.lblStatus.Size = New System.Drawing.Size(0, 17)
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(435, 323)
-        Me.Controls.Add(Me.lblStatus)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnCalculate)
@@ -278,6 +286,8 @@ Partial Class Form1
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -298,10 +308,11 @@ Partial Class Form1
     Friend WithEvents btnCalculate As System.Windows.Forms.Button
     Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
-    Friend WithEvents lblStatus As System.Windows.Forms.StatusStrip
     Friend WithEvents txtMonths As System.Windows.Forms.TextBox
     Friend WithEvents lblTotalFee As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lblMonthlyFee As System.Windows.Forms.Label
+    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents lblStatus As System.Windows.Forms.ToolStripStatusLabel
 
 End Class

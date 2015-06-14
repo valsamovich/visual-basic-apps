@@ -4,7 +4,7 @@
         Dim decBaseFee As Decimal           ' Base Monthly Fee
         Dim decTotalFee As Decimal          ' Total Memebership Fee
         Dim intMonths As Integer            ' Number of months
-        Dim blnInutOk As Boolean = True
+        Dim blnInputOk As Boolean = True
 
         ' Constans for base fees.
         Const decADULT_FEE As Decimal = 40D
@@ -17,20 +17,14 @@
         Const decKARATE_FEE As Decimal = 30D
         Const decTRAINER_FEE As Decimal = 50D
 
-        ' Validate and convert the number of months.
-        lblStatus.Text = String.Empty
-        If Integer.TryParse(txtMonths.Text, intMonths) = False Then
-            lblStatus.Text = "Months must be an integer."
-            blnInutOk = False
-        End If
 
         ' Validate the number of months.
         If intMonths < 1 Or intMonths > 24 Then
-            lblStatus.Text = "Text must be in the range 1 - 24."
-            blnInutOk = True
+            lblStatus.Text = "Months must be in the range 1 - 24."
+            blnInputOk = False
         End If
 
-        If blnInutOk = True Then
+        If blnInputOk = True Then
             ' Detarmine the base monthly fee.
             If radAdult.Checked = True Then
                 decBaseFee = decADULT_FEE
