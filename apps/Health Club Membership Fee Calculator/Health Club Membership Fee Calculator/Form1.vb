@@ -64,4 +64,29 @@
         End If
 
     End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        ' Reset the Adult radio buttons.
+        radAdult.Checked = True
+
+        ' Clear the check boxes.
+        chkYoga.Checked = False
+        chkKarate.Checked = False
+        chkTrainer.Checked = False
+
+        ' Clear the number of months.
+        txtMonths.Clear()
+
+        lblMonthlyFee.Text = String.Empty
+        lblTotalFee.Text = String.Empty
+        lblStatus.Text = String.Empty
+
+        ' Give txtMonths the focus.
+        txtMonths.Focus()
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        ' Close the form.
+        Me.Close()
+    End Sub
 End Class
