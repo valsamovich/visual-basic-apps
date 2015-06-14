@@ -1,4 +1,9 @@
-﻿Public Class Form1
+﻿'Written by Valery samovich 
+'June 4, 2015
+Option Strict On
+Option Explicit On
+
+Public Class Form1
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
         Dim decBaseFee As Decimal           ' Base Monthly Fee
@@ -17,15 +22,19 @@
         Const decKARATE_FEE As Decimal = 30D
         Const decTRAINER_FEE As Decimal = 50D
 
-
-        ' Validate the number of months.
-        If intMonths < 1 Or intMonths > 24 Then
+        ' Validate and convert the number of months.
+        lblStatus.Text = String.Empty
+        If Integer.TryParse(txtMonths.Text, intMonths) = False Then
+            lblStatus.Text = "Months must be an integer."
+            blnInputOk = False
+        ElseIf intMonths < 1 Or intMonths > 24 Then
+            ' Validate the number of months.
             lblStatus.Text = "Months must be in the range 1 - 24."
             blnInputOk = False
         End If
 
         If blnInputOk = True Then
-            ' Detarmine the base monthly fee.
+            ' Determine the base monthly fee.
             If radAdult.Checked = True Then
                 decBaseFee = decADULT_FEE
             ElseIf radChild.Checked = True Then
