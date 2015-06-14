@@ -12,4 +12,5 @@
 - French Numbers
 - Latin Translator
 - Room Charge Calculator
+- Health Club Membership Fee Calculator
 
