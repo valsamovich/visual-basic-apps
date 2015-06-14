@@ -23,26 +23,26 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.radSenior = New System.Windows.Forms.RadioButton()
+        Me.radStudent = New System.Windows.Forms.RadioButton()
+        Me.radChild = New System.Windows.Forms.RadioButton()
+        Me.radAdult = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.chkTrainer = New System.Windows.Forms.CheckBox()
+        Me.chkKarate = New System.Windows.Forms.CheckBox()
+        Me.chkYoga = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtMonths = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.lblTotalFee = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblMonthlyFee = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCalculate = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.radAdult = New System.Windows.Forms.RadioButton()
-        Me.radChild = New System.Windows.Forms.RadioButton()
-        Me.radStudent = New System.Windows.Forms.RadioButton()
-        Me.radSenior = New System.Windows.Forms.RadioButton()
-        Me.chkYoga = New System.Windows.Forms.CheckBox()
-        Me.chkKarate = New System.Windows.Forms.CheckBox()
-        Me.chkTrainer = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.txtMonths = New System.Windows.Forms.TextBox()
-        Me.lblMonthlyFee = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblTotalFee = New System.Windows.Forms.Label()
+        Me.lblStatus = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -62,6 +62,48 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Types of Membership"
         '
+        'radSenior
+        '
+        Me.radSenior.AutoSize = True
+        Me.radSenior.Location = New System.Drawing.Point(13, 88)
+        Me.radSenior.Name = "radSenior"
+        Me.radSenior.Size = New System.Drawing.Size(89, 17)
+        Me.radSenior.TabIndex = 3
+        Me.radSenior.Text = "S&enior Citizen"
+        Me.radSenior.UseVisualStyleBackColor = True
+        '
+        'radStudent
+        '
+        Me.radStudent.AutoSize = True
+        Me.radStudent.Location = New System.Drawing.Point(13, 65)
+        Me.radStudent.Name = "radStudent"
+        Me.radStudent.Size = New System.Drawing.Size(62, 17)
+        Me.radStudent.TabIndex = 2
+        Me.radStudent.Text = "&Student"
+        Me.radStudent.UseVisualStyleBackColor = True
+        '
+        'radChild
+        '
+        Me.radChild.AutoSize = True
+        Me.radChild.Location = New System.Drawing.Point(13, 42)
+        Me.radChild.Name = "radChild"
+        Me.radChild.Size = New System.Drawing.Size(108, 17)
+        Me.radChild.TabIndex = 1
+        Me.radChild.Text = "Chil&d (12 && under)"
+        Me.radChild.UseVisualStyleBackColor = True
+        '
+        'radAdult
+        '
+        Me.radAdult.AutoSize = True
+        Me.radAdult.Checked = True
+        Me.radAdult.Location = New System.Drawing.Point(13, 19)
+        Me.radAdult.Name = "radAdult"
+        Me.radAdult.Size = New System.Drawing.Size(98, 17)
+        Me.radAdult.TabIndex = 0
+        Me.radAdult.TabStop = True
+        Me.radAdult.Text = "Standard  &Adult"
+        Me.radAdult.UseVisualStyleBackColor = True
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.chkTrainer)
@@ -74,6 +116,36 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Options"
         '
+        'chkTrainer
+        '
+        Me.chkTrainer.AutoSize = True
+        Me.chkTrainer.Location = New System.Drawing.Point(10, 65)
+        Me.chkTrainer.Name = "chkTrainer"
+        Me.chkTrainer.Size = New System.Drawing.Size(103, 17)
+        Me.chkTrainer.TabIndex = 2
+        Me.chkTrainer.Text = "&Personal Trainer"
+        Me.chkTrainer.UseVisualStyleBackColor = True
+        '
+        'chkKarate
+        '
+        Me.chkKarate.AutoSize = True
+        Me.chkKarate.Location = New System.Drawing.Point(10, 42)
+        Me.chkKarate.Name = "chkKarate"
+        Me.chkKarate.Size = New System.Drawing.Size(57, 17)
+        Me.chkKarate.TabIndex = 1
+        Me.chkKarate.Text = "&Karate"
+        Me.chkKarate.UseVisualStyleBackColor = True
+        '
+        'chkYoga
+        '
+        Me.chkYoga.AutoSize = True
+        Me.chkYoga.Location = New System.Drawing.Point(10, 19)
+        Me.chkYoga.Name = "chkYoga"
+        Me.chkYoga.Size = New System.Drawing.Size(51, 17)
+        Me.chkYoga.TabIndex = 0
+        Me.chkYoga.Text = "&Yoga"
+        Me.chkYoga.UseVisualStyleBackColor = True
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.txtMonths)
@@ -84,6 +156,22 @@ Partial Class Form1
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Membership Length"
+        '
+        'txtMonths
+        '
+        Me.txtMonths.Location = New System.Drawing.Point(9, 51)
+        Me.txtMonths.Name = "txtMonths"
+        Me.txtMonths.Size = New System.Drawing.Size(100, 20)
+        Me.txtMonths.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(143, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Enter the Number of Months:"
         '
         'GroupBox4
         '
@@ -97,6 +185,40 @@ Partial Class Form1
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Membership Fees"
+        '
+        'lblTotalFee
+        '
+        Me.lblTotalFee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTotalFee.Location = New System.Drawing.Point(81, 58)
+        Me.lblTotalFee.Name = "lblTotalFee"
+        Me.lblTotalFee.Size = New System.Drawing.Size(100, 23)
+        Me.lblTotalFee.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(44, 63)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(34, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Total:"
+        '
+        'lblMonthlyFee
+        '
+        Me.lblMonthlyFee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblMonthlyFee.Location = New System.Drawing.Point(81, 24)
+        Me.lblMonthlyFee.Name = "lblMonthlyFee"
+        Me.lblMonthlyFee.Size = New System.Drawing.Size(100, 23)
+        Me.lblMonthlyFee.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(10, 29)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(68, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Monthly Fee:"
         '
         'btnCalculate
         '
@@ -125,142 +247,20 @@ Partial Class Form1
         Me.btnExit.Text = "E&xit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'radAdult
+        'lblStatus
         '
-        Me.radAdult.AutoSize = True
-        Me.radAdult.Checked = True
-        Me.radAdult.Location = New System.Drawing.Point(13, 19)
-        Me.radAdult.Name = "radAdult"
-        Me.radAdult.Size = New System.Drawing.Size(98, 17)
-        Me.radAdult.TabIndex = 0
-        Me.radAdult.TabStop = True
-        Me.radAdult.Text = "Standard  &Adult"
-        Me.radAdult.UseVisualStyleBackColor = True
-        '
-        'radChild
-        '
-        Me.radChild.AutoSize = True
-        Me.radChild.Location = New System.Drawing.Point(13, 42)
-        Me.radChild.Name = "radChild"
-        Me.radChild.Size = New System.Drawing.Size(108, 17)
-        Me.radChild.TabIndex = 1
-        Me.radChild.Text = "Chil&d (12 && under)"
-        Me.radChild.UseVisualStyleBackColor = True
-        '
-        'radStudent
-        '
-        Me.radStudent.AutoSize = True
-        Me.radStudent.Location = New System.Drawing.Point(13, 65)
-        Me.radStudent.Name = "radStudent"
-        Me.radStudent.Size = New System.Drawing.Size(62, 17)
-        Me.radStudent.TabIndex = 2
-        Me.radStudent.Text = "&Student"
-        Me.radStudent.UseVisualStyleBackColor = True
-        '
-        'radSenior
-        '
-        Me.radSenior.AutoSize = True
-        Me.radSenior.Location = New System.Drawing.Point(13, 88)
-        Me.radSenior.Name = "radSenior"
-        Me.radSenior.Size = New System.Drawing.Size(89, 17)
-        Me.radSenior.TabIndex = 3
-        Me.radSenior.Text = "S&enior Citizen"
-        Me.radSenior.UseVisualStyleBackColor = True
-        '
-        'chkYoga
-        '
-        Me.chkYoga.AutoSize = True
-        Me.chkYoga.Location = New System.Drawing.Point(10, 19)
-        Me.chkYoga.Name = "chkYoga"
-        Me.chkYoga.Size = New System.Drawing.Size(51, 17)
-        Me.chkYoga.TabIndex = 0
-        Me.chkYoga.Text = "&Yoga"
-        Me.chkYoga.UseVisualStyleBackColor = True
-        '
-        'chkKarate
-        '
-        Me.chkKarate.AutoSize = True
-        Me.chkKarate.Location = New System.Drawing.Point(10, 42)
-        Me.chkKarate.Name = "chkKarate"
-        Me.chkKarate.Size = New System.Drawing.Size(57, 17)
-        Me.chkKarate.TabIndex = 1
-        Me.chkKarate.Text = "&Karate"
-        Me.chkKarate.UseVisualStyleBackColor = True
-        '
-        'chkTrainer
-        '
-        Me.chkTrainer.AutoSize = True
-        Me.chkTrainer.Location = New System.Drawing.Point(10, 65)
-        Me.chkTrainer.Name = "chkTrainer"
-        Me.chkTrainer.Size = New System.Drawing.Size(103, 17)
-        Me.chkTrainer.TabIndex = 2
-        Me.chkTrainer.Text = "&Personal Trainer"
-        Me.chkTrainer.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(143, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Enter the Number of Months:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(10, 29)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 13)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Monthly Fee:"
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 301)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(435, 22)
-        Me.StatusStrip1.TabIndex = 6
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'txtMonths
-        '
-        Me.txtMonths.Location = New System.Drawing.Point(9, 51)
-        Me.txtMonths.Name = "txtMonths"
-        Me.txtMonths.Size = New System.Drawing.Size(100, 20)
-        Me.txtMonths.TabIndex = 1
-        '
-        'lblMonthlyFee
-        '
-        Me.lblMonthlyFee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblMonthlyFee.Location = New System.Drawing.Point(81, 24)
-        Me.lblMonthlyFee.Name = "lblMonthlyFee"
-        Me.lblMonthlyFee.Size = New System.Drawing.Size(100, 23)
-        Me.lblMonthlyFee.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(44, 63)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(34, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Total:"
-        '
-        'lblTotalFee
-        '
-        Me.lblTotalFee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTotalFee.Location = New System.Drawing.Point(81, 58)
-        Me.lblTotalFee.Name = "lblTotalFee"
-        Me.lblTotalFee.Size = New System.Drawing.Size(100, 23)
-        Me.lblTotalFee.TabIndex = 3
+        Me.lblStatus.Location = New System.Drawing.Point(0, 301)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(435, 22)
+        Me.lblStatus.TabIndex = 6
+        Me.lblStatus.Text = "StatusStrip1"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(435, 323)
-        Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnCalculate)
@@ -298,7 +298,7 @@ Partial Class Form1
     Friend WithEvents btnCalculate As System.Windows.Forms.Button
     Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
-    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents lblStatus As System.Windows.Forms.StatusStrip
     Friend WithEvents txtMonths As System.Windows.Forms.TextBox
     Friend WithEvents lblTotalFee As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
