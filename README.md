@@ -8,7 +8,7 @@
 ## Apps
 
 - [Directions](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Directions)
-- Flags
+- [Flags](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Flags)
 - French Numbers
 - Latin Translator
 - Room Charge Calculator
