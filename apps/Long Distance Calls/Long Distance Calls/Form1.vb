@@ -1,4 +1,9 @@
-﻿Public Class Form1
+﻿'Written by Valery Samovich
+'June 15, 2015
+Option Strict On
+Option Explicit On
+
+Public Class Form1
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
         Dim intMinutes As Integer           ' Number of minutes
@@ -6,9 +11,9 @@
         Dim blnInputOk As Boolean = True
 
         ' Constants for rate per mintues
-        Const dblDAYTIME_FEE As Double = 0.07
-        Const dblEVENING_FEE As Double = 0.12
-        Const dblOFFPEAK_FEE As Double = 0.05
+        Const dblDAYTIME_FEE As Double = 0.07   ' Daytime rate fee per minute
+        Const dblEVENING_FEE As Double = 0.12   ' Evening rate fee per minute 
+        Const dblOFFPEAK_FEE As Double = 0.05   ' Off-Peak rate fee per minute
 
         lblStatus.Text = String.Empty
         ' Validate and convert the number of minutes
