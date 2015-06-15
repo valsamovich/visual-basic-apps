@@ -180,9 +180,8 @@ Partial Class Form1
         '
         'lblStatus
         '
-        Me.lblStatus.AutoSize = False
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(121, 17)
+        Me.lblStatus.Size = New System.Drawing.Size(0, 17)
         '
         'Form1
         '

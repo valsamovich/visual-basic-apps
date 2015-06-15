@@ -10,7 +10,30 @@
         Const dblEVENING_FEE As Double = 0.12
         Const dblOFFPEAK_FEE As Double = 0.05
 
+        lblStatus.Text = String.Empty
         ' Validate and convert the number of minutes
+        If Integer.TryParse(txtMinutes.Text, intMinutes) = False Then
+            lblStatus.Text = "Minutes must be in an integer."
+            blnInputOk = False
+        ElseIf intMinutes <= 0 Then
+            ' Validate  the number of mintues
+            lblStatus.Text = "Minutes must be greater than 0."
+            blnInputOk = False
+        End If
+
+        If blnInputOk = True Then
+            ' Determine the base call fee.
+            If radDaytime.Checked = True Then
+                dblTotalFee = dblDAYTIME_FEE * intMinutes
+            ElseIf radEvening.Checked = True Then
+                dblTotalFee = dblEVENING_FEE * intMinutes
+            ElseIf radOffPeak.Checked = True Then
+                dblTotalFee = dblOFFPEAK_FEE * intMinutes
+            End If
+        End If
+
+        ' Display the call total fee.
+        lblTotalFee.Text = dblTotalFee.ToString("c")
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
