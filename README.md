@@ -7,7 +7,7 @@
 
 ## Apps
 
-- Directions
+- [Directions](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Directions)
 - Flags
 - French Numbers
 - Latin Translator
