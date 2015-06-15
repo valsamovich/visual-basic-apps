@@ -21,7 +21,7 @@ Public Class Form1
             lblStatus.Text = "Minutes must be in an integer."
             blnInputOk = False
         ElseIf intMinutes <= 0 Then
-            ' Validate  the number of mintues
+            ' Validate  the number of minutes
             lblStatus.Text = "Minutes must be greater than 0."
             blnInputOk = False
         End If
@@ -37,7 +37,7 @@ Public Class Form1
             End If
         End If
 
-        ' Display the call total fee.
+        ' Display the call total charge.
         lblTotalFee.Text = dblTotalFee.ToString("c")
     End Sub
 
@@ -45,13 +45,13 @@ Public Class Form1
         ' Reset the Daytime radio button.
         radDaytime.Checked = True
 
-        ' Clear the number of minutes
+        ' Clear the number of minutes.
         txtMinutes.Clear()
 
-        ' Clear the total charge
+        ' Clear the total charge.
         lblTotalFee.Text = String.Empty
 
-        ' Clear the status message
+        ' Clear the status message.
         lblStatus.Text = String.Empty
 
         ' Give txtMinutes the focus.
