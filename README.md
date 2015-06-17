@@ -9,7 +9,7 @@
 
 - [Directions](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Directions)
 - [Flags](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Flags)
-- French Numbers
+- [French Numbers](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/French%20Numbers)
 - Latin Translator
 - Room Charge Calculator
 - Health Club Membership Fee Calculator
