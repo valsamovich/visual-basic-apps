@@ -105,4 +105,14 @@
             lstOutput.Items.Clear()
         End If
     End Sub
+
+    Private Sub radUsed_CheckedChanged(sender As Object, e As EventArgs) Handles radUsed.CheckedChanged
+        ' If the Used radio button is checked, then
+        ' the user has selected a used car load.
+        If radUsed.Checked = True Then
+            dblAnnualRate = dblUSED_RATE
+            lblAnnualRate.Text = dblUSED_RATE.ToString("p")
+            lstOutput.Items.Clear()
+        End If
+    End Sub
 End Class
