@@ -75,7 +75,10 @@
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        ' Reset the interest rate, clear the text boxes, the list box, and the message label.
+        ' Reset the interest rate, clear the text boxes, the 
+        ' list box, and the message label. Set default interest 
+        ' rate for new car loans.
+        radNew.Checked = True
         dblAnnualRate = dblNEW_RATE
         lblAnnualRate.Text = dblNEW_RATE.ToString("p")
         txtCost.Clear()
@@ -84,9 +87,6 @@
         lstOutput.Items.Clear()
         lblMessage.Text = String.Empty
 
-        ' Set default interest rate for new car loans.
-        radNew.Checked = True
-
         ' Reset the focus to txtCost.
         txtCost.Focus()
     End Sub
@@ -94,5 +94,15 @@
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         ' Close the form.
         Me.Close()
+    End Sub
+
+    Private Sub radNew_CheckedChanged(sender As Object, e As EventArgs) Handles radNew.CheckedChanged
+        ' If the New radio button is checked, then
+        ' the user has selected a new car loan.
+        If radNew.Checked = True Then
+            dblAnnualRate = dblNEW_RATE
+            lblAnnualRate.Text = dblNEW_RATE.ToString("p")
+            lstOutput.Items.Clear()
+        End If
     End Sub
 End Class
