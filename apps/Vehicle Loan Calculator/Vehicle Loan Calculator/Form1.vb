@@ -73,4 +73,21 @@
             Next
         End If
     End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        ' Reset the interest rate, clear the text boxes, the list box, and the message label.
+        dblAnnualRate = dblNEW_RATE
+        lblAnnualRate.Text = dblNEW_RATE.ToString("p")
+        txtCost.Clear()
+        txtDownPayment.Clear()
+        txtMonths.Clear()
+        lstOutput.Items.Clear()
+        lblMessage.Text = String.Empty
+
+        ' Set default interest rate for new car loans.
+        radNew.Checked = True
+
+        ' Reset the focus to txtCost.
+        txtCost.Focus()
+    End Sub
 End Class
