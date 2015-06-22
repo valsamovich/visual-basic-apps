@@ -23,20 +23,20 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtMonths = New System.Windows.Forms.TextBox()
+        Me.txtDownPayment = New System.Windows.Forms.TextBox()
+        Me.txtCost = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.txtCost = New System.Windows.Forms.TextBox()
-        Me.txtDownPayment = New System.Windows.Forms.TextBox()
-        Me.txtMonths = New System.Windows.Forms.TextBox()
-        Me.radNew = New System.Windows.Forms.RadioButton()
         Me.radUsed = New System.Windows.Forms.RadioButton()
+        Me.radNew = New System.Windows.Forms.RadioButton()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lstOutput = New System.Windows.Forms.ListBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblAnnualRate = New System.Windows.Forms.Label()
         Me.lblMessage = New System.Windows.Forms.Label()
-        Me.lstOutput = New System.Windows.Forms.ListBox()
         Me.btnCalculate = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
@@ -59,6 +59,27 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Vehicle && Loan Information"
+        '
+        'txtMonths
+        '
+        Me.txtMonths.Location = New System.Drawing.Point(144, 72)
+        Me.txtMonths.Name = "txtMonths"
+        Me.txtMonths.Size = New System.Drawing.Size(100, 20)
+        Me.txtMonths.TabIndex = 5
+        '
+        'txtDownPayment
+        '
+        Me.txtDownPayment.Location = New System.Drawing.Point(144, 46)
+        Me.txtDownPayment.Name = "txtDownPayment"
+        Me.txtDownPayment.Size = New System.Drawing.Size(100, 20)
+        Me.txtDownPayment.TabIndex = 4
+        '
+        'txtCost
+        '
+        Me.txtCost.Location = New System.Drawing.Point(144, 20)
+        Me.txtCost.Name = "txtCost"
+        Me.txtCost.Size = New System.Drawing.Size(100, 20)
+        Me.txtCost.TabIndex = 3
         '
         'Label3
         '
@@ -98,36 +119,16 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "New or Used?"
         '
-        'GroupBox3
+        'radUsed
         '
-        Me.GroupBox3.Controls.Add(Me.lstOutput)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 152)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(480, 126)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Interest and Principal Payments"
-        '
-        'txtCost
-        '
-        Me.txtCost.Location = New System.Drawing.Point(144, 20)
-        Me.txtCost.Name = "txtCost"
-        Me.txtCost.Size = New System.Drawing.Size(100, 20)
-        Me.txtCost.TabIndex = 3
-        '
-        'txtDownPayment
-        '
-        Me.txtDownPayment.Location = New System.Drawing.Point(144, 46)
-        Me.txtDownPayment.Name = "txtDownPayment"
-        Me.txtDownPayment.Size = New System.Drawing.Size(100, 20)
-        Me.txtDownPayment.TabIndex = 4
-        '
-        'txtMonths
-        '
-        Me.txtMonths.Location = New System.Drawing.Point(144, 72)
-        Me.txtMonths.Name = "txtMonths"
-        Me.txtMonths.Size = New System.Drawing.Size(100, 20)
-        Me.txtMonths.TabIndex = 5
+        Me.radUsed.AutoSize = True
+        Me.radUsed.Location = New System.Drawing.Point(26, 58)
+        Me.radUsed.Name = "radUsed"
+        Me.radUsed.Size = New System.Drawing.Size(50, 17)
+        Me.radUsed.TabIndex = 3
+        Me.radUsed.TabStop = True
+        Me.radUsed.Text = "Used"
+        Me.radUsed.UseVisualStyleBackColor = True
         '
         'radNew
         '
@@ -140,16 +141,23 @@ Partial Class Form1
         Me.radNew.Text = "New"
         Me.radNew.UseVisualStyleBackColor = True
         '
-        'radUsed
+        'GroupBox3
         '
-        Me.radUsed.AutoSize = True
-        Me.radUsed.Location = New System.Drawing.Point(26, 58)
-        Me.radUsed.Name = "radUsed"
-        Me.radUsed.Size = New System.Drawing.Size(50, 17)
-        Me.radUsed.TabIndex = 3
-        Me.radUsed.TabStop = True
-        Me.radUsed.Text = "Used"
-        Me.radUsed.UseVisualStyleBackColor = True
+        Me.GroupBox3.Controls.Add(Me.lstOutput)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 152)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(480, 126)
+        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Interest and Principal Payments"
+        '
+        'lstOutput
+        '
+        Me.lstOutput.FormattingEnabled = True
+        Me.lstOutput.Location = New System.Drawing.Point(10, 21)
+        Me.lstOutput.Name = "lstOutput"
+        Me.lstOutput.Size = New System.Drawing.Size(460, 95)
+        Me.lstOutput.TabIndex = 0
         '
         'Label4
         '
@@ -174,14 +182,6 @@ Partial Class Form1
         Me.lblMessage.Name = "lblMessage"
         Me.lblMessage.Size = New System.Drawing.Size(480, 23)
         Me.lblMessage.TabIndex = 5
-        '
-        'lstOutput
-        '
-        Me.lstOutput.FormattingEnabled = True
-        Me.lstOutput.Location = New System.Drawing.Point(6, 22)
-        Me.lstOutput.Name = "lstOutput"
-        Me.lstOutput.Size = New System.Drawing.Size(468, 95)
-        Me.lstOutput.TabIndex = 0
         '
         'btnCalculate
         '
@@ -225,7 +225,7 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form1"
-        Me.Text = "Loan Calculator"
+        Me.Text = "Valery's Samovich Loan Calculator"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
