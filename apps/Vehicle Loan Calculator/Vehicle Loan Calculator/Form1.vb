@@ -41,15 +41,35 @@
             ' Calculate the loan ammout and monthy payment.
             dblLoan = dblVehicleCost - dblDownPayment
             dblMonthlyPayment = Pmt(dblAnnualRate / dblMONTHS_YEAR,
-                intMonths, -dblLoan)
+                                    intMonths, -dblLoan)
 
             ' Clear the list box and message label
             lstOutput.Items.Clear()
             lblMessage.Text = String.Empty
 
             For intCount = 1 To intMonths
+                ' Calculate thr interest for this period.
+                dblInterest = IPmt(dblAnnualRate / dblMONTHS_YEAR,
+                                   intCount, intMonths, -dblLoan)
+
                 ' Calculate thr principal for this period.
-                dblInterest()
+                dblInterest = PPmt(dblAnnualRate / dblMONTHS_YEAR,
+                                   intCount, intMonths, -dblLoan)
+
+                ' Start building the output string with the month.
+                strOut = "Month " & intCount.ToString("d2")
+
+                ' Add the payment amount to the output string.
+                strOut &= ": payment = " & dblMonthlyPayment.ToString("n2")
+
+                ' Add the interest amount to the output string.
+                strOut &= ", interest = " & dblInterest.ToString("n2")
+
+                ' Add the principal amount to the output string.
+                strOut &= ", principal = " & dblPrincipal.ToString("n2")
+
+                ' Add the output string to the list box.
+                lstOutput.Items.Add(strOut)
             Next
         End If
     End Sub
