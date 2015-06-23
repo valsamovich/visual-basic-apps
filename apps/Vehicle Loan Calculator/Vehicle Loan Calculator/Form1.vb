@@ -58,8 +58,8 @@ Public Class Form1
                                    intCount, intMonths, -dblLoan)
 
                 ' Calculate thr principal for this period.
-                dblInterest = PPmt(dblAnnualRate / dblMONTHS_YEAR,
-                                   intCount, intMonths, -dblLoan)
+                dblPrincipal = PPmt(dblAnnualRate / dblMONTHS_YEAR,
+                                    intCount, intMonths, -dblLoan)
 
                 ' Start building the output string with the month.
                 strOut = "Month " & intCount.ToString("d2")
