@@ -12,5 +12,5 @@
 - [French Numbers](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/French%20Numbers)
 - [Latin Translator](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/LatinTranslator)
 - [Room Charge Calculator](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Room%20Charge%20Calculator)
-- Health Club Membership Fee Calculator
+- [Health Club Membership Fee Calculator](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Health%20Club%20Membership%20Fee%20Calculator)
 
