@@ -83,11 +83,11 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(30, 30)
+        Me.Label2.Location = New System.Drawing.Point(21, 30)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 13)
+        Me.Label2.Size = New System.Drawing.Size(87, 13)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Guess number:"
+        Me.Label2.Text = "Guess a number:"
         '
         'btnPlay
         '
