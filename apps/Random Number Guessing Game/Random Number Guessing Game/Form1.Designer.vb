@@ -69,6 +69,7 @@ Partial Class Form1
         Me.lblNumberOfGuesses.Name = "lblNumberOfGuesses"
         Me.lblNumberOfGuesses.Size = New System.Drawing.Size(106, 20)
         Me.lblNumberOfGuesses.TabIndex = 3
+        Me.lblNumberOfGuesses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3
         '
@@ -126,10 +127,11 @@ Partial Class Form1
         'lblMessage
         '
         Me.lblMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblMessage.Location = New System.Drawing.Point(15, 22)
+        Me.lblMessage.Location = New System.Drawing.Point(15, 23)
         Me.lblMessage.Name = "lblMessage"
         Me.lblMessage.Size = New System.Drawing.Size(210, 20)
         Me.lblMessage.TabIndex = 0
+        Me.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnClear
         '
