@@ -16,7 +16,7 @@ Public Class Form1
         Dim btnInputOk As Boolean = True    ' Help to validate input
 
         '----------------------------------------
-        ' For test: Generated random number
+        ' Generated random number
         '----------------------------------------
         lblRandomNumber.Text = intRandomNumber.ToString()
 
