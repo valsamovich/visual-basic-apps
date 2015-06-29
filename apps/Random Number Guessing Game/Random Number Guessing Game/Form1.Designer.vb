@@ -28,13 +28,12 @@ Partial Class Form1
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblGuesses = New System.Windows.Forms.Label()
-        Me.lblRandom = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 24)
+        Me.Label1.Location = New System.Drawing.Point(52, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(251, 13)
         Me.Label1.TabIndex = 0
@@ -43,7 +42,7 @@ Partial Class Form1
         '
         'btnPlay
         '
-        Me.btnPlay.Location = New System.Drawing.Point(98, 92)
+        Me.btnPlay.Location = New System.Drawing.Point(103, 92)
         Me.btnPlay.Name = "btnPlay"
         Me.btnPlay.Size = New System.Drawing.Size(75, 23)
         Me.btnPlay.TabIndex = 2
@@ -52,7 +51,7 @@ Partial Class Form1
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(179, 92)
+        Me.btnExit.Location = New System.Drawing.Point(184, 92)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 3
@@ -62,7 +61,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(65, 60)
+        Me.Label3.Location = New System.Drawing.Point(70, 58)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(101, 13)
         Me.Label3.TabIndex = 2
@@ -71,33 +70,24 @@ Partial Class Form1
         'lblGuesses
         '
         Me.lblGuesses.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblGuesses.Location = New System.Drawing.Point(172, 55)
+        Me.lblGuesses.Location = New System.Drawing.Point(177, 53)
         Me.lblGuesses.Name = "lblGuesses"
         Me.lblGuesses.Size = New System.Drawing.Size(106, 23)
         Me.lblGuesses.TabIndex = 3
         Me.lblGuesses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'lblRandom
-        '
-        Me.lblRandom.Location = New System.Drawing.Point(260, 92)
-        Me.lblRandom.Name = "lblRandom"
-        Me.lblRandom.Size = New System.Drawing.Size(44, 23)
-        Me.lblRandom.TabIndex = 4
-        Me.lblRandom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(348, 132)
-        Me.Controls.Add(Me.lblRandom)
+        Me.ClientSize = New System.Drawing.Size(357, 132)
         Me.Controls.Add(Me.lblGuesses)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPlay)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
-        Me.Text = "Valery Samovich's Number Guess Game"
+        Me.Text = "Valery Samovich's Number Guessing Game"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -108,6 +98,5 @@ Partial Class Form1
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents lblGuesses As System.Windows.Forms.Label
-    Friend WithEvents lblRandom As System.Windows.Forms.Label
 
 End Class

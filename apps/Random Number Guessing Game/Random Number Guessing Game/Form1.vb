@@ -9,19 +9,17 @@ Public Class Form1
         Dim intNumber As Integer        ' Declare an Integer variable.
         Dim randNumber As New Random    ' Create a Random object
 
-        Dim intCount As Integer = 1     ' Counter variable, initialized to 1
+        Dim intCount As Integer = 0     ' Counter variable, initialized to 0
         Dim intGuess As Integer         ' To hold guess number
         Dim strInput As String          ' To hold user input
 
         ' Get a random integer and assign it to intNumber
         intNumber = randNumber.Next(1, 100)
 
-        lblRandom.Text = intNumber.ToString()
-
         ' Get the each guess number
         Do While intGuess <> intNumber
             ' Get a guess number from the user.
-            strInput = InputBox("Enter the guess number " & intCount.ToString())
+            strInput = InputBox("Enter the guess number.")
 
             ' Convert input to a Integer.
             If Integer.TryParse(strInput, intGuess) Then
