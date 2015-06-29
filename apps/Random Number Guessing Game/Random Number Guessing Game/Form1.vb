@@ -4,52 +4,42 @@ Option Strict On
 Option Explicit On
 
 Public Class Form1
-    ' Class-level random object
-    Dim randNumber As New Random
-
-    ' Class-level variable to hold the random number
-    Dim intRandomNumber As Integer = randNumber.Next(1, 100)     ' 
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
-        Dim intGuessNumber As Integer       ' To hold user input
-        ' Dim intGuessCounter As Integer      ' To hold number of guess
-        Dim btnInputOk As Boolean = True    ' Help to validate input
+        Dim intNumber As Integer          ' Declare an Integer variable.
+        Dim randNumber As New Random    ' Create a Random object
 
-        '----------------------------------------
-        ' Generated random number
-        '----------------------------------------
-        lblRandomNumber.Text = intRandomNumber.ToString()
+        Dim intCount As Integer         ' Counter variable
+        Dim intGuess As Integer         ' To hold guess number
+        Dim strInput As String          ' To hold user input
 
-        ' Get the user input
-        If Not Integer.TryParse(txtGuessNumber.Text, intGuessNumber) Then
-            '  Validate that input is an integer.
-            lblMessage.Text = "Guess number must be in integer!"
-            btnInputOk = False
-        ElseIf intGuessNumber <= 0 Or intGuessNumber > 100 Then
-            ' Validate that number in range from 1 to 100.
-            lblMessage.Text = "Number must be in range from 1 to 100!"
-            btnInputOk = False
-        End If
+        ' Get a random integer and assign it to i
+        intNumber = randNumber.Next(1, 100)
 
-        ' Compare guess number with random generated number.
-        If btnInputOk = True Then
-            ' Determine if the number higher, lower or equal.
-            If intGuessNumber > intRandomNumber Then
-                lblMessage.Text = "The number is too high, try again."
-            ElseIf intGuessNumber < intRandomNumber Then
-                lblMessage.Text = "The number is too low, try again."
-            ElseIf intGuessNumber = intRandomNumber Then
-                lblMessage.Text = "The number is correct. Great job!"
+        ' Get the each guess number
+        Do While intGuess <> intNumber
+            ' Get a guess number from the user.
+            strInput = InputBox("Enter the guess number " & intCount.ToString())
+
+            ' Convert input to a Integer.
+            If Integer.TryParse(strInput, intGuess) Then
+                ' Determine if the number higher, lower or equal.
+                If intGuess > intNumber Then
+                    MessageBox.Show("The number is too high, try again.")
+                ElseIf intGuess < intNumber Then
+                    MessageBox.Show("The number is too low, try again.")
+                ElseIf intGuess = intNumber Then
+                    MessageBox.Show("The number is correct. great job!")
+                End If
+                ' Add 1 to the loop counter
+                intCount += 1
+            Else
+                ' Display an error message for invalid input
+                MessageBox.Show("Enter a numeric value")
             End If
-        End If
-    End Sub
-
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        txtGuessNumber.Clear()          ' Clear the guess number box
-        lblMessage.Text = String.Empty  ' Clear the message box
-
-        ' Set focus on guess number
-        txtGuessNumber.Focus()
+        Loop
+        ' Display the number of guesses
+        lblGuesses.Text = intCount.ToString()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
