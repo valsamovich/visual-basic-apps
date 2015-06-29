@@ -33,6 +33,7 @@ Partial Class Form1
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblMessage = New System.Windows.Forms.Label()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -40,7 +41,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(17, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(237, 39)
         Me.Label1.TabIndex = 0
@@ -54,9 +55,9 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtGuessNumber)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 60)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 66)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(231, 87)
+        Me.GroupBox1.Size = New System.Drawing.Size(241, 87)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Game properties"
@@ -64,9 +65,9 @@ Partial Class Form1
         'lblNumberOfGuesses
         '
         Me.lblNumberOfGuesses.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblNumberOfGuesses.Location = New System.Drawing.Point(118, 50)
+        Me.lblNumberOfGuesses.Location = New System.Drawing.Point(119, 50)
         Me.lblNumberOfGuesses.Name = "lblNumberOfGuesses"
-        Me.lblNumberOfGuesses.Size = New System.Drawing.Size(100, 20)
+        Me.lblNumberOfGuesses.Size = New System.Drawing.Size(106, 20)
         Me.lblNumberOfGuesses.TabIndex = 3
         '
         'Label3
@@ -80,9 +81,9 @@ Partial Class Form1
         '
         'txtGuessNumber
         '
-        Me.txtGuessNumber.Location = New System.Drawing.Point(118, 23)
+        Me.txtGuessNumber.Location = New System.Drawing.Point(119, 23)
         Me.txtGuessNumber.Name = "txtGuessNumber"
-        Me.txtGuessNumber.Size = New System.Drawing.Size(100, 20)
+        Me.txtGuessNumber.Size = New System.Drawing.Size(106, 20)
         Me.txtGuessNumber.TabIndex = 1
         '
         'Label2
@@ -96,7 +97,7 @@ Partial Class Form1
         '
         'btnPlay
         '
-        Me.btnPlay.Location = New System.Drawing.Point(44, 228)
+        Me.btnPlay.Location = New System.Drawing.Point(14, 244)
         Me.btnPlay.Name = "btnPlay"
         Me.btnPlay.Size = New System.Drawing.Size(75, 23)
         Me.btnPlay.TabIndex = 2
@@ -105,7 +106,7 @@ Partial Class Form1
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(135, 228)
+        Me.btnExit.Location = New System.Drawing.Point(178, 244)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 3
@@ -115,9 +116,9 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.lblMessage)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 158)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 170)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(231, 57)
+        Me.GroupBox2.Size = New System.Drawing.Size(241, 57)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Game Message"
@@ -125,16 +126,26 @@ Partial Class Form1
         'lblMessage
         '
         Me.lblMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblMessage.Location = New System.Drawing.Point(14, 22)
+        Me.lblMessage.Location = New System.Drawing.Point(15, 22)
         Me.lblMessage.Name = "lblMessage"
-        Me.lblMessage.Size = New System.Drawing.Size(204, 20)
+        Me.lblMessage.Size = New System.Drawing.Size(210, 20)
         Me.lblMessage.TabIndex = 0
+        '
+        'btnClear
+        '
+        Me.btnClear.Location = New System.Drawing.Point(97, 244)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.TabIndex = 6
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(255, 264)
+        Me.ClientSize = New System.Drawing.Size(271, 283)
+        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPlay)
@@ -160,5 +171,6 @@ Partial Class Form1
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents lblMessage As System.Windows.Forms.Label
+    Friend WithEvents btnClear As System.Windows.Forms.Button
 
 End Class
