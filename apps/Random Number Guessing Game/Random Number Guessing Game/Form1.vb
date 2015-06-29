@@ -8,4 +8,5 @@
         integerNumber = randomNumber.Next()
 
     End Sub
+
 End Class

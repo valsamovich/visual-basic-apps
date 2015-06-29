@@ -30,8 +30,11 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnPlay = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblMessage = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -39,9 +42,11 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(232, 13)
+        Me.Label1.Size = New System.Drawing.Size(237, 39)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Guess a number from 1 to 100 and click to play."
+        Me.Label1.Text = "Guess a number from 1 to 100. Click ""Play"" to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "test your number with random gener" & _
+    "ated number." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use ""Game Message"" to validate yuor guess."
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox1
         '
@@ -49,9 +54,9 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtGuessNumber)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 35)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 60)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(231, 98)
+        Me.GroupBox1.Size = New System.Drawing.Size(231, 87)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Game properties"
@@ -59,7 +64,7 @@ Partial Class Form1
         'lblNumberOfGuesses
         '
         Me.lblNumberOfGuesses.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblNumberOfGuesses.Location = New System.Drawing.Point(114, 54)
+        Me.lblNumberOfGuesses.Location = New System.Drawing.Point(118, 50)
         Me.lblNumberOfGuesses.Name = "lblNumberOfGuesses"
         Me.lblNumberOfGuesses.Size = New System.Drawing.Size(100, 20)
         Me.lblNumberOfGuesses.TabIndex = 3
@@ -67,7 +72,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(7, 58)
+        Me.Label3.Location = New System.Drawing.Point(11, 54)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(101, 13)
         Me.Label3.TabIndex = 2
@@ -75,7 +80,7 @@ Partial Class Form1
         '
         'txtGuessNumber
         '
-        Me.txtGuessNumber.Location = New System.Drawing.Point(114, 27)
+        Me.txtGuessNumber.Location = New System.Drawing.Point(118, 23)
         Me.txtGuessNumber.Name = "txtGuessNumber"
         Me.txtGuessNumber.Size = New System.Drawing.Size(100, 20)
         Me.txtGuessNumber.TabIndex = 1
@@ -83,7 +88,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(21, 30)
+        Me.Label2.Location = New System.Drawing.Point(25, 26)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(87, 13)
         Me.Label2.TabIndex = 0
@@ -91,7 +96,7 @@ Partial Class Form1
         '
         'btnPlay
         '
-        Me.btnPlay.Location = New System.Drawing.Point(41, 175)
+        Me.btnPlay.Location = New System.Drawing.Point(44, 228)
         Me.btnPlay.Name = "btnPlay"
         Me.btnPlay.Size = New System.Drawing.Size(75, 23)
         Me.btnPlay.TabIndex = 2
@@ -100,26 +105,37 @@ Partial Class Form1
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(132, 175)
+        Me.btnExit.Location = New System.Drawing.Point(135, 228)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 3
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.lblMessage)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 158)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(231, 57)
+        Me.GroupBox2.TabIndex = 5
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Game Message"
+        '
         'lblMessage
         '
-        Me.lblMessage.Location = New System.Drawing.Point(12, 142)
+        Me.lblMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblMessage.Location = New System.Drawing.Point(14, 22)
         Me.lblMessage.Name = "lblMessage"
-        Me.lblMessage.Size = New System.Drawing.Size(231, 23)
-        Me.lblMessage.TabIndex = 4
+        Me.lblMessage.Size = New System.Drawing.Size(204, 20)
+        Me.lblMessage.TabIndex = 0
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(255, 210)
-        Me.Controls.Add(Me.lblMessage)
+        Me.ClientSize = New System.Drawing.Size(255, 264)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPlay)
         Me.Controls.Add(Me.GroupBox1)
@@ -128,6 +144,7 @@ Partial Class Form1
         Me.Text = "Number Guess Game"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -140,6 +157,8 @@ Partial Class Form1
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btnPlay As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents lblMessage As System.Windows.Forms.Label
 
 End Class
