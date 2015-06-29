@@ -46,7 +46,7 @@ Partial Class Form1
         Me.Label1.Size = New System.Drawing.Size(237, 39)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Guess a number from 1 to 100. Click ""Play"" to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "test your number with random gener" & _
-    "ated number." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use ""Game Message"" to validate yuor guess."
+    "ated number." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use ""Game Message"" to validate your guess."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox1
