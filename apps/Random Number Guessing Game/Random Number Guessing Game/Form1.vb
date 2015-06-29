@@ -1,20 +1,22 @@
 ﻿' Written by Valery Samovich 
-' June 28, 2015
+' June 29, 2015
 Option Strict On
 Option Explicit On
 
 Public Class Form1
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
-        Dim intNumber As Integer          ' Declare an Integer variable.
+        Dim intNumber As Integer        ' Declare an Integer variable.
         Dim randNumber As New Random    ' Create a Random object
 
-        Dim intCount As Integer         ' Counter variable
+        Dim intCount As Integer = 1     ' Counter variable, initialized to 1
         Dim intGuess As Integer         ' To hold guess number
         Dim strInput As String          ' To hold user input
 
-        ' Get a random integer and assign it to i
+        ' Get a random integer and assign it to intNumber
         intNumber = randNumber.Next(1, 100)
+
+        lblRandom.Text = intNumber.ToString()
 
         ' Get the each guess number
         Do While intGuess <> intNumber
@@ -35,7 +37,7 @@ Public Class Form1
                 intCount += 1
             Else
                 ' Display an error message for invalid input
-                MessageBox.Show("Enter a numeric value")
+                MessageBox.Show("Enter a numeric value!")
             End If
         Loop
         ' Display the number of guesses
