@@ -34,6 +34,7 @@ Partial Class Form1
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblMessage = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.lblRandomNumber = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -142,11 +143,20 @@ Partial Class Form1
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
+        'lblRandomNumber
+        '
+        Me.lblRandomNumber.Location = New System.Drawing.Point(83, 280)
+        Me.lblRandomNumber.Name = "lblRandomNumber"
+        Me.lblRandomNumber.Size = New System.Drawing.Size(100, 20)
+        Me.lblRandomNumber.TabIndex = 7
+        Me.lblRandomNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(271, 283)
+        Me.ClientSize = New System.Drawing.Size(271, 316)
+        Me.Controls.Add(Me.lblRandomNumber)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnExit)
@@ -174,5 +184,6 @@ Partial Class Form1
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents lblMessage As System.Windows.Forms.Label
     Friend WithEvents btnClear As System.Windows.Forms.Button
+    Friend WithEvents lblRandomNumber As System.Windows.Forms.Label
 
 End Class

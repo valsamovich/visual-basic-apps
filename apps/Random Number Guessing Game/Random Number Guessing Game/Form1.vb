@@ -4,15 +4,21 @@ Option Strict On
 Option Explicit On
 
 Public Class Form1
+    ' Declare and create a class-level random object
+    Dim randNumber As New Random
+
+    ' Get an random integer and assign it to declared class-level intRandomNumber variable
+    Dim intRandomNumber As Integer = randNumber.Next(1, 100)     ' 
+
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
-        Dim intRandomNumber As Integer      ' Declare an integer variable
-        Dim randNumber As New Random        ' Create a Random object
-        Dim intGuessNumber As Integer       ' To hold input for user
-        Dim intGuessCounter As Integer      ' To hold number of guess
+        Dim intGuessNumber As Integer       ' To hold user input
+        ' Dim intGuessCounter As Integer      ' To hold number of guess
         Dim btnInputOk As Boolean = True    ' Help to validate input
 
-        ' Get an random integer and assign it to integerNumber
-        intRandomNumber = randNumber.Next(1, 100)
+        '----------------------------------------
+        ' For test: Generated random number
+        '----------------------------------------
+        lblRandomNumber.Text = intRandomNumber.ToString()
 
         ' Get the user input
         If Not Integer.TryParse(txtGuessNumber.Text, intGuessNumber) Then
@@ -30,7 +36,7 @@ Public Class Form1
             ' Determine if the number higher, lower or equal.
             If intGuessNumber > intRandomNumber Then
                 lblMessage.Text = "The number is too high, try again."
-            ElseIf intGuessCounter < intRandomNumber Then
+            ElseIf intGuessNumber < intRandomNumber Then
                 lblMessage.Text = "The number is too low, try again."
             ElseIf intGuessNumber = intRandomNumber Then
                 lblMessage.Text = "The number is correct. Great job!"
