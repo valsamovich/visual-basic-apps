@@ -4,10 +4,10 @@ Option Strict On
 Option Explicit On
 
 Public Class Form1
-    ' Declare and create a class-level random object
+    ' Class-level random object
     Dim randNumber As New Random
 
-    ' Get an random integer and assign it to declared class-level intRandomNumber variable
+    ' Class-level variable to hold the random number
     Dim intRandomNumber As Integer = randNumber.Next(1, 100)     ' 
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
