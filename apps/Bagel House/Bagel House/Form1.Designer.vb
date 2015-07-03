@@ -28,10 +28,10 @@ Partial Class Form1
         Me.radWheat = New System.Windows.Forms.RadioButton()
         Me.radWhite = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.radCafeAuLait = New System.Windows.Forms.RadioButton()
+        Me.radCappuccino = New System.Windows.Forms.RadioButton()
+        Me.radRegCoffee = New System.Windows.Forms.RadioButton()
+        Me.radNoCoffee = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.chkPeach = New System.Windows.Forms.CheckBox()
         Me.chkRaspberry = New System.Windows.Forms.CheckBox()
@@ -39,15 +39,15 @@ Partial Class Form1
         Me.chkButter = New System.Windows.Forms.CheckBox()
         Me.chkCreamCheese = New System.Windows.Forms.CheckBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblTax = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblSubtotal = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnCalculate = New System.Windows.Forms.Button()
+        Me.btnReset = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -103,60 +103,64 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.RadioButton6)
-        Me.GroupBox2.Controls.Add(Me.RadioButton5)
-        Me.GroupBox2.Controls.Add(Me.RadioButton4)
-        Me.GroupBox2.Controls.Add(Me.RadioButton3)
+        Me.GroupBox2.Controls.Add(Me.radCafeAuLait)
+        Me.GroupBox2.Controls.Add(Me.radCappuccino)
+        Me.GroupBox2.Controls.Add(Me.radRegCoffee)
+        Me.GroupBox2.Controls.Add(Me.radNoCoffee)
         Me.GroupBox2.Location = New System.Drawing.Point(218, 50)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(200, 132)
+        Me.GroupBox2.Size = New System.Drawing.Size(200, 118)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
+        Me.GroupBox2.Text = "Want Coffee with That?"
         '
-        'RadioButton6
+        'radCafeAuLait
         '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Location = New System.Drawing.Point(6, 88)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton6.TabIndex = 3
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.Text = "RadioButton6"
-        Me.RadioButton6.UseVisualStyleBackColor = True
+        Me.radCafeAuLait.AutoSize = True
+        Me.radCafeAuLait.Location = New System.Drawing.Point(6, 88)
+        Me.radCafeAuLait.Name = "radCafeAuLait"
+        Me.radCafeAuLait.Size = New System.Drawing.Size(114, 17)
+        Me.radCafeAuLait.TabIndex = 3
+        Me.radCafeAuLait.TabStop = True
+        Me.radCafeAuLait.Text = "Cafe au lait ($1.75)"
+        Me.ToolTip1.SetToolTip(Me.radCafeAuLait, "Click here to choose cafe au lait.")
+        Me.radCafeAuLait.UseVisualStyleBackColor = True
         '
-        'RadioButton5
+        'radCappuccino
         '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(6, 65)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton5.TabIndex = 2
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "RadioButton5"
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.radCappuccino.AutoSize = True
+        Me.radCappuccino.Location = New System.Drawing.Point(6, 65)
+        Me.radCappuccino.Name = "radCappuccino"
+        Me.radCappuccino.Size = New System.Drawing.Size(118, 17)
+        Me.radCappuccino.TabIndex = 2
+        Me.radCappuccino.TabStop = True
+        Me.radCappuccino.Text = "Cappuccino ($2.00)"
+        Me.ToolTip1.SetToolTip(Me.radCappuccino, "Click here to choose cappuccino.")
+        Me.radCappuccino.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'radRegCoffee
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton4.TabIndex = 1
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "RadioButton4"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.radRegCoffee.AutoSize = True
+        Me.radRegCoffee.Location = New System.Drawing.Point(6, 42)
+        Me.radRegCoffee.Name = "radRegCoffee"
+        Me.radRegCoffee.Size = New System.Drawing.Size(132, 17)
+        Me.radRegCoffee.TabIndex = 1
+        Me.radRegCoffee.TabStop = True
+        Me.radRegCoffee.Text = "Regular Coffee ($1.25)"
+        Me.ToolTip1.SetToolTip(Me.radRegCoffee, "Click here to choosee regular coffee.")
+        Me.radRegCoffee.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'radNoCoffee
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(90, 17)
-        Me.RadioButton3.TabIndex = 0
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "RadioButton3"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.radNoCoffee.AutoSize = True
+        Me.radNoCoffee.Location = New System.Drawing.Point(6, 19)
+        Me.radNoCoffee.Name = "radNoCoffee"
+        Me.radNoCoffee.Size = New System.Drawing.Size(51, 17)
+        Me.radNoCoffee.TabIndex = 0
+        Me.radNoCoffee.TabStop = True
+        Me.radNoCoffee.Text = "None"
+        Me.ToolTip1.SetToolTip(Me.radNoCoffee, "Click here to choose no coffee?")
+        Me.radNoCoffee.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -167,7 +171,7 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.chkCreamCheese)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 128)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(200, 159)
+        Me.GroupBox3.Size = New System.Drawing.Size(200, 141)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Pick Your Toppings"
@@ -229,108 +233,108 @@ Partial Class Form1
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.Label7)
+        Me.GroupBox4.Controls.Add(Me.lblTotal)
         Me.GroupBox4.Controls.Add(Me.Label6)
-        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Controls.Add(Me.lblTax)
         Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Controls.Add(Me.Label3)
+        Me.GroupBox4.Controls.Add(Me.lblSubtotal)
         Me.GroupBox4.Controls.Add(Me.Label2)
-        Me.GroupBox4.Location = New System.Drawing.Point(218, 188)
+        Me.GroupBox4.Location = New System.Drawing.Point(218, 174)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(200, 122)
+        Me.GroupBox4.Size = New System.Drawing.Size(200, 95)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "GroupBox4"
+        Me.GroupBox4.Text = "Price"
         '
-        'Label7
+        'lblTotal
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(119, 66)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(39, 13)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Label7"
+        Me.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTotal.Location = New System.Drawing.Point(94, 65)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(50, 18)
+        Me.lblTotal.TabIndex = 5
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(74, 66)
+        Me.Label6.Location = New System.Drawing.Point(54, 67)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.Size = New System.Drawing.Size(34, 13)
         Me.Label6.TabIndex = 4
-        Me.Label6.Text = "Label6"
+        Me.Label6.Text = "Total:"
         '
-        'Label5
+        'lblTax
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(119, 43)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(39, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Label5"
+        Me.lblTax.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTax.Location = New System.Drawing.Point(94, 42)
+        Me.lblTax.Name = "lblTax"
+        Me.lblTax.Size = New System.Drawing.Size(50, 18)
+        Me.lblTax.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(74, 43)
+        Me.Label4.Location = New System.Drawing.Point(60, 44)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.Size = New System.Drawing.Size(28, 13)
         Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Label4"
+        Me.Label4.Text = "Tax:"
         '
-        'Label3
+        'lblSubtotal
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(119, 20)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Label3"
+        Me.lblSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblSubtotal.Location = New System.Drawing.Point(94, 19)
+        Me.lblSubtotal.Name = "lblSubtotal"
+        Me.lblSubtotal.Size = New System.Drawing.Size(50, 18)
+        Me.lblSubtotal.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(74, 20)
+        Me.Label2.Location = New System.Drawing.Point(39, 21)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Label2"
+        Me.Label2.Text = "Subtotal:"
         '
-        'Button1
+        'btnCalculate
         '
-        Me.Button1.Location = New System.Drawing.Point(122, 343)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCalculate.Location = New System.Drawing.Point(20, 281)
+        Me.btnCalculate.Name = "btnCalculate"
+        Me.btnCalculate.Size = New System.Drawing.Size(125, 23)
+        Me.btnCalculate.TabIndex = 2
+        Me.btnCalculate.Text = "&Calculate Total"
+        Me.ToolTip1.SetToolTip(Me.btnCalculate, "Click here to calculate the total of the order.")
+        Me.btnCalculate.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnReset
         '
-        Me.Button2.Location = New System.Drawing.Point(203, 343)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnReset.Location = New System.Drawing.Point(151, 281)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(125, 23)
+        Me.btnReset.TabIndex = 3
+        Me.btnReset.Text = "&Reset Form"
+        Me.ToolTip1.SetToolTip(Me.btnReset, "Click Here to clear the form and start over.")
+        Me.btnReset.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnExit
         '
-        Me.Button3.Location = New System.Drawing.Point(284, 343)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnExit.Location = New System.Drawing.Point(282, 281)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(125, 23)
+        Me.btnExit.TabIndex = 4
+        Me.btnExit.Text = "E&xit"
+        Me.ToolTip1.SetToolTip(Me.btnExit, "Click here to exit.")
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(430, 395)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(430, 317)
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.btnReset)
+        Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox4)
@@ -355,26 +359,26 @@ Partial Class Form1
     Friend WithEvents radWheat As System.Windows.Forms.RadioButton
     Friend WithEvents radWhite As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
+    Friend WithEvents radRegCoffee As System.Windows.Forms.RadioButton
+    Friend WithEvents radNoCoffee As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
+    Friend WithEvents radCafeAuLait As System.Windows.Forms.RadioButton
+    Friend WithEvents radCappuccino As System.Windows.Forms.RadioButton
     Friend WithEvents chkPeach As System.Windows.Forms.CheckBox
     Friend WithEvents chkRaspberry As System.Windows.Forms.CheckBox
     Friend WithEvents chkBlueberry As System.Windows.Forms.CheckBox
     Friend WithEvents chkButter As System.Windows.Forms.CheckBox
     Friend WithEvents chkCreamCheese As System.Windows.Forms.CheckBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lblTax As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblSubtotal As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btnCalculate As System.Windows.Forms.Button
+    Friend WithEvents btnReset As System.Windows.Forms.Button
+    Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 
 End Class
