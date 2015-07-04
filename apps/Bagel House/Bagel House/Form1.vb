@@ -39,4 +39,52 @@
         ' Close the form.
         Me.Close()
     End Sub
+
+    Function CalcBagelCost() As Decimal
+        ' This function returns the cost of the selected bagel.
+        Dim decBagel As Decimal
+
+        If radWhite.Checked = True Then
+            decBagel = decWHITE_BAGEL
+        Else
+            decBagel = decWHEAT_BAGEL
+        End If
+
+        Return decBagel
+    End Function
+
+    Function CalcToppingCost() As Decimal
+        ' This function returns the cost of the toppings.
+        Dim decCostOfTopping As Decimal = 0D
+
+        If chkCreamCheese.Checked = True Then
+            decCostOfTopping += decCREAM_CHEESE
+        End If
+
+        If chkButter.Checked = True Then
+            decCostOfTopping += decBUTTER
+        End If
+
+        If chkBlueberry.Checked = True Then
+            decCostOfTopping += decBLUEBERRY
+        End If
+
+        If chkRaspberry.Checked = True Then
+            decCostOfTopping += decRASPBERRY
+        End If
+
+        Return decCostOfTopping
+    End Function
+
+    Function CalcCoffeeCost() As Decimal
+        ' This function returns the cost of the selected coffee.
+        Dim decCoffee As Decimal
+
+        If radNoCoffee.Checked = True Then
+            decCoffee = 0D
+        ElseIf radRegCoffee.Checked = True Then
+            decCoffee = decREG_COFFEE
+        ElseIf rad Then
+        End If
+    End Function
 End Class
