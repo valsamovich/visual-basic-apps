@@ -84,7 +84,36 @@
             decCoffee = 0D
         ElseIf radRegCoffee.Checked = True Then
             decCoffee = decREG_COFFEE
-        ElseIf rad Then
+        ElseIf radCappuccino.Checked = True Then
+            decCoffee = decCAPPUCCINO
+        ElseIf radCafeAuLait.Checked = True Then
+            decCoffee = decCAFE_AU_LAIT
         End If
+
+        Return decCoffee
     End Function
+
+    Function CalcTax(ByVal decAmount As Decimal) As Decimal
+        ' This function receives the sale amount and
+        ' returns the amount of the sales tax.
+        Return decAmount * decTAX_RATE
+    End Function
+
+    Sub ResetBagels()
+        ' This procedure resets the bagel selection.
+        radWhite.Checked = True
+    End Sub
+
+    Sub ResetToppings()
+        ' This procedure resets the topping selection.
+        chkCreamCheese.Checked = False
+        chkButter.Checked = False
+        chkBlueberry.Checked = False
+        chkRaspberry.Checked = False
+    End Sub
+
+    Sub ResetCoffee()
+        ' This procedure resets the coffee selection.
+        radRegCoffee.Checked = True
+    End Sub
 End Class
