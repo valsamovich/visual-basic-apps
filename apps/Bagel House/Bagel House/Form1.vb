@@ -26,4 +26,17 @@
         lblTax.Text = decTax.ToString("c")
         lblTotal.Text = decTotal.ToString("c")
     End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        ' This procedure resets the controls to default values.
+        ResetBagels()
+        ResetToppings()
+        ResetCoffee()
+        ResetPrice()
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        ' Close the form.
+        Me.Close()
+    End Sub
 End Class
