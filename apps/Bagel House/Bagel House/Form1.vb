@@ -1,4 +1,9 @@
-﻿Public Class Form1
+﻿' Written by Valery Samovich 
+' July 4, 2015
+Option Strict On
+Option Explicit On
+
+Public Class Form1
     ' Class-level declarations
     Const decTAX_RATE As Decimal = 0.06D        ' Tax rate
     Const decWHITE_BAGEL As Decimal = 1.25D     ' Cost of a white bagel
@@ -18,7 +23,7 @@
         Dim decTax As Decimal       ' Holds the sales tax
         Dim decTotal As Decimal     ' Holds the order total
 
-        decSubtotal = CalcBagelCost() + CalcToppingCost() CalcCoffeeCost()
+        decSubtotal = CalcBagelCost() + CalcToppingCost() + CalcCoffeeCost()
         decTax = CalcTax(decSubtotal)
         decTotal = decSubtotal + decTax
 
@@ -115,5 +120,12 @@
     Sub ResetCoffee()
         ' This procedure resets the coffee selection.
         radRegCoffee.Checked = True
+    End Sub
+
+    Sub ResetPrice()
+        ' This procedure resets the price.
+        lblSubtotal.Text = String.Empty
+        lblTax.Text = String.Empty
+        lblTotal.Text = String.Empty
     End Sub
 End Class
