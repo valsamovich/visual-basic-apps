@@ -115,11 +115,12 @@ Public Class Form1
         chkButter.Checked = False
         chkBlueberry.Checked = False
         chkRaspberry.Checked = False
+        chkPeach.Checked = False
     End Sub
 
     Sub ResetCoffee()
         ' This procedure resets the coffee selection.
-        radRegCoffee.Checked = True
+        radNoCoffee.Checked = True
     End Sub
 
     Sub ResetPrice()
