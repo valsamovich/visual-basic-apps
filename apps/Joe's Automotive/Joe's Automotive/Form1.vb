@@ -34,6 +34,38 @@ Public Class Form1
         Me.Close()
     End Sub
 
+    Function OilLubeCharges() As Decimal
+        ' This function returns the cost of the selected oil charges.
+        Return 0
+    End Function
+
+    Function FlushCharges() As Decimal
+        ' This function returns the cost of the selected flush charges. 
+        Return 0
+    End Function
+
+    Function MyFunc() As Decimal
+        ' This function returns the cost of the selected misc charges. 
+        Return 0
+    End Function
+
+    Function OtherCharges() As Decimal
+        ' This function returns the cost of the selected other charges. 
+        Return 0
+    End Function
+
+    Function TaxCharges() As Decimal
+        ' This function returns the amount of the sales tax.
+        Return 0
+    End Function
+
+    Function TotalCharges() As Decimal
+        ' This function returns the amount of the total charges.
+        Return 0
+    End Function
+
+
+
     Sub ClearOilLube()
         ' This procedure resets the oil change selection.
         chkOilChange.Checked = False
