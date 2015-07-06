@@ -16,14 +16,54 @@ Public Class Form1
 
     Private Sub btnCalculateTotal_Click(sender As Object, e As EventArgs) Handles btnCalculateTotal.Click
         ' This procedure calculates the total of an order.
-
+        Dim decTax As Decimal       ' Holds the sales tax
+        Dim decTotal As Decimal     ' Holds the order total
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-
+        ' This procedures resets the controls to default values.
+        ClearOilLube()
+        ClearFlushes()
+        ClearMisc()
+        ClearOther()
+        ClearFees()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        ' Close the form.
+        Me.Close()
+    End Sub
 
+    Sub ClearOilLube()
+        ' This procedure resets the oil change selection.
+        chkOilChange.Checked = False
+        chkLubeJob.Checked = False
+    End Sub
+
+    Sub ClearFlushes()
+        ' This procedure resets the flush selection.
+        chkRadiatorFlush.Checked = False
+        chkTransmissionFlush.Checked = False
+    End Sub
+
+    Sub ClearMisc()
+        ' This procedure resets the misc selection.
+        chkInspection.Checked = False
+        chkReplaceMuffler.Checked = False
+        chkTireRotation.Checked = False
+    End Sub
+
+    Sub ClearOther()
+        ' This procedure resets the parts and labor.
+        txtParts.Clear()
+        txtLabor.Clear()
+    End Sub
+
+    Sub ClearFees()
+        ' This procedure resets the summary.
+        lblServicesAndLabel.Text = String.Empty
+        lblParts.Text = String.Empty
+        lblTaxOnParts.Text = String.Empty
+        lblTotalFees.Text = String.Empty
     End Sub
 End Class
