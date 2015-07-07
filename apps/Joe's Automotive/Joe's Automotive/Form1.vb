@@ -5,7 +5,7 @@ Option Explicit On
 
 Public Class Form1
     ' Class-level declarations
-    Const decTAX_RATE As Decimal = 0.06D            ' Tax rate
+    Const decTAX_RATE As Decimal = 0.06D            ' Tax rate on parts cost
     Const decOIL_CHANGE As Decimal = 26D            ' Cost of a oil change
     Const decLUBE_JOB As Decimal = 18D              ' Cost of lube job
     Const decRADIATOR_FLUSH As Decimal = 30D        ' Cost of radiator flush
@@ -16,9 +16,55 @@ Public Class Form1
 
     Private Sub btnCalculateTotal_Click(sender As Object, e As EventArgs) Handles btnCalculateTotal.Click
         ' This procedure calculates the total of an order.
-        ' Dim decTax As Decimal       ' Holds the sales tax
-        ' Dim decTotal As Decimal     ' Holds the order total
+        Dim decServicesAndLabor As Decimal  ' Holds the total of services and labor
+        Dim decParts As Decimal             ' Holds the parts
+        Dim decTaxOnParts As Decimal        ' Holds the sales tax
+        Dim decTotal As Decimal             ' Holds the order total
+
+        decServicesAndLabor = OilLubeCharges() + FlushCharges() + MiscCharges() + OtherCharges()
+        decParts = PartsCost()
+        decTaxOnParts = TaxCharges(decParts)
+        decTotal = decServicesAndLabor + decTaxOnParts + decParts
+
+        lblServicesAndLabel.Text = decServicesAndLabor.ToString("c")
+        lblParts.Text = decParts.ToString("c")
+        lblTaxOnParts.Text = decTaxOnParts.ToString("c")
+        lblTotalFees.Text = decTotal.ToString("c")
     End Sub
+
+    Function PartsInput() As Boolean
+        ' Declaration to hold the part value.
+        Dim decParts As Decimal
+
+        ' Validate parts input validation.
+        If Not Decimal.TryParse(txtParts.Text, decParts) Then
+            MessageBox.Show("Enter a numeric value for parts charges.")
+            Return False
+        End If
+
+        If decParts < 0 Then
+            MessageBox.Show("Enter a positive numeric value for parts charges.")
+        End If
+
+        Return True
+    End Function
+
+    Function LaborInput() As Boolean
+        ' Declaration to hold the labor value.
+        Dim decLabor As Decimal
+
+        ' Validate labor input validation.
+        If Not Decimal.TryParse(txtLabor.Text, decLabor) Then
+            MessageBox.Show("Enter a numeric value for labor charges.")
+            Return False
+        End If
+
+        If decLabor < 0 Then
+            MessageBox.Show("Enter a positive numeric value for labor charges.")
+        End If
+
+        Return True
+    End Function
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ' This procedures resets the controls to default values.
@@ -84,13 +130,16 @@ Public Class Form1
     End Function
 
     Function OtherCharges() As Decimal
-        ' This function returns the cost of the selected other charges. 
+        ' This function returns the cost for other charges.
+        Dim decCostOfParts As Decimal = 0D
+        Dim decCostOfLabor As Decimal = 0D
+
         Return 0
     End Function
 
-    Function TaxCharges() As Decimal
-        ' This function returns the amount of the sales tax.
-        Return 0
+    Function TaxCharges(ByVal decAmount As Decimal) As Decimal
+        ' This function receives the parts amount and return the amount of the sales tax.
+        Return decAmount * decTAX_RATE
     End Function
 
     Function TotalCharges() As Decimal
