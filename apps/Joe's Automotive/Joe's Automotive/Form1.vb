@@ -22,7 +22,7 @@ Public Class Form1
         Dim decTotal As Decimal             ' Holds the order total
 
         decServicesAndLabor = OilLubeCharges() + FlushCharges() + MiscCharges() + OtherCharges()
-        decParts = PartsCost()
+        decParts = PartsCharge()
         decTaxOnParts = TaxCharges(decParts)
         decTotal = decServicesAndLabor + decTaxOnParts + decParts
 
@@ -129,12 +129,20 @@ Public Class Form1
         Return decCostOfMiscCharges
     End Function
 
-    Function OtherCharges() As Decimal
-        ' This function returns the cost for other charges.
-        Dim decCostOfParts As Decimal = 0D
-        Dim decCostOfLabor As Decimal = 0D
+    Function PartsCharge() As Decimal
+        ' This function returns the charge of parts.
+        Dim decPartsCharge As Decimal
+        decPartsCharge = CDec(txtParts.Text)
 
-        Return 0
+        Return decPartsCharge
+    End Function
+
+    Function OtherCharges() As Decimal
+        ' This function returns the charge for labor.
+        Dim decLaborCharge As Decimal
+        decLaborCharge = CDec(txtLabor.Text)
+        decLaborCharge *= 20
+        Return decLaborCharge
     End Function
 
     Function TaxCharges(ByVal decAmount As Decimal) As Decimal
