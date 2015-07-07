@@ -1,5 +1,5 @@
 ﻿' Written by Valery Samovich 
-' July 6, 2015
+' July 7, 2015
 Option Strict On
 Option Explicit On
 
@@ -24,7 +24,7 @@ Public Class Form1
         decServicesAndLabor = OilLubeCharges() + FlushCharges() + MiscCharges() + OtherCharges()
         decParts = PartsCharge()
         decTaxOnParts = TaxCharges(decParts)
-        decTotal = decServicesAndLabor + decTaxOnParts + decParts
+        decTotal = TotalCharges(decServicesAndLabor, decTaxOnParts, decParts)
 
         lblServicesAndLabel.Text = decServicesAndLabor.ToString("c")
         lblParts.Text = decParts.ToString("c")
@@ -34,15 +34,15 @@ Public Class Form1
 
     Function PartsInput() As Boolean
         ' Declaration to hold the part value.
-        Dim decParts As Decimal
+        Dim decPartsInput As Decimal
 
         ' Validate parts input validation.
-        If Not Decimal.TryParse(txtParts.Text, decParts) Then
+        If Not Decimal.TryParse(txtParts.Text, decPartsInput) Then
             MessageBox.Show("Enter a numeric value for parts charges.")
             Return False
         End If
 
-        If decParts < 0 Then
+        If decPartsInput < 0 Then
             MessageBox.Show("Enter a positive numeric value for parts charges.")
         End If
 
@@ -51,15 +51,15 @@ Public Class Form1
 
     Function LaborInput() As Boolean
         ' Declaration to hold the labor value.
-        Dim decLabor As Decimal
+        Dim decLaborInput As Decimal
 
         ' Validate labor input validation.
-        If Not Decimal.TryParse(txtLabor.Text, decLabor) Then
+        If Not Decimal.TryParse(txtLabor.Text, decLaborInput) Then
             MessageBox.Show("Enter a numeric value for labor charges.")
             Return False
         End If
 
-        If decLabor < 0 Then
+        If decLaborInput < 0 Then
             MessageBox.Show("Enter a positive numeric value for labor charges.")
         End If
 
@@ -142,6 +142,7 @@ Public Class Form1
         Dim decLaborCharge As Decimal
         decLaborCharge = CDec(txtLabor.Text)
         decLaborCharge *= 20
+
         Return decLaborCharge
     End Function
 
@@ -150,9 +151,11 @@ Public Class Form1
         Return decAmount * decTAX_RATE
     End Function
 
-    Function TotalCharges() As Decimal
+    Function TotalCharges(ByVal decServicesAndLabor As Decimal,
+                          ByVal decTaxOnParts As Decimal,
+                          ByVal decParts As Decimal) As Decimal
         ' This function returns the amount of the total charges.
-        Return 0
+        Return decServicesAndLabor + decTaxOnParts + decParts
     End Function
 
     Sub ClearOilLube()
