@@ -16,8 +16,8 @@ Public Class Form1
 
     Private Sub btnCalculateTotal_Click(sender As Object, e As EventArgs) Handles btnCalculateTotal.Click
         ' This procedure calculates the total of an order.
-        Dim decTax As Decimal       ' Holds the sales tax
-        Dim decTotal As Decimal     ' Holds the order total
+        ' Dim decTax As Decimal       ' Holds the sales tax
+        ' Dim decTotal As Decimal     ' Holds the order total
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -35,18 +35,52 @@ Public Class Form1
     End Sub
 
     Function OilLubeCharges() As Decimal
-        ' This function returns the cost of the selected oil charges.
-        Return 0
+        ' This function returns the cost for an oil & lube.
+        Dim decCostOfOilLubeCharges As Decimal = 0D
+
+        If chkOilChange.Checked = True Then
+            decCostOfOilLubeCharges += decOIL_CHANGE
+        End If
+
+        If chkLubeJob.Checked = True Then
+            decCostOfOilLubeCharges += decLUBE_JOB
+        End If
+
+        Return decCostOfOilLubeCharges
     End Function
 
     Function FlushCharges() As Decimal
-        ' This function returns the cost of the selected flush charges. 
-        Return 0
+        ' This function returns the cost for a flushes.
+        Dim decCostOfFlushCharges As Decimal = 0D
+
+        If chkRadiatorFlush.Checked = True Then
+            decCostOfFlushCharges += decRADIATOR_FLUSH
+        End If
+
+        If chkTransmissionFlush.Checked = True Then
+            decCostOfFlushCharges += decTRANSMISSION_FLUSH
+        End If
+
+        Return decCostOfFlushCharges
     End Function
 
-    Function MyFunc() As Decimal
-        ' This function returns the cost of the selected misc charges. 
-        Return 0
+    Function MiscCharges() As Decimal
+        ' This function returns the cost for a misc charges. 
+        Dim decCostOfMiscCharges As Decimal = 0D
+
+        If chkInspection.Checked = True Then
+            decCostOfMiscCharges += decINSPECTION
+        End If
+
+        If chkReplaceMuffler.Checked = True Then
+            decCostOfMiscCharges += decMUFFLER_REPLACEMENT
+        End If
+
+        If chkTireRotation.Checked = True Then
+            decCostOfMiscCharges += decTIRE_ROTATION
+        End If
+
+        Return decCostOfMiscCharges
     End Function
 
     Function OtherCharges() As Decimal
@@ -63,8 +97,6 @@ Public Class Form1
         ' This function returns the amount of the total charges.
         Return 0
     End Function
-
-
 
     Sub ClearOilLube()
         ' This procedure resets the oil change selection.
