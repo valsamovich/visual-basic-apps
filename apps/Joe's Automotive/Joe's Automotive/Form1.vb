@@ -15,56 +15,36 @@ Public Class Form1
     Const decTIRE_ROTATION As Decimal = 20D         ' Cost of tire rotation
 
     Private Sub btnCalculateTotal_Click(sender As Object, e As EventArgs) Handles btnCalculateTotal.Click
-        ' This procedure calculates the total of an order.
-        Dim decServicesAndLabor As Decimal  ' Holds the total of services and labor
-        Dim decParts As Decimal             ' Holds the parts
-        Dim decTaxOnParts As Decimal        ' Holds the sales tax
+        Dim decParts As Decimal             ' The parts cost
+        Dim decLabor As Decimal             ' The labor hours
+        Dim decServicesAndLabor As Decimal  ' Holds the total for services and labor
+        Dim decTaxOnParts As Decimal        ' Holds the sales tax on parts
         Dim decTotal As Decimal             ' Holds the order total
 
-        decServicesAndLabor = OilLubeCharges() + FlushCharges() + MiscCharges() + OtherCharges()
-        decParts = PartsCharge()
-        decTaxOnParts = TaxCharges(decParts)
-        decTotal = TotalCharges(decServicesAndLabor, decTaxOnParts, decParts)
+        If PartsIsValid() And LaborIsValid() Then
+            ' Get the parts cost.
+            Decimal.TryParse(txtParts.Text, decParts)
 
-        lblServicesAndLabel.Text = decServicesAndLabor.ToString("c")
-        lblParts.Text = decParts.ToString("c")
-        lblTaxOnParts.Text = decTaxOnParts.ToString("c")
-        lblTotalFees.Text = decTotal.ToString("c")
+            ' Get labor hours.
+            Decimal.TryParse(txtLabor.Text, decLabor)
+
+            ' Get the total for services and labor
+            decServicesAndLabor = OilLubeCharges() + FlushCharges() + MiscCharges() + OtherCharges(decLabor)
+
+            ' Get the taxes for parts
+            decTaxOnParts = TaxCharges(decParts)
+
+            ' Get the total charges.
+            decTotal = TotalCharges(decServicesAndLabor, decParts, decTaxOnParts)
+
+            ' Display the summary details, formatted as currency.
+            lblServicesAndLabel.Text = decServicesAndLabor.ToString("c")
+            lblParts.Text = decParts.ToString("c")
+            lblTaxOnParts.Text = decTaxOnParts.ToString("c")
+            lblTotalFees.Text = decTotal.ToString("c")
+        End If
+        
     End Sub
-
-    Function PartsInput() As Boolean
-        ' Declaration to hold the part value.
-        Dim decPartsInput As Decimal
-
-        ' Validate parts input validation.
-        If Not Decimal.TryParse(txtParts.Text, decPartsInput) Then
-            MessageBox.Show("Enter a numeric value for parts charges.")
-            Return False
-        End If
-
-        If decPartsInput < 0 Then
-            MessageBox.Show("Enter a positive numeric value for parts charges.")
-        End If
-
-        Return True
-    End Function
-
-    Function LaborInput() As Boolean
-        ' Declaration to hold the labor value.
-        Dim decLaborInput As Decimal
-
-        ' Validate labor input validation.
-        If Not Decimal.TryParse(txtLabor.Text, decLaborInput) Then
-            MessageBox.Show("Enter a numeric value for labor charges.")
-            Return False
-        End If
-
-        If decLaborInput < 0 Then
-            MessageBox.Show("Enter a positive numeric value for labor charges.")
-        End If
-
-        Return True
-    End Function
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ' This procedures resets the controls to default values.
@@ -79,6 +59,48 @@ Public Class Form1
         ' Close the form.
         Me.Close()
     End Sub
+
+    Function PartsIsValid() As Boolean
+        ' Declate a variable to temporary hold the parts value.
+        Dim decPartsTempValue As Decimal
+
+        ' Try to convert the value entered by the user to a Decimal.
+        ' If it will not convert, display an error message and return false. 
+        If Not Decimal.TryParse(txtParts.Text, decPartsTempValue) Then
+            MessageBox.Show("Enter a numeric value for the parts cost.")
+            Return False
+        End If
+
+        ' Determine whether the value entered is negative.
+        ' If it is, display an error message and return false.
+        If decPartsTempValue < 0 Then
+            MessageBox.Show("Enter a positive numeric value for the parts cost.")
+        End If
+
+        ' If value is valid, return true.
+        Return True
+    End Function
+
+    Function LaborIsValid() As Boolean
+        ' Declate a variable to temporary hold the labor hours.
+        Dim decLaborTempValue As Decimal
+
+        ' Try to convert the value entered by the user to a Decimal.
+        ' If it will not convert, display an error message and return false. 
+        If Not Decimal.TryParse(txtLabor.Text, decLaborTempValue) Then
+            MessageBox.Show("Enter a numeric value for the labor hours.")
+            Return False
+        End If
+
+        ' Determine whether the value entered is negative.
+        ' If it is, display an error message and return false.
+        If decLaborTempValue < 0 Then
+            MessageBox.Show("Enter a positive numeric value for the labor hours.")
+        End If
+
+        ' If value is valid, return true.
+        Return True
+    End Function
 
     Function OilLubeCharges() As Decimal
         ' This function returns the cost for an oil & lube.
@@ -129,33 +151,25 @@ Public Class Form1
         Return decCostOfMiscCharges
     End Function
 
-    Function PartsCharge() As Decimal
-        ' This function returns the charge of parts.
-        Dim decPartsCharge As Decimal
-        decPartsCharge = CDec(txtParts.Text)
-
-        Return decPartsCharge
-    End Function
-
-    Function OtherCharges() As Decimal
+    Function OtherCharges(ByVal decLabor As Decimal) As Decimal
         ' This function returns the charge for labor.
         Dim decLaborCharge As Decimal
-        decLaborCharge = CDec(txtLabor.Text)
-        decLaborCharge *= 20
+        decLaborCharge = decLabor * 20
 
+        ' Return the labor charge.
         Return decLaborCharge
     End Function
 
-    Function TaxCharges(ByVal decAmount As Decimal) As Decimal
+    Function TaxCharges(ByVal decParts As Decimal) As Decimal
         ' This function receives the parts amount and return the amount of the sales tax.
-        Return decAmount * decTAX_RATE
+        Return decParts * decTAX_RATE
     End Function
 
     Function TotalCharges(ByVal decServicesAndLabor As Decimal,
-                          ByVal decTaxOnParts As Decimal,
-                          ByVal decParts As Decimal) As Decimal
+                          ByVal decParts As Decimal,
+                          ByVal decTaxOnParts As Decimal) As Decimal
         ' This function returns the amount of the total charges.
-        Return decServicesAndLabor + decTaxOnParts + decParts
+        Return decServicesAndLabor + decParts + decTaxOnParts
     End Function
 
     Sub ClearOilLube()
