@@ -23,16 +23,24 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.chkLubeJob = New System.Windows.Forms.CheckBox()
         Me.chkOilChange = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.chkTransmissionFlush = New System.Windows.Forms.CheckBox()
         Me.chkRadiatorFlush = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.chkTireRotation = New System.Windows.Forms.CheckBox()
         Me.chkReplaceMuffler = New System.Windows.Forms.CheckBox()
         Me.chkInspection = New System.Windows.Forms.CheckBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.txtLabor = New System.Windows.Forms.TextBox()
         Me.txtParts = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -49,14 +57,6 @@ Partial Class Form1
         Me.btnCalculateTotal = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -76,6 +76,24 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Oil Change"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(142, 43)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(46, 13)
+        Me.Label12.TabIndex = 3
+        Me.Label12.Text = "($18.00)"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(143, 20)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(46, 13)
+        Me.Label11.TabIndex = 2
+        Me.Label11.Text = "($26.00)"
         '
         'chkLubeJob
         '
@@ -109,6 +127,24 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Flushes"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(144, 20)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(46, 13)
+        Me.Label14.TabIndex = 3
+        Me.Label14.Text = "($30.00)"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(144, 42)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(46, 13)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "($80.00)"
         '
         'chkTransmissionFlush
         '
@@ -144,6 +180,33 @@ Partial Class Form1
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Misc"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(144, 66)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(46, 13)
+        Me.Label17.TabIndex = 5
+        Me.Label17.Text = "($20.00)"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(144, 43)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(52, 13)
+        Me.Label16.TabIndex = 4
+        Me.Label16.Text = "($100.00)"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(144, 20)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(46, 13)
+        Me.Label15.TabIndex = 3
+        Me.Label15.Text = "($15.00)"
         '
         'chkTireRotation
         '
@@ -188,6 +251,15 @@ Partial Class Form1
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Parts and Labor"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(133, 57)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(88, 13)
+        Me.Label18.TabIndex = 4
+        Me.Label18.Text = "($20.00 per hour)"
         '
         'txtLabor
         '
@@ -333,78 +405,6 @@ Partial Class Form1
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(143, 20)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(46, 13)
-        Me.Label11.TabIndex = 2
-        Me.Label11.Text = "($26.00)"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(142, 43)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(46, 13)
-        Me.Label12.TabIndex = 3
-        Me.Label12.Text = "($18.00)"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(144, 42)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(46, 13)
-        Me.Label13.TabIndex = 2
-        Me.Label13.Text = "($80.00)"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(144, 20)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(46, 13)
-        Me.Label14.TabIndex = 3
-        Me.Label14.Text = "($30.00)"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(144, 20)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(46, 13)
-        Me.Label15.TabIndex = 3
-        Me.Label15.Text = "($15.00)"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(144, 43)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(52, 13)
-        Me.Label16.TabIndex = 4
-        Me.Label16.Text = "($100.00)"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(144, 66)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(46, 13)
-        Me.Label17.TabIndex = 5
-        Me.Label17.Text = "($20.00)"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(133, 57)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(88, 13)
-        Me.Label18.TabIndex = 4
-        Me.Label18.Text = "($20.00 per hour)"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -419,7 +419,7 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form1"
-        Me.Text = "Joe's Automotive"
+        Me.Text = "Valery Samovich's Joe's Automotive"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
