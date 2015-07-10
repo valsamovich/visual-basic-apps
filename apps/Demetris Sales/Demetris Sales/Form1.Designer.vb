@@ -25,9 +25,17 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblSalesData = New System.Windows.Forms.ListBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuReport = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.mnuReportData = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuReportDisplay = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHelpAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -50,11 +58,40 @@ Partial Class Form1
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile, Me.mnuReport, Me.mnuHelp})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(409, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'mnuFile
+        '
+        Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFileExit})
+        Me.mnuFile.Name = "mnuFile"
+        Me.mnuFile.Size = New System.Drawing.Size(37, 20)
+        Me.mnuFile.Text = "&File"
+        '
+        'mnuFileExit
+        '
+        Me.mnuFileExit.Name = "mnuFileExit"
+        Me.mnuFileExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Q), System.Windows.Forms.Keys)
+        Me.mnuFileExit.Size = New System.Drawing.Size(152, 22)
+        Me.mnuFileExit.Text = "E&xit"
+        '
+        'mnuReport
+        '
+        Me.mnuReport.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuReportData, Me.mnuReportDisplay})
+        Me.mnuReport.Name = "mnuReport"
+        Me.mnuReport.Size = New System.Drawing.Size(54, 20)
+        Me.mnuReport.Text = "&Report"
+        '
+        'mnuHelp
+        '
+        Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuHelpAbout})
+        Me.mnuHelp.Name = "mnuHelp"
+        Me.mnuHelp.Size = New System.Drawing.Size(44, 20)
+        Me.mnuHelp.Text = "&Help"
         '
         'Label1
         '
@@ -73,6 +110,26 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(100, 23)
         Me.Label2.TabIndex = 3
         '
+        'mnuReportData
+        '
+        Me.mnuReportData.Name = "mnuReportData"
+        Me.mnuReportData.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.mnuReportData.Size = New System.Drawing.Size(221, 22)
+        Me.mnuReportData.Text = "&Enter Sales Data"
+        '
+        'mnuReportDisplay
+        '
+        Me.mnuReportDisplay.Name = "mnuReportDisplay"
+        Me.mnuReportDisplay.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.mnuReportDisplay.Size = New System.Drawing.Size(221, 22)
+        Me.mnuReportDisplay.Text = "&Display Sales Report"
+        '
+        'mnuHelpAbout
+        '
+        Me.mnuHelpAbout.Name = "mnuHelpAbout"
+        Me.mnuHelpAbout.Size = New System.Drawing.Size(152, 22)
+        Me.mnuHelpAbout.Text = "&About"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -86,6 +143,8 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Valery Samovich's Demetris Leadership Center"
         Me.GroupBox1.ResumeLayout(False)
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -95,5 +154,12 @@ Partial Class Form1
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents mnuFile As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuFileExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuReport As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuHelp As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuReportData As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuReportDisplay As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuHelpAbout As System.Windows.Forms.ToolStripMenuItem
 
 End Class
