@@ -54,6 +54,49 @@
     End Sub
 
     Private Sub mnuReportData_Click(sender As Object, e As EventArgs) Handles mnuReportData.Click
+        Dim intCount As Integer = 0 ' Loop counter
 
+        Do While intCount <= intMAX_SUBSCRIPT
+            Try
+                ' Get the units sold for a product.
+                intUnitsSold(intCount) = CInt(
+                    InputBox("Enter units sold of product number " &
+                             intProdNums(intCount)))
+                ' Increment intCount.
+                intCount += 1
+            Catch
+                ' Error message for invalit input.
+                MessageBox.Show("Enter a valid integer.")
+            End Try
+        Loop
+    End Sub
+
+    Private Sub mnuReportDisplay_Click(sender As Object, e As EventArgs) Handles mnuReportDisplay.Click
+        ' Calculates and displays the revenue for each
+        ' product and the total revenue.
+        Dim intCount As Integer
+        Dim decRevenue As Decimal
+        Dim decTotalRevenue As Decimal
+
+        ' Display the sales report header.
+        lstSalesData.Items.Add("SALES REPORT")
+        lstSalesData.Items.Add("-------------------")
+
+        ' Display sales data for each product.
+        For intCount = 0 To intMAX_SUBSCRIPT
+
+            ' Calculate product revenue.
+            decRevenue = intUnitsSold(intCount) * decPrices(intCount)
+
+            ' Display  the product data.
+            lstSalesData.Items.Add("Product Number: " & intProdNums(intCount))
+            lstSalesData.Items.Add("Name: " & strProdNames(intCount))
+            lstSalesData.Items.Add("Description: " & strDesc(intCount))
+            lstSalesData.Items.Add("Unit Price: " & decPrices(intCount).ToString("c"))
+            lstSalesData.Items.Add("Product Revenue: " & decRevenue.ToString("c"))
+
+            ' Accumulate revenue.
+            decTotalRevenue = decTotalRevenue + decRevenue
+        Next
     End Sub
 End Class

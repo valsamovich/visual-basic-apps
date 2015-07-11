@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblSalesData = New System.Windows.Forms.ListBox()
+        Me.lstSalesData = New System.Windows.Forms.ListBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,7 +40,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.lblSalesData)
+        Me.GroupBox1.Controls.Add(Me.lstSalesData)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 34)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(386, 229)
@@ -48,13 +48,13 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Sales Data"
         '
-        'lblSalesData
+        'lstSalesData
         '
-        Me.lblSalesData.FormattingEnabled = True
-        Me.lblSalesData.Location = New System.Drawing.Point(11, 18)
-        Me.lblSalesData.Name = "lblSalesData"
-        Me.lblSalesData.Size = New System.Drawing.Size(364, 199)
-        Me.lblSalesData.TabIndex = 0
+        Me.lstSalesData.FormattingEnabled = True
+        Me.lstSalesData.Location = New System.Drawing.Point(11, 18)
+        Me.lstSalesData.Name = "lstSalesData"
+        Me.lstSalesData.Size = New System.Drawing.Size(364, 199)
+        Me.lstSalesData.TabIndex = 0
         '
         'MenuStrip1
         '
@@ -150,7 +150,7 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents lblSalesData As System.Windows.Forms.ListBox
+    Friend WithEvents lstSalesData As System.Windows.Forms.ListBox
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
