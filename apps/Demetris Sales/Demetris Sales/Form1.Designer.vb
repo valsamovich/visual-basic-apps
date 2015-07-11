@@ -28,12 +28,12 @@ Partial Class Form1
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuReport = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.mnuReportData = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuReportDisplay = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuHelpAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -86,12 +86,32 @@ Partial Class Form1
         Me.mnuReport.Size = New System.Drawing.Size(54, 20)
         Me.mnuReport.Text = "&Report"
         '
+        'mnuReportData
+        '
+        Me.mnuReportData.Name = "mnuReportData"
+        Me.mnuReportData.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.mnuReportData.Size = New System.Drawing.Size(221, 22)
+        Me.mnuReportData.Text = "&Enter Sales Data"
+        '
+        'mnuReportDisplay
+        '
+        Me.mnuReportDisplay.Name = "mnuReportDisplay"
+        Me.mnuReportDisplay.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.mnuReportDisplay.Size = New System.Drawing.Size(221, 22)
+        Me.mnuReportDisplay.Text = "&Display Sales Report"
+        '
         'mnuHelp
         '
         Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuHelpAbout})
         Me.mnuHelp.Name = "mnuHelp"
         Me.mnuHelp.Size = New System.Drawing.Size(44, 20)
         Me.mnuHelp.Text = "&Help"
+        '
+        'mnuHelpAbout
+        '
+        Me.mnuHelpAbout.Name = "mnuHelpAbout"
+        Me.mnuHelpAbout.Size = New System.Drawing.Size(107, 22)
+        Me.mnuHelpAbout.Text = "&About"
         '
         'Label1
         '
@@ -109,26 +129,6 @@ Partial Class Form1
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 23)
         Me.Label2.TabIndex = 3
-        '
-        'mnuReportData
-        '
-        Me.mnuReportData.Name = "mnuReportData"
-        Me.mnuReportData.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.mnuReportData.Size = New System.Drawing.Size(221, 22)
-        Me.mnuReportData.Text = "&Enter Sales Data"
-        '
-        'mnuReportDisplay
-        '
-        Me.mnuReportDisplay.Name = "mnuReportDisplay"
-        Me.mnuReportDisplay.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.mnuReportDisplay.Size = New System.Drawing.Size(221, 22)
-        Me.mnuReportDisplay.Text = "&Display Sales Report"
-        '
-        'mnuHelpAbout
-        '
-        Me.mnuHelpAbout.Name = "mnuHelpAbout"
-        Me.mnuHelpAbout.Size = New System.Drawing.Size(152, 22)
-        Me.mnuHelpAbout.Text = "&About"
         '
         'Form1
         '

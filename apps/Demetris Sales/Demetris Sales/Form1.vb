@@ -47,4 +47,13 @@
         intProdNums(2) = 918
         decPrices(2) = 21.95D
     End Sub
+
+    Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
+        ' Close the form.
+        Me.Close()
+    End Sub
+
+    Private Sub mnuReportData_Click(sender As Object, e As EventArgs) Handles mnuReportData.Click
+
+    End Sub
 End Class
