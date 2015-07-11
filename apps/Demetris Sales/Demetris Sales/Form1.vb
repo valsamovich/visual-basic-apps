@@ -1,4 +1,9 @@
-﻿Public Class Form1
+﻿' Written by Valery Samovich 
+' July 11, 2015
+Option Strict On
+Option Explicit On
+
+Public Class Form1
     ' This application displays a sales report for the Demetris
     ' Leadership Center.
 
@@ -42,10 +47,10 @@
         decPrices(3) = 16.95D
 
         ' Fifth product.
-        strProdNames(2) = "Seven Lessons of Quality"
-        strDesc(2) = "CD"
-        intProdNums(2) = 918
-        decPrices(2) = 21.95D
+        strProdNames(4) = "Seven Lessons of Quality"
+        strDesc(4) = "CD"
+        intProdNums(4) = 918
+        decPrices(4) = 21.95D
     End Sub
 
     Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
@@ -95,6 +100,7 @@
             lstSalesData.Items.Add("Unit Price: " & decPrices(intCount).ToString("c"))
             lstSalesData.Items.Add("Unit Sold: " & intUnitsSold(intCount).ToString())
             lstSalesData.Items.Add("Product Revenue: " & decRevenue.ToString("c"))
+            lstSalesData.Items.Add("")
 
             ' Accumulate revenue.
             decTotalRevenue = decTotalRevenue + decRevenue
@@ -106,6 +112,6 @@
 
     Private Sub mnuHelpAbout_Click(sender As Object, e As EventArgs) Handles mnuHelpAbout.Click
         ' Display an About box.
-        MessageBox.Show("displays a sales report for DLC.", "About")
+        MessageBox.Show("Displays a sales report for DLC.", "About")
     End Sub
 End Class
