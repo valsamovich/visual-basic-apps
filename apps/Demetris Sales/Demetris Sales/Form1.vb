@@ -93,10 +93,19 @@
             lstSalesData.Items.Add("Name: " & strProdNames(intCount))
             lstSalesData.Items.Add("Description: " & strDesc(intCount))
             lstSalesData.Items.Add("Unit Price: " & decPrices(intCount).ToString("c"))
+            lstSalesData.Items.Add("Unit Sold: " & intUnitsSold(intCount).ToString())
             lstSalesData.Items.Add("Product Revenue: " & decRevenue.ToString("c"))
 
             ' Accumulate revenue.
             decTotalRevenue = decTotalRevenue + decRevenue
         Next
+
+        ' Display total revenue.
+        lblTotalRevenue.Text = decTotalRevenue.ToString("c")
+    End Sub
+
+    Private Sub mnuHelpAbout_Click(sender As Object, e As EventArgs) Handles mnuHelpAbout.Click
+        ' Display an About box.
+        MessageBox.Show("displays a sales report for DLC.", "About")
     End Sub
 End Class
