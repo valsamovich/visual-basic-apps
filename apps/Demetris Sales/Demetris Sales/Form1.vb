@@ -14,4 +14,37 @@
         ' Initialize the arrays with product data.
         InitArrays()
     End Sub
+
+    Private Sub InitArrays()
+        ' Initialize the arrays.
+        ' First product.
+        strProdNames(0) = "Six Steps to Leadership"
+        strDesc(0) = "Book"
+        intProdNums(0) = 914
+        decPrices(0) = 12.95D
+
+        ' Second product.
+        strProdNames(1) = "Six Steps to Leadership"
+        strDesc(1) = "CD"
+        intProdNums(1) = 915
+        decPrices(1) = 14.95D
+
+        ' Third product.
+        strProdNames(2) = "The Road to Excellence"
+        strDesc(2) = "Video"
+        intProdNums(2) = 916
+        decPrices(2) = 18.95D
+
+        ' Fourth product.
+        strProdNames(3) = "Seven Lessons of Quality"
+        strDesc(3) = "Book"
+        intProdNums(3) = 917
+        decPrices(3) = 16.95D
+
+        ' Fifth product.
+        strProdNames(2) = "Seven Lessons of Quality"
+        strDesc(2) = "CD"
+        intProdNums(2) = 918
+        decPrices(2) = 21.95D
+    End Sub
 End Class
