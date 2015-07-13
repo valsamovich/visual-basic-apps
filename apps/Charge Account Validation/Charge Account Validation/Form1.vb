@@ -18,4 +18,23 @@ Public Class Form1
         ' Close the form.
         Me.Close()
     End Sub
+
+    ' Sequential search to determine wheather a number appears in the array.
+    Function isValid(ByVal intInput As Integer) As Boolean
+        Dim btnFound As Boolean = False     ' Boolean flag for search
+        Dim intIndex As Integer             ' Hold an array index
+
+        ' Loop thru array to validate if the number appears in it.
+        While Not btnFound And intIndex < intNumbers.Length()
+            If intNumbers(intIndex) = intInput Then
+                btnFound = True
+            Else
+                intIndex += 1
+            End If
+        End While
+
+        ' Return the flag of the search. 
+        Return True
+    End Function
+
 End Class
