@@ -11,19 +11,21 @@ Public Class Form1
                                    1005231, 6545231, 3852085, 7576651, 7881200, 4581002}
 
     Private Sub btnValidate_Click(sender As Object, e As EventArgs) Handles btnValidate.Click
-        Dim intInput As Integer     ' To hold input
+        Dim intAccountNumber As Integer     ' To hold account number
 
-        If inputIsValid() Then
-            ' Get the input value.
-            Integer.TryParse(txtInput.Text, intInput)
-
-            ' determint wheather it is valid.
-            If isValid(intInput) Then
+        ' Try to convert the value entered by the user to a Integer.
+        ' If it will not convert, display an error message and return false. 
+        If Not Integer.TryParse(txtInput.Text, intAccountNumber) Then
+            MessageBox.Show("Enter a numeric value for the input.")
+        Else
+            ' Determine wheather it is valid account number.
+            If isValid(intAccountNumber) Then
                 MessageBox.Show("Account number is valid.")
             Else
                 MessageBox.Show("Account number is invalid.")
             End If
         End If
+
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -36,30 +38,15 @@ Public Class Form1
         Me.Close()
     End Sub
 
-    Function inputIsValid() As Boolean
-        ' Varialbe to temporary hold the input value.
-        Dim intInputTempValue As Integer
-
-        ' Try to convert the value entered by the user to a Integer.
-        ' If it will not convert, display an error message and return false. 
-        If Not Integer.TryParse(txtInput.Text, intInputTempValue) Then
-            MessageBox.Show("Enter a numeric value for the input.")
-            Return False
-        End If
-
-        ' If value is valid, return true.
-        Return True
-    End Function
-
     ' Sequential search to determine wheather a number appears in the array.
-    Function isValid(ByVal intInput As Integer) As Boolean
-        Dim btnFound As Boolean = False     ' Boolean flag for search
+    Function isValid(ByVal intNumber As Integer) As Boolean
+        Dim btnSearch As Boolean = False    ' Hold search flag
         Dim intIndex As Integer             ' Hold an array index
 
         ' Loop thru array to validate if the number appears in it.
-        While Not btnFound And intIndex < intNumbers.Length()
-            If intNumbers(intIndex) = intInput Then
-                btnFound = True
+        While Not btnSearch And intIndex < intNumbers.Length()
+            If intNumbers(intIndex) = intNumber Then
+                btnSearch = True
             Else
                 intIndex += 1
             End If
