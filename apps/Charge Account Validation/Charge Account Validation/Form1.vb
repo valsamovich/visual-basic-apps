@@ -31,6 +31,7 @@ Public Class Form1
 
         ' Sequential search to determine wheather a number appears in the array.
         Do While intCount < intNumbers.Length
+            ' Compare input number to array value
             If intAccountNumber = intNumbers(intCount) Then
                 blnSearch = True
                 Exit Do
@@ -41,8 +42,10 @@ Public Class Form1
 
         ' Determine wheather it is valid account number.
         If blnSearch Then
+            ' Display message if account is valid.
             MessageBox.Show("Account number is valid.")
         Else
+            ' Display message if account is invalid.
             MessageBox.Show("Account number is invalid.")
         End If
 
