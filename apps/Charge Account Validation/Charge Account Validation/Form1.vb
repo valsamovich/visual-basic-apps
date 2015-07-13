@@ -17,12 +17,18 @@ Public Class Form1
             ' Get the input value.
             Integer.TryParse(txtInput.Text, intInput)
 
+            ' determint wheather it is valid.
             If isValid(intInput) Then
                 MessageBox.Show("Account number is valid.")
             Else
                 MessageBox.Show("Account number is invalid.")
             End If
         End If
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        ' This procedure clear the input.
+        txtInput.Clear()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -39,12 +45,6 @@ Public Class Form1
         If Not Integer.TryParse(txtInput.Text, intInputTempValue) Then
             MessageBox.Show("Enter a numeric value for the input.")
             Return False
-        End If
-
-        ' Determine whether the value entered is negative.
-        ' If it is, display an error message and return false.
-        If intInputTempValue < 0 Then
-            MessageBox.Show("Enter a positive numeric value for the input.")
         End If
 
         ' If value is valid, return true.
