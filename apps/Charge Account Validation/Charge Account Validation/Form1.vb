@@ -13,7 +13,7 @@ Public Class Form1
     Private Sub btnValidate_Click(sender As Object, e As EventArgs) Handles btnValidate.Click
         Dim intAccountNumber As Integer     ' To hold account number
         Dim blnSearch As Boolean = False    ' Hold search flag
-        Dim intCount As Integer = 0         ' Hold an array index
+        Dim intIndex As Integer = 0         ' Hold an array index
 
         ' Try to convert the value entered by the user to a Integer.
         ' If it will not convert, display an error message and return false. 
@@ -30,13 +30,13 @@ Public Class Form1
         End If
 
         ' Sequential search to determine wheather a number appears in the array.
-        Do While intCount < intNumbers.Length
+        Do While intIndex < intNumbers.Length
             ' Compare input number to array value
-            If intAccountNumber = intNumbers(intCount) Then
+            If intAccountNumber = intNumbers(intIndex) Then
                 blnSearch = True
                 Exit Do
             Else
-                intCount += 1
+                intIndex += 1
             End If
         Loop
 
