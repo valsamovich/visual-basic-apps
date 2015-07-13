@@ -12,18 +12,38 @@ Public Class Form1
 
     Private Sub btnValidate_Click(sender As Object, e As EventArgs) Handles btnValidate.Click
         Dim intAccountNumber As Integer     ' To hold account number
+        Dim blnSearch As Boolean = False    ' Hold search flag
+        Dim intCount As Integer = 0         ' Hold an array index
 
         ' Try to convert the value entered by the user to a Integer.
         ' If it will not convert, display an error message and return false. 
         If Not Integer.TryParse(txtInput.Text, intAccountNumber) Then
             MessageBox.Show("Enter a numeric value for the input.")
-        Else
-            ' Determine wheather it is valid account number.
-            If isValid(intAccountNumber) Then
-                MessageBox.Show("Account number is valid.")
+            Exit Sub
+        End If
+
+        ' Determine whether the value entered is negative.
+        ' If it is, display an error message and return false.
+        If intAccountNumber < 0 Then
+            MessageBox.Show("Enter a positive numeric value for input.")
+            Exit Sub
+        End If
+
+        ' Sequential search to determine wheather a number appears in the array.
+        Do While intCount < intNumbers.Length
+            If intAccountNumber = intNumbers(intCount) Then
+                blnSearch = True
+                Exit Do
             Else
-                MessageBox.Show("Account number is invalid.")
+                intCount += 1
             End If
+        Loop
+
+        ' Determine wheather it is valid account number.
+        If blnSearch Then
+            MessageBox.Show("Account number is valid.")
+        Else
+            MessageBox.Show("Account number is invalid.")
         End If
 
     End Sub
@@ -37,23 +57,5 @@ Public Class Form1
         ' Close the form.
         Me.Close()
     End Sub
-
-    ' Sequential search to determine wheather a number appears in the array.
-    Function isValid(ByVal intNumber As Integer) As Boolean
-        Dim btnSearch As Boolean = False    ' Hold search flag
-        Dim intIndex As Integer             ' Hold an array index
-
-        ' Loop thru array to validate if the number appears in it.
-        While Not btnSearch And intIndex < intNumbers.Length()
-            If intNumbers(intIndex) = intNumber Then
-                btnSearch = True
-            Else
-                intIndex += 1
-            End If
-        End While
-
-        ' Return the flag of the search. 
-        Return True
-    End Function
 
 End Class
