@@ -18,14 +18,14 @@ Public Class Form1
         ' Try to convert the value entered by the user to a Integer.
         ' If it will not convert, display an error message and return false. 
         If Not Integer.TryParse(txtInput.Text, intAccountNumber) Then
-            MessageBox.Show("Enter a numeric value for the input.")
+            MessageBox.Show("Enter a numeric value for the account number.")
             Exit Sub
         End If
 
         ' Determine whether the value entered is negative.
         ' If it is, display an error message and return false.
         If intAccountNumber < 0 Then
-            MessageBox.Show("Enter a positive numeric value for input.")
+            MessageBox.Show("Enter a positive numeric value for account number.")
             Exit Sub
         End If
 
