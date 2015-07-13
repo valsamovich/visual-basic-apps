@@ -17,7 +17,11 @@ Public Class Form1
             ' Get the input value.
             Integer.TryParse(txtInput.Text, intInput)
 
-
+            If isValid(intInput) Then
+                MessageBox.Show("Account number is valid.")
+            Else
+                MessageBox.Show("Account number is invalid.")
+            End If
         End If
     End Sub
 
