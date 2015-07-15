@@ -100,6 +100,9 @@ Partial Class Form1
         '
         'txtDocument
         '
+        Me.txtDocument.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDocument.Location = New System.Drawing.Point(6, 31)
         Me.txtDocument.Multiline = True
         Me.txtDocument.Name = "txtDocument"
