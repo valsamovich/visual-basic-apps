@@ -31,6 +31,7 @@ Partial Class Form1
         Me.mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuHelpAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.txtDocument = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -39,7 +40,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile, Me.mnuHelp})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(326, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(357, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -97,11 +98,20 @@ Partial Class Form1
         Me.mnuHelpAbout.Size = New System.Drawing.Size(152, 22)
         Me.mnuHelpAbout.Text = "&About"
         '
+        'txtDocument
+        '
+        Me.txtDocument.Location = New System.Drawing.Point(6, 31)
+        Me.txtDocument.Multiline = True
+        Me.txtDocument.Name = "txtDocument"
+        Me.txtDocument.Size = New System.Drawing.Size(345, 307)
+        Me.txtDocument.TabIndex = 1
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(326, 307)
+        Me.ClientSize = New System.Drawing.Size(357, 344)
+        Me.Controls.Add(Me.txtDocument)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
@@ -121,5 +131,6 @@ Partial Class Form1
     Friend WithEvents mnuFileExit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuHelp As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuHelpAbout As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents txtDocument As System.Windows.Forms.TextBox
 
 End Class
