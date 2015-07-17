@@ -32,6 +32,8 @@ Partial Class Form1
         Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuHelpAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtDocument = New System.Windows.Forms.TextBox()
+        Me.ofdOpenFile = New System.Windows.Forms.OpenFileDialog()
+        Me.sfdSaveFile = New System.Windows.Forms.SaveFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -95,7 +97,7 @@ Partial Class Form1
         'mnuHelpAbout
         '
         Me.mnuHelpAbout.Name = "mnuHelpAbout"
-        Me.mnuHelpAbout.Size = New System.Drawing.Size(152, 22)
+        Me.mnuHelpAbout.Size = New System.Drawing.Size(107, 22)
         Me.mnuHelpAbout.Text = "&About"
         '
         'txtDocument
@@ -108,6 +110,17 @@ Partial Class Form1
         Me.txtDocument.Name = "txtDocument"
         Me.txtDocument.Size = New System.Drawing.Size(345, 307)
         Me.txtDocument.TabIndex = 1
+        '
+        'ofdOpenFile
+        '
+        Me.ofdOpenFile.FileName = "OpenFileDialog1"
+        Me.ofdOpenFile.Filter = "Text File (*.txt) | *.txt"
+        Me.ofdOpenFile.Title = "Open File"
+        '
+        'sfdSaveFile
+        '
+        Me.sfdSaveFile.Filter = "Text File (*.txt) | *.txt"
+        Me.sfdSaveFile.Title = "Save File As"
         '
         'Form1
         '
@@ -135,5 +148,7 @@ Partial Class Form1
     Friend WithEvents mnuHelp As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuHelpAbout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents txtDocument As System.Windows.Forms.TextBox
+    Friend WithEvents ofdOpenFile As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents sfdSaveFile As System.Windows.Forms.SaveFileDialog
 
 End Class
