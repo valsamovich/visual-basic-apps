@@ -107,4 +107,27 @@ Public Class Form1
             End If
         End If
     End Sub
+
+    Private Sub mnuFileSave_Click(sender As Object, e As EventArgs) Handles mnuFileSave.Click
+        ' Does the current document have a filename.
+        If strFilename = String.Empty Then
+            ' The document has not been saved, so
+            ' use Save As dialog box.
+            If sfdSaveFile.ShowDialog = Windows.Forms.DialogResult.OK Then
+                strFilename = sfdSaveFile.FileName
+                SaveDocument()
+            End If
+        Else
+            ' Save the document with the current filename.
+            SaveDocument()
+        End If
+    End Sub
+
+    Private Sub mnuFileSaveAs_Click(sender As Object, e As EventArgs) Handles mnuFileSaveAs.Click
+        ' Save the current document under a new filename.
+        If sfdSaveFile.ShowDialog = Windows.Forms.DialogResult.OK Then
+            strFilename = sfdSaveFile.FileName
+            SaveDocument()
+        End If
+    End Sub
 End Class
