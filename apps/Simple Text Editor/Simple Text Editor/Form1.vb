@@ -85,8 +85,26 @@ Public Class Form1
                 ClearDocumnet()
             End If
         Else
-            ' Documnet has not changed, so clear it.
+            ' Document has not changed, so clear it.
             ClearDocumnet()
+        End If
+    End Sub
+
+    Private Sub mnuFileOpen_Click(sender As Object, e As EventArgs) Handles mnuFileOpen.Click
+        ' Has the current documnet changed?
+        If blnIsChanged = True Then
+            ' Confirm before clearing and replacing.
+            If MessageBox.Show("The current documnet is not saved. " &
+                               "Are you sure?", "Confirm",
+                               MessageBoxButtons.YesNo) =
+                               Windows.Forms.DialogResult.Yes Then
+                ClearDocumnet()
+                OpenDocument()
+            Else
+                ' Document has not changed, so replace it.
+                ClearDocumnet()
+                OpenDocument()
+            End If
         End If
     End Sub
 End Class
