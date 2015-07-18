@@ -141,5 +141,19 @@ Public Class Form1
         MessageBox.Show("Simple Text Editor version 1.0")
     End Sub
 
-
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        ' If the document has benn modified, confirm
+        ' before exiting.
+        If blnIsChanged = True Then
+            If MessageBox.Show("The current document is not saved. " &
+                               "Do you wish to discard your charges?",
+                               "Confirm",
+                               MessageBoxButtons.YesNo) =
+                               Windows.Forms.DialogResult.Yes Then
+                e.Cancel = False
+            Else
+                e.Cancel = True
+            End If
+        End If
+    End Sub
 End Class
