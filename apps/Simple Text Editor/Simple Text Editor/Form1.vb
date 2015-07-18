@@ -51,9 +51,42 @@ Public Class Form1
         Dim outputFile As StreamWriter  ' Object variable
 
         Try
+            ' Create the file.
+            outputFile = File.CreateText(strFilename)
 
-        Catch ex As Exception
+            ' Write the TextBox to the file.
+            outputFile.Write(txtDocument.Text)
 
+            ' Close the file.
+            outputFile.Close()
+
+            ' Update the isChanged variable.
+            blnIsChanged = False
+        Catch
+            ' Error message for file creation error.
+            MessageBox.Show("Error creating the file.")
         End Try
+    End Sub
+
+
+    Private Sub txtDocument_TextChanged(sender As Object, e As EventArgs) Handles txtDocument.TextChanged
+        ' Indicate the text has changed.
+        blnIsChanged = True
+    End Sub
+
+
+    Private Sub mnuFileNew_Click(sender As Object, e As EventArgs) Handles mnuFileNew.Click
+        ' Has the current document changed?
+        If blnIsChanged = True Then
+            ' Confirm before clearing the document.
+            If MessageBox.Show("The current document is not saved. " &
+                               "Are you sure?", "Confirm", MessageBoxButtons.YesNo) =
+                               Windows.Forms.DialogResult.Yes Then
+                ClearDocumnet()
+            End If
+        Else
+            ' Documnet has not changed, so clear it.
+            ClearDocumnet()
+        End If
     End Sub
 End Class
