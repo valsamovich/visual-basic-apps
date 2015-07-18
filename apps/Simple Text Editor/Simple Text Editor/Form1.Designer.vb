@@ -97,7 +97,7 @@ Partial Class Form1
         'mnuHelpAbout
         '
         Me.mnuHelpAbout.Name = "mnuHelpAbout"
-        Me.mnuHelpAbout.Size = New System.Drawing.Size(107, 22)
+        Me.mnuHelpAbout.Size = New System.Drawing.Size(152, 22)
         Me.mnuHelpAbout.Text = "&About"
         '
         'txtDocument

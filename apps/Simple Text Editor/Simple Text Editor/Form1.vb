@@ -130,4 +130,16 @@ Public Class Form1
             SaveDocument()
         End If
     End Sub
+
+    Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
+        ' Close the form.
+        Me.Close()
+    End Sub
+
+    Private Sub mnuHelpAbout_Click(sender As Object, e As EventArgs) Handles mnuHelpAbout.Click
+        ' Display an about box.
+        MessageBox.Show("Simple Text Editor version 1.0")
+    End Sub
+
+
 End Class
