@@ -104,11 +104,11 @@ Public Class Form1
                            Windows.Forms.DialogResult.Yes Then
                 ClearDocument()
                 OpenDocument()
-            Else
-                ' Document has not changed, so replace it.
-                ClearDocument()
-                OpenDocument()
             End If
+        Else
+            ' Document has not changed, so replace it.
+            ClearDocument()
+            OpenDocument()
         End If
     End Sub
 
