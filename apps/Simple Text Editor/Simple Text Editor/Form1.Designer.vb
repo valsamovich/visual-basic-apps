@@ -114,7 +114,6 @@ Partial Class Form1
         'ofdOpenFile
         '
         Me.ofdOpenFile.FileName = "OpenFileDialog1"
-        Me.ofdOpenFile.Filter = "Text Files (*.txt) | *.txt"
         Me.ofdOpenFile.Title = "Open File"
         '
         'sfdSaveFile

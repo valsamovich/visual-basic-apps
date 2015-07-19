@@ -73,12 +73,10 @@ Public Class Form1
         End Try
     End Sub
 
-
     Private Sub txtDocument_TextChanged(sender As Object, e As EventArgs) Handles txtDocument.TextChanged
         ' Indicate the text has changed.
         blnIsChanged = True
     End Sub
-
 
     Private Sub mnuFileNew_Click(sender As Object, e As EventArgs) Handles mnuFileNew.Click
         ' Has the current document changed?
