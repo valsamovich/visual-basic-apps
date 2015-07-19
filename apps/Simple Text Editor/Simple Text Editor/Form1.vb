@@ -95,7 +95,7 @@ Public Class Form1
     End Sub
 
     Private Sub mnuFileOpen_Click(sender As Object, e As EventArgs) Handles mnuFileOpen.Click
-        ' Has the current documnet changed?
+        ' Has the current document changed?
         If blnIsChanged = True Then
             ' Confirm before clearing and replacing.
             If MessageBox.Show("The current document is not saved. " &
