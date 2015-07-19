@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2872F91B-B06E-4C2C-9374-597E65ADA95C}</ProjectGuid>
+    <ProjectGuid>{3E88AA8F-E625-41DE-963C-4C5C763F5A65}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>COP1000_Grades.My.MyApplication</StartupObject>
-    <RootNamespace>COP1000_Grades</RootNamespace>
-    <AssemblyName>COP1000 Grades</AssemblyName>
+    <StartupObject>All_COP1000_Grades.My.MyApplication</StartupObject>
+    <RootNamespace>All_COP1000_Grades</RootNamespace>
+    <AssemblyName>All COP1000 Grades</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -20,7 +20,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>COP1000 Grades.xml</DocumentationFile>
+    <DocumentationFile>All COP1000 Grades.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,7 +30,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>COP1000 Grades.xml</DocumentationFile>
+    <DocumentationFile>All COP1000 Grades.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
