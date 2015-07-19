@@ -17,6 +17,7 @@
 - [Latin Translator](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/LatinTranslator)
 - [Long Distance Calls](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Long%20Distance%20Calls)
 - [Room Charge Calculator](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Room%20Charge%20Calculator)
+- [COP1000 Grades](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/COP1000%20Grades)
 - [Vehicle Loan Calculator](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Vehicle%20Loan%20Calculator)
 - [Random Number Guessing Game](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Random%20Number%20Guessing%20Game)
 - [Bagel House](https://github.com/valerysamovich/visual-basic-apps/tree/master/apps/Bagel%20House)
