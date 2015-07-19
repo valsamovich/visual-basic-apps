@@ -5,7 +5,7 @@ Public Class Form1
     Private strFilename As String = String.Empty    ' Document filename
     Dim blnIsChanged As Boolean = False             ' File change flag
 
-    Sub ClearDocumnet()
+    Sub ClearDocument()
         ' Clear the contents of the text box.
         txtDocument.Clear()
 
@@ -23,14 +23,14 @@ Public Class Form1
         Dim inputFile As StreamReader   ' Object variable
 
         If ofdOpenFile.ShowDialog = Windows.Forms.DialogResult.OK Then
-            ' Retieve the elected filename.
+            ' Retieve the selected filename.
             strFilename = ofdOpenFile.FileName
 
             Try
                 ' Open the file.
                 inputFile = File.OpenText(strFilename)
 
-                ' Read thr file's contents into the TextBox.
+                ' Read the file's contents into the TextBox.
                 txtDocument.Text = inputFile.ReadToEnd
 
                 ' Close the file.
@@ -80,13 +80,14 @@ Public Class Form1
         If blnIsChanged = True Then
             ' Confirm before clearing the document.
             If MessageBox.Show("The current document is not saved. " &
-                               "Are you sure?", "Confirm", MessageBoxButtons.YesNo) =
-                               Windows.Forms.DialogResult.Yes Then
-                ClearDocumnet()
+                               "Are you sure?", "Confirm",
+                               MessageBoxButtons.YesNo) =
+                           Windows.Forms.DialogResult.Yes Then
+                ClearDocument()
             End If
         Else
             ' Document has not changed, so clear it.
-            ClearDocumnet()
+            ClearDocument()
         End If
     End Sub
 
@@ -94,15 +95,15 @@ Public Class Form1
         ' Has the current documnet changed?
         If blnIsChanged = True Then
             ' Confirm before clearing and replacing.
-            If MessageBox.Show("The current documnet is not saved. " &
+            If MessageBox.Show("The current document is not saved. " &
                                "Are you sure?", "Confirm",
                                MessageBoxButtons.YesNo) =
-                               Windows.Forms.DialogResult.Yes Then
-                ClearDocumnet()
+                           Windows.Forms.DialogResult.Yes Then
+                ClearDocument()
                 OpenDocument()
             Else
                 ' Document has not changed, so replace it.
-                ClearDocumnet()
+                ClearDocument()
                 OpenDocument()
             End If
         End If
@@ -149,7 +150,7 @@ Public Class Form1
                                "Do you wish to discard your charges?",
                                "Confirm",
                                MessageBoxButtons.YesNo) =
-                               Windows.Forms.DialogResult.Yes Then
+                           Windows.Forms.DialogResult.Yes Then
                 e.Cancel = False
             Else
                 e.Cancel = True
