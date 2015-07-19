@@ -1,4 +1,9 @@
-﻿Imports System.IO
+﻿' Written by Valery Samovich 
+' July 18, 2015
+Option Strict On
+Option Explicit On
+
+Imports System.IO
 
 Public Class Form1
     ' Class-level variables
