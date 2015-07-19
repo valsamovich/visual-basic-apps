@@ -97,7 +97,7 @@ Partial Class Form1
         'mnuHelpAbout
         '
         Me.mnuHelpAbout.Name = "mnuHelpAbout"
-        Me.mnuHelpAbout.Size = New System.Drawing.Size(152, 22)
+        Me.mnuHelpAbout.Size = New System.Drawing.Size(107, 22)
         Me.mnuHelpAbout.Text = "&About"
         '
         'txtDocument
@@ -114,12 +114,12 @@ Partial Class Form1
         'ofdOpenFile
         '
         Me.ofdOpenFile.FileName = "OpenFileDialog1"
-        Me.ofdOpenFile.Filter = "Text File (*.txt) | *.txt"
+        Me.ofdOpenFile.Filter = "Text Files (*.txt) | *.txt"
         Me.ofdOpenFile.Title = "Open File"
         '
         'sfdSaveFile
         '
-        Me.sfdSaveFile.Filter = "Text File (*.txt) | *.txt"
+        Me.sfdSaveFile.Filter = "Text Files (*.txt) | *.txt"
         Me.sfdSaveFile.Title = "Save File As"
         '
         'Form1
