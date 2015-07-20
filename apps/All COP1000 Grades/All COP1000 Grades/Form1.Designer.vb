@@ -35,12 +35,12 @@ Partial Class Form1
         Me.lstTests = New System.Windows.Forms.ListBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblPossiblePoints = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.lblPercentageGrade = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblPercentageGrade = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblPossiblePoints = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -78,7 +78,7 @@ Partial Class Form1
         Me.btnLoadGrades.Name = "btnLoadGrades"
         Me.btnLoadGrades.Size = New System.Drawing.Size(80, 42)
         Me.btnLoadGrades.TabIndex = 3
-        Me.btnLoadGrades.Text = "Load Grades from File"
+        Me.btnLoadGrades.Text = "Load Scores from File"
         Me.btnLoadGrades.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -172,39 +172,13 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Points && Grade"
         '
-        'Label5
+        'Label8
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(61, 30)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(106, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Total possible points:"
-        '
-        'lblPossiblePoints
-        '
-        Me.lblPossiblePoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblPossiblePoints.Location = New System.Drawing.Point(170, 25)
-        Me.lblPossiblePoints.Name = "lblPossiblePoints"
-        Me.lblPossiblePoints.Size = New System.Drawing.Size(100, 23)
-        Me.lblPossiblePoints.TabIndex = 1
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(66, 64)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(101, 13)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Total points earned:"
-        '
-        'lblPercentageGrade
-        '
-        Me.lblPercentageGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblPercentageGrade.Location = New System.Drawing.Point(170, 59)
-        Me.lblPercentageGrade.Name = "lblPercentageGrade"
-        Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
-        Me.lblPercentageGrade.TabIndex = 3
+        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label8.Location = New System.Drawing.Point(170, 91)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(100, 23)
+        Me.Label8.TabIndex = 3
         '
         'Label6
         '
@@ -215,13 +189,39 @@ Partial Class Form1
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Overall grade percentage:"
         '
-        'Label8
+        'lblPercentageGrade
         '
-        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label8.Location = New System.Drawing.Point(170, 91)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(100, 23)
-        Me.Label8.TabIndex = 3
+        Me.lblPercentageGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPercentageGrade.Location = New System.Drawing.Point(170, 59)
+        Me.lblPercentageGrade.Name = "lblPercentageGrade"
+        Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
+        Me.lblPercentageGrade.TabIndex = 3
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(66, 64)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(101, 13)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Total points earned:"
+        '
+        'lblPossiblePoints
+        '
+        Me.lblPossiblePoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPossiblePoints.Location = New System.Drawing.Point(170, 25)
+        Me.lblPossiblePoints.Name = "lblPossiblePoints"
+        Me.lblPossiblePoints.Size = New System.Drawing.Size(100, 23)
+        Me.lblPossiblePoints.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(61, 30)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(106, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Total possible points:"
         '
         'Form1
         '

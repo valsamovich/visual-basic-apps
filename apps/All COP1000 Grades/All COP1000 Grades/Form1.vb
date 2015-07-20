@@ -20,9 +20,20 @@ Public Class Form1
 
     End Function
 
+    Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
+
+    End Sub
+
+    Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
+
+    End Sub
+
+    Private Sub btnLoadGrades_Click(sender As Object, e As EventArgs) Handles btnLoadGrades.Click
+
+    End Sub
+
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         ' Close the form.
         Me.Close()
     End Sub
-
 End Class
