@@ -30,44 +30,53 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.lstProjects = New System.Windows.Forms.ListBox()
         Me.lstTutorials = New System.Windows.Forms.ListBox()
         Me.lstTests = New System.Windows.Forms.ListBox()
-        Me.lstProjects = New System.Windows.Forms.ListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblPossiblePoints = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblPercentageGrade = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'bntEnterScores
         '
-        Me.bntEnterScores.Location = New System.Drawing.Point(12, 224)
+        Me.bntEnterScores.Location = New System.Drawing.Point(12, 408)
         Me.bntEnterScores.Name = "bntEnterScores"
-        Me.bntEnterScores.Size = New System.Drawing.Size(124, 25)
+        Me.bntEnterScores.Size = New System.Drawing.Size(80, 42)
         Me.bntEnterScores.TabIndex = 0
         Me.bntEnterScores.Text = "Enter Scores"
         Me.bntEnterScores.UseVisualStyleBackColor = True
         '
         'btnSaveScores
         '
-        Me.btnSaveScores.Location = New System.Drawing.Point(272, 224)
+        Me.btnSaveScores.Location = New System.Drawing.Point(98, 408)
         Me.btnSaveScores.Name = "btnSaveScores"
-        Me.btnSaveScores.Size = New System.Drawing.Size(124, 25)
+        Me.btnSaveScores.Size = New System.Drawing.Size(80, 42)
         Me.btnSaveScores.TabIndex = 1
         Me.btnSaveScores.Text = "Save Scores to File"
         Me.btnSaveScores.UseVisualStyleBackColor = True
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(402, 224)
+        Me.btnExit.Location = New System.Drawing.Point(270, 408)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(125, 25)
+        Me.btnExit.Size = New System.Drawing.Size(80, 42)
         Me.btnExit.TabIndex = 2
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
         'btnLoadGrades
         '
-        Me.btnLoadGrades.Location = New System.Drawing.Point(142, 224)
+        Me.btnLoadGrades.Location = New System.Drawing.Point(184, 408)
         Me.btnLoadGrades.Name = "btnLoadGrades"
-        Me.btnLoadGrades.Size = New System.Drawing.Size(124, 25)
+        Me.btnLoadGrades.Size = New System.Drawing.Size(80, 42)
         Me.btnLoadGrades.TabIndex = 3
         Me.btnLoadGrades.Text = "Load Grades from File"
         Me.btnLoadGrades.UseVisualStyleBackColor = True
@@ -80,17 +89,17 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.lstProjects)
         Me.GroupBox1.Controls.Add(Me.lstTutorials)
         Me.GroupBox1.Controls.Add(Me.lstTests)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 16)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 44)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(290, 202)
+        Me.GroupBox1.Size = New System.Drawing.Size(338, 202)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Total Scores"
+        Me.GroupBox1.Text = "Scores"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(190, 24)
+        Me.Label3.Location = New System.Drawing.Point(222, 25)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(48, 13)
         Me.Label3.TabIndex = 5
@@ -99,7 +108,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(99, 16)
+        Me.Label2.Location = New System.Drawing.Point(116, 24)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 13)
         Me.Label2.TabIndex = 4
@@ -108,41 +117,119 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 24)
+        Me.Label1.Location = New System.Drawing.Point(10, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(36, 13)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Tests:"
         '
+        'lstProjects
+        '
+        Me.lstProjects.FormattingEnabled = True
+        Me.lstProjects.Location = New System.Drawing.Point(225, 41)
+        Me.lstProjects.Name = "lstProjects"
+        Me.lstProjects.Size = New System.Drawing.Size(100, 147)
+        Me.lstProjects.TabIndex = 2
+        '
         'lstTutorials
         '
         Me.lstTutorials.FormattingEnabled = True
-        Me.lstTutorials.Location = New System.Drawing.Point(102, 43)
+        Me.lstTutorials.Location = New System.Drawing.Point(119, 41)
         Me.lstTutorials.Name = "lstTutorials"
-        Me.lstTutorials.Size = New System.Drawing.Size(85, 147)
+        Me.lstTutorials.Size = New System.Drawing.Size(100, 147)
         Me.lstTutorials.TabIndex = 1
         '
         'lstTests
         '
         Me.lstTests.FormattingEnabled = True
-        Me.lstTests.Location = New System.Drawing.Point(11, 43)
+        Me.lstTests.Location = New System.Drawing.Point(13, 41)
         Me.lstTests.Name = "lstTests"
-        Me.lstTests.Size = New System.Drawing.Size(85, 147)
+        Me.lstTests.Size = New System.Drawing.Size(100, 147)
         Me.lstTests.TabIndex = 0
         '
-        'lstProjects
+        'Label4
         '
-        Me.lstProjects.FormattingEnabled = True
-        Me.lstProjects.Location = New System.Drawing.Point(193, 43)
-        Me.lstProjects.Name = "lstProjects"
-        Me.lstProjects.Size = New System.Drawing.Size(85, 147)
-        Me.lstProjects.TabIndex = 2
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(81, 11)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(211, 20)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Grade average calculator"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.lblPercentageGrade)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.lblPossiblePoints)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 257)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(338, 133)
+        Me.GroupBox2.TabIndex = 11
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Points && Grade"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(61, 30)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(106, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Total possible points:"
+        '
+        'lblPossiblePoints
+        '
+        Me.lblPossiblePoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPossiblePoints.Location = New System.Drawing.Point(170, 25)
+        Me.lblPossiblePoints.Name = "lblPossiblePoints"
+        Me.lblPossiblePoints.Size = New System.Drawing.Size(100, 23)
+        Me.lblPossiblePoints.TabIndex = 1
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(66, 64)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(101, 13)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Total points earned:"
+        '
+        'lblPercentageGrade
+        '
+        Me.lblPercentageGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPercentageGrade.Location = New System.Drawing.Point(170, 59)
+        Me.lblPercentageGrade.Name = "lblPercentageGrade"
+        Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
+        Me.lblPercentageGrade.TabIndex = 3
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(37, 95)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(130, 13)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "Overall grade percentage:"
+        '
+        'Label8
+        '
+        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label8.Location = New System.Drawing.Point(170, 91)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(100, 23)
+        Me.Label8.TabIndex = 3
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(536, 261)
+        Me.ClientSize = New System.Drawing.Size(362, 464)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnLoadGrades)
         Me.Controls.Add(Me.btnExit)
@@ -152,7 +239,10 @@ Partial Class Form1
         Me.Text = "Valery Samovich's All COP1000 Grades"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents bntEnterScores As System.Windows.Forms.Button
@@ -166,5 +256,13 @@ Partial Class Form1
     Friend WithEvents lstTutorials As System.Windows.Forms.ListBox
     Friend WithEvents lstTests As System.Windows.Forms.ListBox
     Friend WithEvents lstProjects As System.Windows.Forms.ListBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents lblPercentageGrade As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lblPossiblePoints As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 
 End Class
