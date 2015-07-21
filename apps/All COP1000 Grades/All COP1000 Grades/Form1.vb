@@ -12,35 +12,35 @@ Public Class Form1
     Const intPROJECT_POSSIBLE_POINTS As Integer = 280   ' Possible points per one project
 
     ' Array declarations for three categories of scores.
-    Dim intTestsScores(7) As Integer       ' Hold the 8 tests scores
-    Dim intTutorialsScores(6) As Integer   ' Hold the 7 tutorials scores
-    Dim intProjectsScores(6) As Integer    ' Hold the 7 projects scores
+    Dim intTestsScoresArray(7) As Integer       ' Hold the 8 tests scores
+    Dim intTutorialsScoresArray(6) As Integer   ' Hold the 7 tutorials scores
+    Dim intProjectsScoresArray(6) As Integer    ' Hold the 7 projects scores
 
     ' Function drop lowest score and calculate the total nuber of points. 
     Function ProcessScores() As Integer
-        ' TO-DO: Add body for this function. 
+        ' TO-DO: Add body for this function.
+        ' Page: 486
     End Function
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
-        Dim intTestCount As Integer         ' Loop counter
-        Dim intTestScore As Integer         ' To hold the user's input
-        Dim intTestIndex As Integer         ' Array index variable
+        Dim intTestScore As Integer     ' To hold the user's input
+        Dim intTestCount As Integer     ' Loop counter
 
-        Try
-            ' Get 7 scores and add them to the test array.
-            For intTestCount = 1 To 7
-
+        ' Get the tests scores and add them to an test array.
+        Do While intTestCount < intTestsScoresArray.Length
+            Try
                 ' Get a test scores.
-                intTestScore = CInt(InputBox("Enter score test #" & CStr(intTestCount)))
-                ' Add it to the test array.
-                intTestsScores(intTestIndex) = intTestScore
-
-            Next
-        Catch
-            ' Error message for invalid score.
-            MessageBox.Show("Enter a numeric value for test score.")
-        End Try
-
+                intTestScore = CInt(InputBox("Enter the test score #" & CStr(intTestCount + 1)))
+                ' Add test scores to in array.
+                intTestsScoresArray(intTestCount) = intTestScore
+                ' Increment counter
+                intTestScore += 1
+            Catch
+                ' Error message for invalid score.
+                MessageBox.Show("Enter a numeric value for test score.")
+            End Try
+            
+        Loop
     End Sub
 
     Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
@@ -51,8 +51,8 @@ Public Class Form1
         Try
             ' Add test scores to the file.
             outputFile = File.CreateText("MyScores.txt")
-            For intTestCount = 0 To (intTestsScores.Length - 1)
-                outputFile.WriteLine(intTestsScores(intTestCount))
+            For intTestCount = 0 To (intTestsScoresArray.Length - 1)
+                outputFile.WriteLine(intTestsScoresArray(intTestCount))
             Next
             outputFile.Close()
         Catch
