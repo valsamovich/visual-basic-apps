@@ -10,7 +10,9 @@ Public Class Form1
     Const intTEST_POSSIBLE_POINTS As Integer = 450      ' Possible points per one test
     Const intTUTORIAL_POSSIBLE_POINTS As Integer = 175  ' Possible points per one tutorial
     Const intPROJECT_POSSIBLE_POINTS As Integer = 280   ' Possible points per one project
-    Const strFILENAME As String = "MyGrades.txt"        ' To store scores
+    ' Const strFILENAME As String = "MyGrades.txt"        ' To store scores
+
+    Dim 
 
     ' Array declarations for three categories of scores.
     Dim intTests(7) As Integer       ' Hold the 8 tests scores
@@ -18,35 +20,37 @@ Public Class Form1
     Dim intProjects(6) As Integer    ' Hold the 7 projects scores
 
     ' Function drop lowest score and calculate the total nuber of points. 
-    Function ProcessScores() As Integer
+    ' Function ProcessScores() As Integer
 
-    End Function
+    ' End Function
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
-        Dim intCount As Integer = 0     ' Loop counter, intialized to 0
-        Dim intNumber As Integer        ' To hold user input
+        Dim intTestCount As Integer         ' Loop counter
+        Dim intTestScore As Integer         ' To hold the user's input
+        Dim intTestIndex As Integer         ' Array index variable
 
-        ' Get the scores and add them to the array
-        Do While intCount < intTests.Length
+        ' Get 7 scores and add them to the test array.
+        For intTestCount = 1 To 7
             Try
-                ' Get and tests scores
-                intNumber = CInt(InputBox("Enter score for test #1."))
-
-                ' Add the score to the array
-                'TO-DO
-
-                ' Increment intCount
-                intCount += 1
+                ' Get a test scores.
+                intTestScore = CInt(InputBox("Enter score test #" & CStr(intTestCount)))
+                ' Add it to the test array.
+                intTests(intTestIndex) = intTestScore
             Catch
-                ' Error messagge for invalid integer.
+                ' Error messagge for invalid score.
                 MessageBox.Show("Enter a numeric value for test score.")
             End Try
-        Loop
+        Next
+
     End Sub
 
     Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
-        ' Local variables.
-        Dim outputFile As StreamWriter  ' Object variable
+        ' Write array elements one per line
+        For Each Score As 
+
+            ' Local variables.
+            Dim outputFile As StreamWriter  ' Object variable
+
     End Sub
 
     Private Sub btnLoadScores_Click(sender As Object, e As EventArgs) Handles btnLoadScores.Click
