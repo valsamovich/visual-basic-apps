@@ -19,7 +19,7 @@ Public Class Form1
     ' Function drop lowest score and calculate the total nuber of points. 
     Function ProcessScores() As Integer
         ' TO-DO: Add body for this function.
-        ' Page: 486
+        ' Page: 486 for lower grade drop
     End Function
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
@@ -71,6 +71,7 @@ Public Class Form1
         Dim inputFile As StreamReader       ' Object variable
         Dim intTestCount As Integer         ' Hold the count for tests
         Dim intTestScore As Integer         ' Hold the list number
+
         ' TO-DO: Add local variables for tutorials.
         ' TO-DO: Add local variables for projects.
 
