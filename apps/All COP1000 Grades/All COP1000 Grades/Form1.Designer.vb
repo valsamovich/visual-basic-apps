@@ -25,7 +25,7 @@ Partial Class Form1
         Me.bntEnterScores = New System.Windows.Forms.Button()
         Me.btnSaveScores = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.btnLoadGrades = New System.Windows.Forms.Button()
+        Me.btnLoadScores = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -72,14 +72,14 @@ Partial Class Form1
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'btnLoadGrades
+        'btnLoadScores
         '
-        Me.btnLoadGrades.Location = New System.Drawing.Point(184, 408)
-        Me.btnLoadGrades.Name = "btnLoadGrades"
-        Me.btnLoadGrades.Size = New System.Drawing.Size(80, 42)
-        Me.btnLoadGrades.TabIndex = 3
-        Me.btnLoadGrades.Text = "Load Scores from File"
-        Me.btnLoadGrades.UseVisualStyleBackColor = True
+        Me.btnLoadScores.Location = New System.Drawing.Point(184, 408)
+        Me.btnLoadScores.Name = "btnLoadScores"
+        Me.btnLoadScores.Size = New System.Drawing.Size(80, 42)
+        Me.btnLoadScores.TabIndex = 3
+        Me.btnLoadScores.Text = "Load Scores from File"
+        Me.btnLoadScores.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -231,7 +231,7 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btnLoadGrades)
+        Me.Controls.Add(Me.btnLoadScores)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnSaveScores)
         Me.Controls.Add(Me.bntEnterScores)
@@ -248,7 +248,7 @@ Partial Class Form1
     Friend WithEvents bntEnterScores As System.Windows.Forms.Button
     Friend WithEvents btnSaveScores As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
-    Friend WithEvents btnLoadGrades As System.Windows.Forms.Button
+    Friend WithEvents btnLoadScores As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label

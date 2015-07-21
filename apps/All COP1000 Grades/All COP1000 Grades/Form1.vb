@@ -45,16 +45,44 @@ Public Class Form1
     End Sub
 
     Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
-        ' Local variables
+        ' Local variables.
         Dim outputFile As StreamWriter  ' Object variable
     End Sub
 
-    Private Sub btnLoadGrades_Click(sender As Object, e As EventArgs) Handles btnLoadGrades.Click
+    Private Sub btnLoadScores_Click(sender As Object, e As EventArgs) Handles btnLoadScores.Click
+        ' Local variables.
+        Dim inputFile As StreamReader   ' Object variable
+        Dim strInput As String          ' To hold a lineof input
 
+        Try
+            ' Open the file.
+            inputFile = File.OpenText(strFILENAME)
+
+            ' Clear the listboxes.
+            lstTests.Items.Clear()
+            lstTutorials.Items.Clear()
+            lstProjects.Items.Clear()
+
+            ' Read the file's contents.
+            Do Until inputFile.Peek = -1
+                ' Read a line form the file.
+                strInput = inputFile.ReadLine()
+
+                ' Add the line of input to the list box.
+                lstTests.Items.Add(strInput)
+            Loop
+
+            ' Close the file.
+            inputFile.Close()
+        Catch
+            ' Error message for file open error.
+            MessageBox.Show(strFILENAME & "cannot be opened.")
+        End Try
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         ' Close the form.
         Me.Close()
     End Sub
+
 End Class
