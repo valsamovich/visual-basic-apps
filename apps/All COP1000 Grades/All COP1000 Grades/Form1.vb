@@ -26,6 +26,9 @@ Public Class Form1
         Dim intTestScore As Integer     ' To hold the user's input
         Dim intTestCount As Integer     ' Loop counter
 
+        ' TO-DO: Add local variables for tutorials.
+        ' TO-DO: Add local variables for projects.
+
         ' Get the tests scores and add them to an test array.
         Do While intTestCount < intTestsScoresArray.Length
             Try
@@ -39,8 +42,10 @@ Public Class Form1
                 ' Error message for invalid score.
                 MessageBox.Show("Enter a numeric value for test score.")
             End Try
-            
         Loop
+
+        ' To-DO: Add loop for tutorials
+        ' TO-DO: Add loop for projects.
     End Sub
 
     Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
