@@ -51,8 +51,14 @@ Public Class Form1
 
     Private Sub btnLoadScores_Click(sender As Object, e As EventArgs) Handles btnLoadScores.Click
         ' Local variables.
-        Dim inputFile As StreamReader   ' Object variable
-        Dim strInput As String          ' To hold a lineof input
+        Dim inputFile As StreamReader       ' Object variable
+        Dim intTestCount As Integer        ' Hold the count for tests
+        Dim intTestScore As Integer            ' Hold the list number
+        ' TO-DO: Add local variables for tutorials.
+        ' TO-DO: Add local variables for projects.
+
+        ' Check to see whether the file exists. If it does, then
+        ' read is contents. Otherwise display an erro message.
 
         Try
             ' Open the file.
@@ -63,14 +69,14 @@ Public Class Form1
             lstTutorials.Items.Clear()
             lstProjects.Items.Clear()
 
-            ' Read the file's contents.
-            Do Until inputFile.Peek = -1
-                ' Read a line form the file.
-                strInput = inputFile.ReadLine()
+            ' Read the 7 numbers for tests and display them.
+            For intTestCount = 1 To 7
+                intTestScore = CInt(inputFile.ReadLine())
+                lstTests.Items.Add(intTestScore)
+            Next
 
-                ' Add the line of input to the list box.
-                lstTests.Items.Add(strInput)
-            Loop
+            ' TO-DO: Add loop for tutorial scores.
+            ' TO-DO: Add loop for project scores.
 
             ' Close the file.
             inputFile.Close()
