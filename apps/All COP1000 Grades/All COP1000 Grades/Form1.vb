@@ -14,6 +14,7 @@ Public Class Form1
     'Class-level variables.
     Dim intTotalPossiblePoints As Integer   ' To hold total possible points
     Dim intToTalEarnedPoints As Integer     ' To hold total earned points
+    Dim dblPercentageGrade As Double        ' To hold percentage grade
 
     ' Array declarations for three categories of scores.
     Dim intTestScoresArray(7) As Integer       ' Hold the 8 tests scores
@@ -25,8 +26,7 @@ Public Class Form1
 
     ' Function to pre=osess scores. 
     Sub ProcessScores()
-        ' TO-DO: Add body for this function.
-        ' Page: 486 for lower grade drop - 501
+        ' TO-DO : Page 486 for lower grade drop - 501
 
         ' Local variables.
         Dim intTestScore As Integer             ' To hold the test list number
@@ -88,11 +88,17 @@ Public Class Form1
         intToTalEarnedPoints = intTestTotalPoins +
             intTutorialTotalPoins + intProjectTotalPoins
 
+        ' Calculate the percentage grade
+        dblPercentageGrade = intToTalEarnedPoints / intTotalPossiblePoints
+
         ' Display total possible points.
         lblPossiblePoints.Text = intTotalPossiblePoints.ToString
 
         ' Display total earned points.
         lblPointsEarned.Text = intToTalEarnedPoints.ToString
+
+        ' Display the the percentage grade
+        lblPercentageGrade.Text = dblPercentageGrade.ToString("p")
     End Sub
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
@@ -121,11 +127,8 @@ Public Class Form1
             End Try
         Loop
 
-        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-        MessageBox.Show("Scores are successfully entered to the test array!")
-        Dim result1 As String = String.Join("", intTestScoresArray)
-        lblTestArray.Text = result1
-        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+        ' Success message.
+        MessageBox.Show("Test scores are successfully entered to array!")
 
         ' Get the tutorial scores and and add them to the tutorial array.
         Do While intTutorialCount < intTutorialScoresArray.Length
@@ -142,11 +145,8 @@ Public Class Form1
             End Try
         Loop
 
-        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-        MessageBox.Show("Scores are successfully entered to the tutorial array!")
-        Dim result2 As String = String.Join("", intTutorialScoresArray)
-        lblTutorialArray.Text = result2
-        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+        ' Success message.
+        MessageBox.Show("Tutorial scores are successfully entered to array!")
 
         ' Get the project scores and and add them to the project array.
         Do While intProjectCount < intProjectScoresArray.Length
@@ -163,11 +163,8 @@ Public Class Form1
             End Try
         Loop
 
-        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-        MessageBox.Show("Scores are successfully entered to the ptoject array!")
-        Dim result3 As String = String.Join("", intProjectScoresArray)
-        lblProjectArray.Text = result3
-        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+        ' Success message.
+        MessageBox.Show("Project scores are successfully entered to array!")
 
     End Sub
 
@@ -189,41 +186,24 @@ Public Class Form1
             For intTestCount = 0 To (intTestScoresArray.Length - 1)
                 intTestScore = intTestScoresArray(intTestCount)
                 outputFile.WriteLine(intTestScore)
-                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-                ' lstArrayLoad.Items.Add(intTestScore)
-                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
             Next
-
-            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-            MessageBox.Show("Test scores successfully added to MyScores.txt file!")
-            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
 
             ' Get tutorial scores and write them to the file.
             For intTutorialCount = 0 To (intTutorialScoresArray.Length - 1)
                 intTutorialScore = intTutorialScoresArray(intTutorialCount)
                 outputFile.WriteLine(intTutorialScore)
-                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-                ' lstArrayLoad.Items.Add(intTestScore)
-                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
             Next
-
-            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-            MessageBox.Show("Tutorial scores successfully added to MyScores.txt file!")
-            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
 
             ' Get tutorial scores and write them to the file.
             For intProjectCount = 0 To (intProjectScoresArray.Length - 1)
                 intProjectScore = intProjectScoresArray(intProjectCount)
                 outputFile.WriteLine(intProjectScore)
-                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-                ' lstArrayLoad.Items.Add(intTestScore)
-                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
             Next
 
-            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
-            MessageBox.Show("Project scores successfully added to MyScores.txt file!")
-            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+            ' Success message.
+            MessageBox.Show("All scores successfully added to MyScores.txt file!")
 
+            ' Close the file
             outputFile.Close()
 
         Catch
