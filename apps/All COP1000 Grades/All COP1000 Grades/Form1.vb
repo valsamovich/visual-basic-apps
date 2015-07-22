@@ -16,6 +16,10 @@ Public Class Form1
     Dim intToTalEarnedPoints As Integer     ' To hold total earned points
     Dim dblPercentageGrade As Double        ' To hold percentage grade
 
+    Dim intTestLowestScore As Integer       ' To hold lowest test score
+    Dim intTutorialLowestScore As Integer   ' To hold lowest tutorial score
+    Dim intProjectLowestScore As Integer    ' To hold lowest project score
+
     ' Array declarations for three categories of scores.
     Dim intTestScoresArray(7) As Integer       ' Hold the 8 tests scores
     Dim intTutorialScoresArray(6) As Integer   ' Hold the 7 tutorials scores
@@ -26,8 +30,6 @@ Public Class Form1
 
     ' Function to pre=osess scores. 
     Sub ProcessScores()
-        ' TO-DO : Page 486 for lower grade drop - 501
-
         ' Local variables.
         Dim intTestScore As Integer             ' To hold the test list number
         Dim intTestCount As Integer             ' To hold the count of tests
@@ -47,6 +49,51 @@ Public Class Form1
         lstTutorials.Items.Clear()
         lstProjects.Items.Clear()
 
+        ' Sum tha test points
+        For intTestCount = 0 To (intTestScoresArray.Length - 1)
+            intTestTotalPoins += intTestScoresArray(intTestCount)
+        Next
+
+        ' Sum tha tutorial points
+        For intTutorialCount = 0 To (intTutorialScoresArray.Length - 1)
+            intTutorialTotalPoins += intTutorialScoresArray(intTutorialCount)
+        Next
+
+        ' Sum tha project points
+        For intProjectCount = 0 To (intProjectScoresArray.Length - 1)
+            intProjectTotalPoins += intProjectScoresArray(intProjectCount)
+        Next
+
+        ' Get the first element
+        intTestLowestScore = intTestScoresArray(0)
+
+        ' Search for the lowest test score.
+        For intTestCount = 1 To (intTestScoresArray.Length - 1)
+            If intTestScoresArray(intTestCount) < intTestLowestScore Then
+                intTestLowestScore = intTestScoresArray(intTestCount)
+            End If
+        Next
+
+        ' Get the first element
+        intTutorialLowestScore = intTutorialScoresArray(0)
+
+        ' Search for the lowest tutorial score.
+        For intTutorialCount = 1 To (intTutorialScoresArray.Length - 1)
+            If intTutorialScoresArray(intTutorialCount) < intTutorialLowestScore Then
+                intTutorialLowestScore = intTutorialScoresArray(intTutorialCount)
+            End If
+        Next
+
+        ' Get the first element
+        intProjectLowestScore = intProjectScoresArray(0)
+
+        ' Search for the lowest tutorial score.
+        For intProjectCount = 1 To (intProjectScoresArray.Length - 1)
+            If intProjectScoresArray(intProjectCount) < intProjectLowestScore Then
+                intProjectLowestScore = intProjectScoresArray(intProjectCount)
+            End If
+        Next
+
         ' Read the 8 numbers for tests and display them.
         For intTestCount = 1 To 8
             intTestScore = CInt(inputFile.ReadLine())
@@ -63,21 +110,6 @@ Public Class Form1
         For intProjectCount = 16 To 22
             intProjectScore = CInt(inputFile.ReadLine())
             lstProjects.Items.Add(intProjectScore)
-        Next
-
-        ' Sum tha test points
-        For intTestCount = 0 To (intTestScoresArray.Length - 1)
-            intTestTotalPoins += intTestScoresArray(intTestCount)
-        Next
-
-        ' Sum tha tutorial points
-        For intTutorialCount = 0 To (intTutorialScoresArray.Length - 1)
-            intTutorialTotalPoins += intTutorialScoresArray(intTutorialCount)
-        Next
-
-        ' Sum tha project points
-        For intProjectCount = 0 To (intProjectScoresArray.Length - 1)
-            intProjectTotalPoins += intProjectScoresArray(intProjectCount)
         Next
 
         ' Calculate total possible points.
