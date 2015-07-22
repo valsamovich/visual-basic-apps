@@ -19,7 +19,7 @@ Public Class Form1
     ' Function drop lowest score and calculate the total nuber of points. 
     Function ProcessScores() As Integer
         ' TO-DO: Add body for this function.
-        ' Page: 486 for lower grade drop
+        ' Page: 486 for lower grade drop - 501
     End Function
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
@@ -29,21 +29,24 @@ Public Class Form1
         ' TO-DO: Add local variables for tutorials.
         ' TO-DO: Add local variables for projects.
 
-        ' Get the tests scores and add them to an test array.
+        ' Get the tests scores and and add them to the test array.
         Do While intTestCount < intTestsScoresArray.Length
             Try
-                ' Get a test scores.
+                ' Get a test score.
                 intTestScore = CInt(InputBox("Enter the test score #" & CStr(intTestCount + 1)))
                 ' Add test scores to in array.
                 intTestsScoresArray(intTestCount) = intTestScore
                 ' Increment counter
-                intTestScore += 1
+                intTestCount += 1
             Catch
                 ' Error message for invalid score.
                 MessageBox.Show("Enter a numeric value for test score.")
             End Try
         Loop
 
+        MessageBox.Show("Scores are successfully entered to array!")
+        Dim result As String = String.Join("", intTestsScoresArray)
+        lblTestArray.Text = result
         ' To-DO: Add loop for tutorials
         ' TO-DO: Add loop for projects.
     End Sub
@@ -51,15 +54,20 @@ Public Class Form1
     Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
         ' Local variables.
         Dim outputFile As StreamWriter      ' Object variable
-        Dim intTestCount As Integer         ' Hold the count for tests
+        Dim intTestCount As Integer         ' Hold the test count
+        Dim intTestScore As Integer         ' To hold the score from array
 
         Try
-            ' Add test scores to the file.
+            ' Create the file
             outputFile = File.CreateText("MyScores.txt")
+            ' Get 8 numbers and write them to the file
             For intTestCount = 0 To (intTestsScoresArray.Length - 1)
-                outputFile.WriteLine(intTestsScoresArray(intTestCount))
+                intTestScore = intTestsScoresArray(intTestCount)
+                outputFile.WriteLine(intTestScore)
+                lstArrayLoad.Items.Add(intTestScore)
             Next
             outputFile.Close()
+            MessageBox.Show("MyScores.txt file successfully created!")
         Catch
             ' Error message for invalid score.
             MessageBox.Show("No scores have been entered. Click Enter Scores button to enter your scores.")
