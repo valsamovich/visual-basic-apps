@@ -6,37 +6,41 @@ Option Explicit On
 Imports System.IO
 
 Public Class Form1
-    ' Class-level constants for total possible points per category
+    ' Class-level constants for total possible points per category.
     Const intTEST_POSSIBLE_POINTS As Integer = 350      ' Possible points per one test
     Const intTUTORIAL_POSSIBLE_POINTS As Integer = 150  ' Possible points per one tutorial
     Const intPROJECT_POSSIBLE_POINTS As Integer = 240   ' Possible points per one project
 
-    Dim intTotalPossibleValues As Integer               ' To hold total possible points
+    'Class-level variables.
+    Dim intTotalPossiblePoints As Integer   ' To hold total possible points
+    Dim intToTalEarnedPoints As Integer     ' To hold total earned points
 
     ' Array declarations for three categories of scores.
     Dim intTestScoresArray(7) As Integer       ' Hold the 8 tests scores
     Dim intTutorialScoresArray(6) As Integer   ' Hold the 7 tutorials scores
     Dim intProjectScoresArray(6) As Integer    ' Hold the 7 projects scores
 
-    ' Local variables.
-    Dim inputFile As StreamReader       ' Object variable
-    Dim outputFile As StreamWriter      ' Object variable
+    Dim inputFile As StreamReader   ' Object variable
+    Dim outputFile As StreamWriter  ' Object variable
 
-    ' Function drop lowest score and calculate the total nuber of points. 
+    ' Function to pre=osess scores. 
     Sub ProcessScores()
         ' TO-DO: Add body for this function.
         ' Page: 486 for lower grade drop - 501
 
-        Dim intTestScore As Integer         ' To hold the test list number
-        Dim intTestCount As Integer         ' To hold the count of tests
+        ' Local variables.
+        Dim intTestScore As Integer             ' To hold the test list number
+        Dim intTestCount As Integer             ' To hold the count of tests
 
-        Dim intTutorialScore As Integer     ' To hold the tutorial list number
-        Dim intTutorialCount As Integer     ' To hold the count of tutorials
+        Dim intTutorialScore As Integer         ' To hold the tutorial list number
+        Dim intTutorialCount As Integer         ' To hold the count of tutorials
 
-        Dim intProjectScore As Integer      ' To hold the project list number
-        Dim intProjectCount As Integer      ' To hold the count of projects
+        Dim intProjectScore As Integer          ' To hold the project list number
+        Dim intProjectCount As Integer          ' To hold the count of projects
 
-        Dim intTestTotalPoins As Integer    ' To hold test total points earned
+        Dim intTestTotalPoins As Integer        ' To hold test total points earned
+        Dim intTutorialTotalPoins As Integer    ' To hold tutorial total points earned
+        Dim intProjectTotalPoins As Integer     ' To hold project total points earned
 
         ' Clear the listboxes.
         lstTests.Items.Clear()
@@ -61,17 +65,34 @@ Public Class Form1
             lstProjects.Items.Add(intProjectScore)
         Next
 
+        ' Sum tha test points
         For intTestCount = 0 To (intTestScoresArray.Length - 1)
             intTestTotalPoins += intTestScoresArray(intTestCount)
         Next
 
-        ' Calculate total possible points.
-        intTotalPossibleValues = intTEST_POSSIBLE_POINTS +
-            intTUTORIAL_POSSIBLE_POINTS + intPROJECT_POSSIBLE_POINTS
-        ' Display total possible points.
-        lblPossiblePoints.Text = intTotalPossibleValues.ToString
+        ' Sum tha tutorial points
+        For intTutorialCount = 0 To (intTutorialScoresArray.Length - 1)
+            intTutorialTotalPoins += intTutorialScoresArray(intTutorialCount)
+        Next
 
-        lblPointsEarned.Text = intTestTotalPoins.ToString
+        ' Sum tha project points
+        For intProjectCount = 0 To (intProjectScoresArray.Length - 1)
+            intProjectTotalPoins += intProjectScoresArray(intProjectCount)
+        Next
+
+        ' Calculate total possible points.
+        intTotalPossiblePoints = intTEST_POSSIBLE_POINTS +
+            intTUTORIAL_POSSIBLE_POINTS + intPROJECT_POSSIBLE_POINTS
+
+        ' Calculate total points earned.
+        intToTalEarnedPoints = intTestTotalPoins +
+            intTutorialTotalPoins + intProjectTotalPoins
+
+        ' Display total possible points.
+        lblPossiblePoints.Text = intTotalPossiblePoints.ToString
+
+        ' Display total earned points.
+        lblPointsEarned.Text = intToTalEarnedPoints.ToString
     End Sub
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
@@ -218,6 +239,7 @@ Public Class Form1
             ' Open the file.
             inputFile = File.OpenText("MyGrades.txt")
 
+            ' Process the scores.
             ProcessScores()
 
             ' Close the file.
