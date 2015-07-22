@@ -35,9 +35,9 @@ Partial Class Form1
         Me.lstTests = New System.Windows.Forms.ListBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.lblPercentageGrade = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblPointsEarned = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblPossiblePoints = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -163,9 +163,9 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.lblPercentageGrade)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.lblPointsEarned)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.lblPossiblePoints)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -176,14 +176,14 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Points && Grade"
         '
-        'Label8
+        'lblPercentageGrade
         '
-        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label8.Location = New System.Drawing.Point(170, 91)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(100, 23)
-        Me.Label8.TabIndex = 3
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblPercentageGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPercentageGrade.Location = New System.Drawing.Point(170, 91)
+        Me.lblPercentageGrade.Name = "lblPercentageGrade"
+        Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
+        Me.lblPercentageGrade.TabIndex = 3
+        Me.lblPercentageGrade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label6
         '
@@ -194,14 +194,14 @@ Partial Class Form1
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Overall grade percentage:"
         '
-        'lblPercentageGrade
+        'lblPointsEarned
         '
-        Me.lblPercentageGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblPercentageGrade.Location = New System.Drawing.Point(170, 59)
-        Me.lblPercentageGrade.Name = "lblPercentageGrade"
-        Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
-        Me.lblPercentageGrade.TabIndex = 3
-        Me.lblPercentageGrade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblPointsEarned.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPointsEarned.Location = New System.Drawing.Point(170, 59)
+        Me.lblPointsEarned.Name = "lblPointsEarned"
+        Me.lblPointsEarned.Size = New System.Drawing.Size(100, 23)
+        Me.lblPointsEarned.TabIndex = 3
+        Me.lblPointsEarned.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label7
         '
@@ -304,11 +304,11 @@ Partial Class Form1
     Friend WithEvents lstProjects As System.Windows.Forms.ListBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents lblPercentageGrade As System.Windows.Forms.Label
+    Friend WithEvents lblPointsEarned As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents lblPossiblePoints As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents lblPercentageGrade As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents lblProjectArray As System.Windows.Forms.Label
     Friend WithEvents lblTutorialArray As System.Windows.Forms.Label

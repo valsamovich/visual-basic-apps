@@ -10,6 +10,7 @@ Public Class Form1
     Const intTEST_POSSIBLE_POINTS As Integer = 350      ' Possible points per one test
     Const intTUTORIAL_POSSIBLE_POINTS As Integer = 150  ' Possible points per one tutorial
     Const intPROJECT_POSSIBLE_POINTS As Integer = 240   ' Possible points per one project
+
     Dim intTotalPossibleValues As Integer               ' To hold total possible points
 
     ' Array declarations for three categories of scores.
@@ -17,10 +18,60 @@ Public Class Form1
     Dim intTutorialScoresArray(6) As Integer   ' Hold the 7 tutorials scores
     Dim intProjectScoresArray(6) As Integer    ' Hold the 7 projects scores
 
+    ' Local variables.
+    Dim inputFile As StreamReader       ' Object variable
+    Dim outputFile As StreamWriter      ' Object variable
+
     ' Function drop lowest score and calculate the total nuber of points. 
     Sub ProcessScores()
         ' TO-DO: Add body for this function.
         ' Page: 486 for lower grade drop - 501
+
+        Dim intTestScore As Integer         ' To hold the test list number
+        Dim intTestCount As Integer         ' To hold the count of tests
+
+        Dim intTutorialScore As Integer     ' To hold the tutorial list number
+        Dim intTutorialCount As Integer     ' To hold the count of tutorials
+
+        Dim intProjectScore As Integer      ' To hold the project list number
+        Dim intProjectCount As Integer      ' To hold the count of projects
+
+        Dim intTestTotalPoins As Integer    ' To hold test total points earned
+
+        ' Clear the listboxes.
+        lstTests.Items.Clear()
+        lstTutorials.Items.Clear()
+        lstProjects.Items.Clear()
+
+        ' Read the 8 numbers for tests and display them.
+        For intTestCount = 1 To 8
+            intTestScore = CInt(inputFile.ReadLine())
+            lstTests.Items.Add(intTestScore)
+        Next
+
+        ' Read the 7 numbers for tests and display them.
+        For intTutorialCount = 9 To 15
+            intTutorialScore = CInt(inputFile.ReadLine())
+            lstTutorials.Items.Add(intTutorialScore)
+        Next
+
+        ' Read the 7 numbers for tests and display them.
+        For intProjectCount = 16 To 22
+            intProjectScore = CInt(inputFile.ReadLine())
+            lstProjects.Items.Add(intProjectScore)
+        Next
+
+        For intTestCount = 0 To (intTestScoresArray.Length - 1)
+            intTestTotalPoins += intTestScoresArray(intTestCount)
+        Next
+
+        ' Calculate total possible points.
+        intTotalPossibleValues = intTEST_POSSIBLE_POINTS +
+            intTUTORIAL_POSSIBLE_POINTS + intPROJECT_POSSIBLE_POINTS
+        ' Display total possible points.
+        lblPossiblePoints.Text = intTotalPossibleValues.ToString
+
+        lblPointsEarned.Text = intTestTotalPoins.ToString
     End Sub
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
@@ -100,8 +151,6 @@ Public Class Form1
     End Sub
 
     Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
-        ' Local variables.
-        Dim outputFile As StreamWriter      ' Object variable
         Dim intTestScore As Integer         ' To hold the score from test array
         Dim intTestCount As Integer         ' Loop counter for tests
 
@@ -163,50 +212,13 @@ Public Class Form1
     End Sub
 
     Private Sub btnLoadScores_Click(sender As Object, e As EventArgs) Handles btnLoadScores.Click
-        ' Local variables.
-        Dim inputFile As StreamReader       ' Object variable
-        Dim intTestScore As Integer         ' To hold the test list number
-        Dim intTestCount As Integer         ' To hold the count of tests
-
-        Dim intTutorialScore As Integer     ' To hold the tutorial list number
-        Dim intTutorialCount As Integer     ' To hold the count of tutorials
-
-        Dim intProjectScore As Integer      ' To hold the project list number
-        Dim intProjectCount As Integer      ' To hold the count of projects
-
         ' Check to see whether the file exists. If it does, then
         ' read is contents. Otherwise display an erro message.
-
-        ' TO-DO: cal the ProcessScores function
-
         Try
             ' Open the file.
             inputFile = File.OpenText("MyGrades.txt")
 
             ProcessScores()
-
-            ' Clear the listboxes.
-            lstTests.Items.Clear()
-            lstTutorials.Items.Clear()
-            lstProjects.Items.Clear()
-
-            ' Read the 8 numbers for tests and display them.
-            For intTestCount = 1 To 8
-                intTestScore = CInt(inputFile.ReadLine())
-                lstTests.Items.Add(intTestScore)
-            Next
-
-            ' Read the 7 numbers for tests and display them.
-            For intTutorialCount = 9 To 15
-                intTutorialScore = CInt(inputFile.ReadLine())
-                lstTutorials.Items.Add(intTutorialScore)
-            Next
-
-            ' Read the 7 numbers for tests and display them.
-            For intProjectCount = 16 To 22
-                intProjectScore = CInt(inputFile.ReadLine())
-                lstProjects.Items.Add(intProjectScore)
-            Next
 
             ' Close the file.
             inputFile.Close()
@@ -214,10 +226,6 @@ Public Class Form1
             ' Error message for file open error.
             MessageBox.Show("No scores have been entered. Click Enter Scores button to enter your scores.")
         End Try
-
-        intTotalPossibleValues = intTEST_POSSIBLE_POINTS + intTUTORIAL_POSSIBLE_POINTS + intPROJECT_POSSIBLE_POINTS
-        lblPossiblePoints.Text = intTotalPossibleValues.ToString
-
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
