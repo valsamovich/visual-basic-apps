@@ -18,10 +18,10 @@ Public Class Form1
     Dim intProjectScoresArray(6) As Integer    ' Hold the 7 projects scores
 
     ' Function drop lowest score and calculate the total nuber of points. 
-    Function ProcessScores() As Integer
+    Sub ProcessScores()
         ' TO-DO: Add body for this function.
         ' Page: 486 for lower grade drop - 501
-    End Function
+    End Sub
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
         ' Local variables.
@@ -182,6 +182,8 @@ Public Class Form1
         Try
             ' Open the file.
             inputFile = File.OpenText("MyGrades.txt")
+
+            ProcessScores()
 
             ' Clear the listboxes.
             lstTests.Items.Clear()
