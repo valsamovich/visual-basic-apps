@@ -1,5 +1,5 @@
 ﻿' Written by Valery Samovich 
-' July 19, 2015
+' July 21, 2015
 Option Strict On
 Option Explicit On
 
@@ -7,9 +7,10 @@ Imports System.IO
 
 Public Class Form1
     ' Class-level constants for total possible points per category
-    Const intTEST_POSSIBLE_POINTS As Integer = 450      ' Possible points per one test
-    Const intTUTORIAL_POSSIBLE_POINTS As Integer = 175  ' Possible points per one tutorial
-    Const intPROJECT_POSSIBLE_POINTS As Integer = 280   ' Possible points per one project
+    Const intTEST_POSSIBLE_POINTS As Integer = 350      ' Possible points per one test
+    Const intTUTORIAL_POSSIBLE_POINTS As Integer = 150  ' Possible points per one tutorial
+    Const intPROJECT_POSSIBLE_POINTS As Integer = 240   ' Possible points per one project
+    Dim intTotalPossibleValues As Integer               ' To hold total possible points
 
     ' Array declarations for three categories of scores.
     Dim intTestScoresArray(7) As Integer       ' Hold the 8 tests scores
@@ -118,7 +119,9 @@ Public Class Form1
             For intTestCount = 0 To (intTestScoresArray.Length - 1)
                 intTestScore = intTestScoresArray(intTestCount)
                 outputFile.WriteLine(intTestScore)
+                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
                 ' lstArrayLoad.Items.Add(intTestScore)
+                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
             Next
 
             '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
@@ -129,7 +132,9 @@ Public Class Form1
             For intTutorialCount = 0 To (intTutorialScoresArray.Length - 1)
                 intTutorialScore = intTutorialScoresArray(intTutorialCount)
                 outputFile.WriteLine(intTutorialScore)
+                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
                 ' lstArrayLoad.Items.Add(intTestScore)
+                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
             Next
 
             '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
@@ -140,7 +145,9 @@ Public Class Form1
             For intProjectCount = 0 To (intProjectScoresArray.Length - 1)
                 intProjectScore = intProjectScoresArray(intProjectCount)
                 outputFile.WriteLine(intProjectScore)
+                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
                 ' lstArrayLoad.Items.Add(intTestScore)
+                '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
             Next
 
             '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
@@ -170,6 +177,8 @@ Public Class Form1
         ' Check to see whether the file exists. If it does, then
         ' read is contents. Otherwise display an erro message.
 
+        ' TO-DO: cal the ProcessScores function
+
         Try
             ' Open the file.
             inputFile = File.OpenText("MyGrades.txt")
@@ -191,7 +200,7 @@ Public Class Form1
                 lstTutorials.Items.Add(intTutorialScore)
             Next
 
-            ' Read the 8 numbers for tests and display them.
+            ' Read the 7 numbers for tests and display them.
             For intProjectCount = 16 To 22
                 intProjectScore = CInt(inputFile.ReadLine())
                 lstProjects.Items.Add(intProjectScore)
@@ -203,6 +212,10 @@ Public Class Form1
             ' Error message for file open error.
             MessageBox.Show("No scores have been entered. Click Enter Scores button to enter your scores.")
         End Try
+
+        intTotalPossibleValues = intTEST_POSSIBLE_POINTS + intTUTORIAL_POSSIBLE_POINTS + intPROJECT_POSSIBLE_POINTS
+        lblPossiblePoints.Text = intTotalPossibleValues.ToString
+
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click

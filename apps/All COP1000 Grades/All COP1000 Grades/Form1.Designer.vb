@@ -41,10 +41,10 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblPossiblePoints = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblProjectArray = New System.Windows.Forms.Label()
+        Me.lblTutorialArray = New System.Windows.Forms.Label()
         Me.lblTestArray = New System.Windows.Forms.Label()
         Me.lstArrayLoad = New System.Windows.Forms.ListBox()
-        Me.lblTutorialArray = New System.Windows.Forms.Label()
-        Me.lblProjectArray = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -183,6 +183,7 @@ Partial Class Form1
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(100, 23)
         Me.Label8.TabIndex = 3
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label6
         '
@@ -200,6 +201,7 @@ Partial Class Form1
         Me.lblPercentageGrade.Name = "lblPercentageGrade"
         Me.lblPercentageGrade.Size = New System.Drawing.Size(100, 23)
         Me.lblPercentageGrade.TabIndex = 3
+        Me.lblPercentageGrade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label7
         '
@@ -217,6 +219,7 @@ Partial Class Form1
         Me.lblPossiblePoints.Name = "lblPossiblePoints"
         Me.lblPossiblePoints.Size = New System.Drawing.Size(100, 23)
         Me.lblPossiblePoints.TabIndex = 1
+        Me.lblPossiblePoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label5
         '
@@ -226,6 +229,24 @@ Partial Class Form1
         Me.Label5.Size = New System.Drawing.Size(106, 13)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Total possible points:"
+        '
+        'lblProjectArray
+        '
+        Me.lblProjectArray.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblProjectArray.Location = New System.Drawing.Point(237, 466)
+        Me.lblProjectArray.Name = "lblProjectArray"
+        Me.lblProjectArray.Size = New System.Drawing.Size(100, 23)
+        Me.lblProjectArray.TabIndex = 12
+        Me.lblProjectArray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblTutorialArray
+        '
+        Me.lblTutorialArray.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTutorialArray.Location = New System.Drawing.Point(131, 466)
+        Me.lblTutorialArray.Name = "lblTutorialArray"
+        Me.lblTutorialArray.Size = New System.Drawing.Size(100, 23)
+        Me.lblTutorialArray.TabIndex = 12
+        Me.lblTutorialArray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblTestArray
         '
@@ -243,24 +264,6 @@ Partial Class Form1
         Me.lstArrayLoad.Name = "lstArrayLoad"
         Me.lstArrayLoad.Size = New System.Drawing.Size(120, 95)
         Me.lstArrayLoad.TabIndex = 13
-        '
-        'lblTutorialArray
-        '
-        Me.lblTutorialArray.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTutorialArray.Location = New System.Drawing.Point(131, 466)
-        Me.lblTutorialArray.Name = "lblTutorialArray"
-        Me.lblTutorialArray.Size = New System.Drawing.Size(100, 23)
-        Me.lblTutorialArray.TabIndex = 12
-        Me.lblTutorialArray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblProjectArray
-        '
-        Me.lblProjectArray.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblProjectArray.Location = New System.Drawing.Point(237, 466)
-        Me.lblProjectArray.Name = "lblProjectArray"
-        Me.lblProjectArray.Size = New System.Drawing.Size(100, 23)
-        Me.lblProjectArray.TabIndex = 12
-        Me.lblProjectArray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Form1
         '
@@ -307,9 +310,9 @@ Partial Class Form1
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblProjectArray As System.Windows.Forms.Label
+    Friend WithEvents lblTutorialArray As System.Windows.Forms.Label
     Friend WithEvents lblTestArray As System.Windows.Forms.Label
     Friend WithEvents lstArrayLoad As System.Windows.Forms.ListBox
-    Friend WithEvents lblTutorialArray As System.Windows.Forms.Label
-    Friend WithEvents lblProjectArray As System.Windows.Forms.Label
 
 End Class
