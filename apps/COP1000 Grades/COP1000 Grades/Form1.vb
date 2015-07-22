@@ -25,7 +25,7 @@ Public Class Form1
 
         Dim intTotalPossiblePoints As Integer = 250 ' To hold total possible points
         Dim intTotalPointsEarned As Integer         ' To hold total points earned
-        Dim dblPercentageGrade As Double            ' To hold PrecentageGrade
+        Dim dblPercentageGrade As Double            ' To hold percentage grade
 
         Try
             ' Read the values from the Introduction TextBox control. 
@@ -48,7 +48,7 @@ Public Class Form1
                 intChapter2Test + intChapter2Tutorial + intChapter2Project +
                 intChapter3Test + intChapter3Tutorial
 
-            ' Calculate the precentage grade
+            ' Calculate the percentage grade
             dblPercentageGrade = intTotalPointsEarned / intTotalPossiblePoints
 
             ' Display the total possible points
@@ -57,7 +57,7 @@ Public Class Form1
             ' Display the total points earned
             lblTotalPointsEarned.Text = CStr(intTotalPointsEarned)
 
-            ' Display the total points earned
+            ' Display the percentage grade
             lblPercentageGrade.Text = dblPercentageGrade.ToString("p")
         Catch
             ' Display an error mssage
