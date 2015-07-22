@@ -23,6 +23,7 @@ Public Class Form1
     End Function
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
+        ' Local variables.
         Dim intTestScore As Integer         ' To hold the user's input fo tests
         Dim intTestCount As Integer         ' Loop counter for tests
 
@@ -47,10 +48,11 @@ Public Class Form1
             End Try
         Loop
 
-        ' For debugging
+        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
         MessageBox.Show("Scores are successfully entered to the test array!")
         Dim result1 As String = String.Join("", intTestScoresArray)
         lblTestArray.Text = result1
+        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
 
         ' Get the tutorial scores and and add them to the tutorial array.
         Do While intTutorialCount < intTutorialScoresArray.Length
@@ -67,10 +69,11 @@ Public Class Form1
             End Try
         Loop
 
-        ' For debugging
+        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
         MessageBox.Show("Scores are successfully entered to the tutorial array!")
         Dim result2 As String = String.Join("", intTutorialScoresArray)
         lblTutorialArray.Text = result2
+        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
 
         ' Get the project scores and and add them to the project array.
         Do While intProjectCount < intProjectScoresArray.Length
@@ -87,30 +90,65 @@ Public Class Form1
             End Try
         Loop
 
-        ' For debugging
+        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
         MessageBox.Show("Scores are successfully entered to the ptoject array!")
         Dim result3 As String = String.Join("", intProjectScoresArray)
         lblProjectArray.Text = result3
+        '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
 
     End Sub
 
     Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
         ' Local variables.
         Dim outputFile As StreamWriter      ' Object variable
-        Dim intTestCount As Integer         ' Hold the test count
-        Dim intTestScore As Integer         ' To hold the score from array
+        Dim intTestScore As Integer         ' To hold the score from test array
+        Dim intTestCount As Integer         ' Loop counter for tests
+
+        Dim intTutorialScore As Integer     ' To hold the score from tutorial array
+        Dim intTutorialCount As Integer     ' Loop counter for tutorials
+
+        Dim intProjectScore As Integer      ' To hold the score from project array
+        Dim intProjectCount As Integer      ' Loop counter for projects
 
         Try
             ' Create the file
             outputFile = File.CreateText("MyGrades.txt")
-            ' Get 8 numbers and write them to the file
+
+            ' Get test scores and write them to the file.
             For intTestCount = 0 To (intTestScoresArray.Length - 1)
                 intTestScore = intTestScoresArray(intTestCount)
                 outputFile.WriteLine(intTestScore)
-                lstArrayLoad.Items.Add(intTestScore)
+                ' lstArrayLoad.Items.Add(intTestScore)
             Next
+
+            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+            MessageBox.Show("Test scores successfully added to MyScores.txt file!")
+            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+
+            ' Get tutorial scores and write them to the file.
+            For intTutorialCount = 0 To (intTutorialScoresArray.Length - 1)
+                intTutorialScore = intTutorialScoresArray(intTutorialCount)
+                outputFile.WriteLine(intTutorialScore)
+                ' lstArrayLoad.Items.Add(intTestScore)
+            Next
+
+            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+            MessageBox.Show("Tutorial scores successfully added to MyScores.txt file!")
+            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+
+            ' Get tutorial scores and write them to the file.
+            For intProjectCount = 0 To (intProjectScoresArray.Length - 1)
+                intProjectScore = intProjectScoresArray(intProjectCount)
+                outputFile.WriteLine(intProjectScore)
+                ' lstArrayLoad.Items.Add(intTestScore)
+            Next
+
+            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+            MessageBox.Show("Project scores successfully added to MyScores.txt file!")
+            '''''''''' For debugging '''''''''''''''''''''''''''''''''''''''''''''''''
+
             outputFile.Close()
-            MessageBox.Show("MyScores.txt file successfully created!")
+
         Catch
             ' Error message for invalid score.
             MessageBox.Show("No scores have been entered. Click Enter Scores button to enter your scores.")
@@ -120,11 +158,14 @@ Public Class Form1
     Private Sub btnLoadScores_Click(sender As Object, e As EventArgs) Handles btnLoadScores.Click
         ' Local variables.
         Dim inputFile As StreamReader       ' Object variable
-        Dim intTestCount As Integer         ' Hold the count for tests
-        Dim intTestScore As Integer         ' Hold the list number
+        Dim intTestScore As Integer         ' To hold the test list number
+        Dim intTestCount As Integer         ' To hold the count of tests
 
-        ' TO-DO: Add local variables for tutorials.
-        ' TO-DO: Add local variables for projects.
+        Dim intTutorialScore As Integer     ' To hold the tutorial list number
+        Dim intTutorialCount As Integer     ' To hold the count of tutorials
+
+        Dim intProjectScore As Integer      ' To hold the project list number
+        Dim intProjectCount As Integer      ' To hold the count of projects
 
         ' Check to see whether the file exists. If it does, then
         ' read is contents. Otherwise display an erro message.
@@ -138,14 +179,23 @@ Public Class Form1
             lstTutorials.Items.Clear()
             lstProjects.Items.Clear()
 
-            ' Read the 7 numbers for tests and display them.
+            ' Read the 8 numbers for tests and display them.
             For intTestCount = 1 To 8
                 intTestScore = CInt(inputFile.ReadLine())
                 lstTests.Items.Add(intTestScore)
             Next
 
-            ' TO-DO: Add loop for tutorial scores.
-            ' TO-DO: Add loop for project scores.
+            ' Read the 7 numbers for tests and display them.
+            For intTutorialCount = 9 To 15
+                intTutorialScore = CInt(inputFile.ReadLine())
+                lstTutorials.Items.Add(intTutorialScore)
+            Next
+
+            ' Read the 8 numbers for tests and display them.
+            For intProjectCount = 16 To 22
+                intProjectScore = CInt(inputFile.ReadLine())
+                lstProjects.Items.Add(intProjectScore)
+            Next
 
             ' Close the file.
             inputFile.Close()
