@@ -43,6 +43,8 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblTestArray = New System.Windows.Forms.Label()
         Me.lstArrayLoad = New System.Windows.Forms.ListBox()
+        Me.lblTutorialArray = New System.Windows.Forms.Label()
+        Me.lblProjectArray = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -228,9 +230,9 @@ Partial Class Form1
         'lblTestArray
         '
         Me.lblTestArray.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTestArray.Location = New System.Drawing.Point(12, 466)
+        Me.lblTestArray.Location = New System.Drawing.Point(25, 466)
         Me.lblTestArray.Name = "lblTestArray"
-        Me.lblTestArray.Size = New System.Drawing.Size(338, 23)
+        Me.lblTestArray.Size = New System.Drawing.Size(100, 23)
         Me.lblTestArray.TabIndex = 12
         Me.lblTestArray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -242,12 +244,32 @@ Partial Class Form1
         Me.lstArrayLoad.Size = New System.Drawing.Size(120, 95)
         Me.lstArrayLoad.TabIndex = 13
         '
+        'lblTutorialArray
+        '
+        Me.lblTutorialArray.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTutorialArray.Location = New System.Drawing.Point(131, 466)
+        Me.lblTutorialArray.Name = "lblTutorialArray"
+        Me.lblTutorialArray.Size = New System.Drawing.Size(100, 23)
+        Me.lblTutorialArray.TabIndex = 12
+        Me.lblTutorialArray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblProjectArray
+        '
+        Me.lblProjectArray.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblProjectArray.Location = New System.Drawing.Point(237, 466)
+        Me.lblProjectArray.Name = "lblProjectArray"
+        Me.lblProjectArray.Size = New System.Drawing.Size(100, 23)
+        Me.lblProjectArray.TabIndex = 12
+        Me.lblProjectArray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(362, 613)
         Me.Controls.Add(Me.lstArrayLoad)
+        Me.Controls.Add(Me.lblProjectArray)
+        Me.Controls.Add(Me.lblTutorialArray)
         Me.Controls.Add(Me.lblTestArray)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label4)
@@ -287,5 +309,7 @@ Partial Class Form1
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents lblTestArray As System.Windows.Forms.Label
     Friend WithEvents lstArrayLoad As System.Windows.Forms.ListBox
+    Friend WithEvents lblTutorialArray As System.Windows.Forms.Label
+    Friend WithEvents lblProjectArray As System.Windows.Forms.Label
 
 End Class

@@ -12,9 +12,9 @@ Public Class Form1
     Const intPROJECT_POSSIBLE_POINTS As Integer = 280   ' Possible points per one project
 
     ' Array declarations for three categories of scores.
-    Dim intTestsScoresArray(7) As Integer       ' Hold the 8 tests scores
-    Dim intTutorialsScoresArray(6) As Integer   ' Hold the 7 tutorials scores
-    Dim intProjectsScoresArray(6) As Integer    ' Hold the 7 projects scores
+    Dim intTestScoresArray(7) As Integer       ' Hold the 8 tests scores
+    Dim intTutorialScoresArray(6) As Integer   ' Hold the 7 tutorials scores
+    Dim intProjectScoresArray(6) As Integer    ' Hold the 7 projects scores
 
     ' Function drop lowest score and calculate the total nuber of points. 
     Function ProcessScores() As Integer
@@ -23,32 +23,75 @@ Public Class Form1
     End Function
 
     Private Sub bntEnterScores_Click(sender As Object, e As EventArgs) Handles bntEnterScores.Click
-        Dim intTestScore As Integer     ' To hold the user's input
-        Dim intTestCount As Integer     ' Loop counter
+        Dim intTestScore As Integer         ' To hold the user's input fo tests
+        Dim intTestCount As Integer         ' Loop counter for tests
 
-        ' TO-DO: Add local variables for tutorials.
-        ' TO-DO: Add local variables for projects.
+        Dim intTutorialScore As Integer     ' To hold the user's input for tutorials
+        Dim intTutorialCount As Integer     ' Loop counter for tutorials
 
-        ' Get the tests scores and and add them to the test array.
-        Do While intTestCount < intTestsScoresArray.Length
+        Dim intProjectScore As Integer      ' To hold the user's input for projects
+        Dim intProjectCount As Integer      ' Loop counter for projects
+
+        ' Get the test scores and and add them to the test array.
+        Do While intTestCount < intTestScoresArray.Length
             Try
                 ' Get a test score.
                 intTestScore = CInt(InputBox("Enter the test score #" & CStr(intTestCount + 1)))
-                ' Add test scores to in array.
-                intTestsScoresArray(intTestCount) = intTestScore
+                ' Add test score to in array.
+                intTestScoresArray(intTestCount) = intTestScore
                 ' Increment counter
                 intTestCount += 1
             Catch
-                ' Error message for invalid score.
+                ' Error message for invalid test score.
                 MessageBox.Show("Enter a numeric value for test score.")
             End Try
         Loop
 
-        MessageBox.Show("Scores are successfully entered to array!")
-        Dim result As String = String.Join("", intTestsScoresArray)
-        lblTestArray.Text = result
-        ' To-DO: Add loop for tutorials
-        ' TO-DO: Add loop for projects.
+        ' For debugging
+        MessageBox.Show("Scores are successfully entered to the test array!")
+        Dim result1 As String = String.Join("", intTestScoresArray)
+        lblTestArray.Text = result1
+
+        ' Get the tutorial scores and and add them to the tutorial array.
+        Do While intTutorialCount < intTutorialScoresArray.Length
+            Try
+                ' Get a tutorial score.
+                intTutorialScore = CInt(InputBox("Enter the tutorial score #" & CStr(intTutorialCount + 1)))
+                ' Add tutorial score to in array.
+                intTutorialScoresArray(intTutorialCount) = intTutorialScore
+                ' Increment counter
+                intTutorialCount += 1
+            Catch
+                ' Error message for invalid tutorial score.
+                MessageBox.Show("Enter a numeric value for tutorial score.")
+            End Try
+        Loop
+
+        ' For debugging
+        MessageBox.Show("Scores are successfully entered to the tutorial array!")
+        Dim result2 As String = String.Join("", intTutorialScoresArray)
+        lblTutorialArray.Text = result2
+
+        ' Get the project scores and and add them to the project array.
+        Do While intProjectCount < intProjectScoresArray.Length
+            Try
+                ' Get a project score.
+                intProjectScore = CInt(InputBox("Enter the project score #" & CStr(intProjectCount + 1)))
+                ' Add project score to in array.
+                intProjectScoresArray(intProjectCount) = intProjectScore
+                ' Increment counter
+                intProjectCount += 1
+            Catch
+                ' Error message for invalid project score.
+                MessageBox.Show("Enter a numeric value for project score.")
+            End Try
+        Loop
+
+        ' For debugging
+        MessageBox.Show("Scores are successfully entered to the ptoject array!")
+        Dim result3 As String = String.Join("", intProjectScoresArray)
+        lblProjectArray.Text = result3
+
     End Sub
 
     Private Sub btnSaveScores_Click(sender As Object, e As EventArgs) Handles btnSaveScores.Click
@@ -59,10 +102,10 @@ Public Class Form1
 
         Try
             ' Create the file
-            outputFile = File.CreateText("MyScores.txt")
+            outputFile = File.CreateText("MyGrades.txt")
             ' Get 8 numbers and write them to the file
-            For intTestCount = 0 To (intTestsScoresArray.Length - 1)
-                intTestScore = intTestsScoresArray(intTestCount)
+            For intTestCount = 0 To (intTestScoresArray.Length - 1)
+                intTestScore = intTestScoresArray(intTestCount)
                 outputFile.WriteLine(intTestScore)
                 lstArrayLoad.Items.Add(intTestScore)
             Next
@@ -96,7 +139,7 @@ Public Class Form1
             lstProjects.Items.Clear()
 
             ' Read the 7 numbers for tests and display them.
-            For intTestCount = 1 To 7
+            For intTestCount = 1 To 8
                 intTestScore = CInt(inputFile.ReadLine())
                 lstTests.Items.Add(intTestScore)
             Next
